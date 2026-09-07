@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CulinaCorp Admin Dashboard — manage weekly menus, employee subscriptions, meal wallets, orders, and monthly reports.">
+    <title>Dashboard — CulinaCorp Admin</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' stroke='%23C2410C' stroke-width='2.5' fill='none'/%3E%3Cline x1='38' y1='28' x2='38' y2='72' stroke='%23C2410C' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M55 58 Q68 38 62 28 Q54 36 55 58Z' fill='%23C2410C' fill-opacity='0.3' stroke='%23C2410C' stroke-width='2'/%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#C2410C',secondary:'#1E293B'}}}}</script>
+</head>
+<body>
+<div class="dashboard-layout">
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <a href="index.html" class="sidebar-logo">
+            <svg width="28" height="28" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="46" stroke="#EA580C" stroke-width="2.5" fill="none" opacity="0.3"/><line x1="38" y1="28" x2="38" y2="72" stroke="#EA580C" stroke-width="3" stroke-linecap="round"/><line x1="32" y1="28" x2="32" y2="40" stroke="#EA580C" stroke-width="2.5" stroke-linecap="round"/><line x1="44" y1="28" x2="44" y2="40" stroke="#EA580C" stroke-width="2.5" stroke-linecap="round"/><path d="M32 40 Q38 48 44 40" fill="none" stroke="#EA580C" stroke-width="2" stroke-linecap="round"/><path d="M55 58 Q68 38 62 28 Q54 36 55 58Z" fill="#EA580C" fill-opacity="0.2" stroke="#EA580C" stroke-width="2"/></svg>
+            CulinaCorp
+        </a>
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">Main</div>
+            <a href="#" class="sidebar-link active" data-section="dashboard"><i class="fas fa-th-large"></i> Dashboard</a>
+            <a href="#" class="sidebar-link" data-section="menu-config"><i class="fas fa-calendar-alt"></i> Menu Config</a>
+            <a href="#" class="sidebar-link" data-section="subscriptions"><i class="fas fa-users"></i> Subscriptions</a>
+            <a href="#" class="sidebar-link" data-section="meal-wallet"><i class="fas fa-wallet"></i> Meal Wallet</a>
+            <div class="sidebar-section">Analytics</div>
+            <a href="#" class="sidebar-link" data-section="orders"><i class="fas fa-shopping-bag"></i> Orders</a>
+            <a href="#" class="sidebar-link" data-section="reports"><i class="fas fa-chart-bar"></i> Reports</a>
+            <div class="sidebar-section">System</div>
+            <a href="#" class="sidebar-link" data-section="settings"><i class="fas fa-cog"></i> Settings</a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="login.html" class="sidebar-link" style="color:rgba(255,255,255,0.5);"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="flex items-center gap-3">
+                <button id="sidebar-toggle" class="xl:hidden p-2 rounded-lg border border-[#E2E8F0] dark:border-[#334155] text-neutral-600 dark:text-neutral-300"><i class="fas fa-bars"></i></button>
+                <div class="hidden sm:block">
+                    <h4 id="header-title" style="font-size:1rem;margin-bottom:0;">Dashboard</h4>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <button class="js-dir-toggle icon-btn" title="Toggle RTL" style="width:36px;height:36px;"><i class="fas fa-exchange-alt text-xs"></i></button>
+                <button class="js-theme-toggle icon-btn" title="Toggle Theme" style="width:36px;height:36px;"><i class="fas fa-moon text-xs"></i></button>
+                <button id="notif-btn" class="icon-btn relative" style="width:36px;height:36px;"><i class="fas fa-bell text-xs"></i><span class="notif-badge">3</span></button>
+                <div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#C2410C] to-[#9A3412] flex items-center justify-center text-white text-sm font-bold" style="font-family:'Outfit',sans-serif;">A</div>
+            </div>
+            <!-- Notification Panel -->
+            <div id="notif-panel" class="hidden absolute right-4 top-16 w-80 bg-[var(--surface)] border border-[var(--border-light)] rounded-2xl shadow-2xl p-4 z-50">
+                <h4 class="mb-3" style="font-size:0.9rem;">Notifications</h4>
+                <div class="space-y-3">
+                    <div class="flex gap-3 items-start p-3 rounded-xl bg-[var(--surface-alt)]">
+                        <div class="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 shrink-0"><i class="fas fa-check text-xs"></i></div>
+                        <div><p class="text-xs font-semibold" style="font-weight:600;">Menu approved for next week</p><p class="text-[11px] text-neutral-400" style="font-weight:400;">2 minutes ago</p></div>
+                    </div>
+                    <div class="flex gap-3 items-start p-3 rounded-xl bg-[var(--surface-alt)]">
+                        <div class="w-8 h-8 rounded-lg bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600 shrink-0"><i class="fas fa-wallet text-xs"></i></div>
+                        <div><p class="text-xs font-semibold" style="font-weight:600;">₹50,000 wallet top-up processed</p><p class="text-[11px] text-neutral-400" style="font-weight:400;">1 hour ago</p></div>
+                    </div>
+                    <div class="flex gap-3 items-start p-3 rounded-xl bg-[var(--surface-alt)]">
+                        <div class="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 shrink-0"><i class="fas fa-file-alt text-xs"></i></div>
+                        <div><p class="text-xs font-semibold" style="font-weight:600;">August cost report ready</p><p class="text-[11px] text-neutral-400" style="font-weight:400;">3 hours ago</p></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ============================================================ -->
+        <!-- SECTION: DASHBOARD (default) -->
+        <!-- ============================================================ -->
+        <main id="section-dashboard" class="dashboard-body dash-section">
+            <!-- Welcome -->
+            <div class="mb-8">
+                <h2 style="font-size:clamp(1.4rem,3vw,1.8rem);margin-bottom:4px;">Good Morning, Admin! 👋</h2>
+                <p class="text-sm text-neutral-500" style="font-weight:400;">Here's what's happening with your canteen today — <span class="font-semibold" style="font-weight:600;">September 7, 2026</span></p>
+            </div>
+
+            <!-- Metrics -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+                <div class="metric-card">
+                    <div class="flex items-center justify-between relative z-10">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600"><i class="fas fa-shopping-bag"></i></div>
+                        <span class="badge badge-success">+12%</span>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-2xl font-bold" style="font-family:'Outfit',sans-serif;font-weight:700;">847</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Today's Orders</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="flex items-center justify-between relative z-10">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600"><i class="fas fa-users"></i></div>
+                        <span class="badge badge-teal">Active</span>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-2xl font-bold" style="font-family:'Outfit',sans-serif;font-weight:700;">1,234</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Subscriptions</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="flex items-center justify-between relative z-10">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600"><i class="fas fa-wallet"></i></div>
+                        <span class="badge badge-warning">₹ INR</span>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-2xl font-bold" style="font-family:'Outfit',sans-serif;font-weight:700;">₹2,45,800</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Wallet Balance</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="flex items-center justify-between relative z-10">
+                        <div class="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center text-rose-600"><i class="fas fa-shield-alt"></i></div>
+                        <span class="badge badge-success">Excellent</span>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-2xl font-bold" style="font-family:'Outfit',sans-serif;font-weight:700;">99.2%</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Hygiene Score</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders Chart + Menu Preview -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <!-- Order Summary -->
+                <div class="card p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h4 style="font-size:1rem;">Today's Orders by Meal Type</h4>
+                        <span class="badge badge-teal">Live</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1"><span style="font-weight:500;">Breakfast</span><span class="text-neutral-500" style="font-weight:400;">234 orders</span></div>
+                            <div class="progress-bar"><div class="progress-fill" style="width:28%;"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1"><span style="font-weight:500;">Lunch</span><span class="text-neutral-500" style="font-weight:400;">456 orders</span></div>
+                            <div class="progress-bar"><div class="progress-fill" style="width:54%;"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1"><span style="font-weight:500;">Snacks</span><span class="text-neutral-500" style="font-weight:400;">157 orders</span></div>
+                            <div class="progress-bar"><div class="progress-fill" style="width:18%;"></div></div>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-[var(--border-light)] flex justify-between items-center">
+                        <span class="text-sm text-neutral-500" style="font-weight:400;">Total Today</span>
+                        <span class="text-lg font-bold text-[#C2410C]" style="font-family:'Outfit',sans-serif;font-weight:700;">847</span>
+                    </div>
+                </div>
+
+                <!-- Weekly Menu Quick View -->
+                <div class="card p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h4 style="font-size:1rem;">This Week's Menu</h4>
+                        <a href="#" class="text-xs text-[#C2410C] font-bold uppercase tracking-wider hover:underline" style="font-weight:600;" data-section="menu-config" onclick="event.preventDefault(); switchSection('menu-config');">View Full</a>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 p-3 rounded-xl bg-[var(--surface-alt)]">
+                            <span class="text-xs font-bold text-[#C2410C] w-10" style="font-weight:600;">MON</span>
+                            <span class="text-sm" style="font-weight:400;">Poha • Paneer Masala • Samosa</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-xl bg-[var(--primary-glow)] border border-[#C2410C]/20">
+                            <span class="text-xs font-bold text-[#C2410C] w-10" style="font-weight:600;">TUE</span>
+                            <span class="text-sm font-semibold" style="font-weight:600;">Idli Sambar • Dal Makhani • Vada Pav</span>
+                            <span class="badge badge-teal ml-auto text-[10px]">Today</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-xl bg-[var(--surface-alt)]">
+                            <span class="text-xs font-bold text-[#C2410C] w-10" style="font-weight:600;">WED</span>
+                            <span class="text-sm" style="font-weight:400;">Dosa • Chole Bhature • Pakora</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-xl bg-[var(--surface-alt)]">
+                            <span class="text-xs font-bold text-[#C2410C] w-10" style="font-weight:600;">THU</span>
+                            <span class="text-sm" style="font-weight:400;">Puri Bhaji • Rajma Chawal • Dhokla</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-xl bg-[var(--surface-alt)]">
+                            <span class="text-xs font-bold text-[#C2410C] w-10" style="font-weight:600;">FRI</span>
+                            <span class="text-sm" style="font-weight:400;">Pancakes • Special Biryani • Pizza</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Department Headcount Table -->
+            <div class="card p-6 mb-8">
+                <div class="flex items-center justify-between mb-6">
+                    <h4 style="font-size:1rem;">Department-wise Meal Count (Today)</h4>
+                    <button class="btn btn-sm btn-secondary"><i class="fas fa-download text-xs"></i> Export</button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="data-table">
+                        <thead><tr><th>Department</th><th class="text-center">Breakfast</th><th class="text-center">Lunch</th><th class="text-center">Snacks</th><th class="text-center">Total</th></tr></thead>
+                        <tbody>
+                            <tr><td style="font-weight:500;">Engineering</td><td class="text-center">78</td><td class="text-center">142</td><td class="text-center">56</td><td class="text-center font-bold" style="font-weight:700;">276</td></tr>
+                            <tr><td style="font-weight:500;">Marketing</td><td class="text-center">45</td><td class="text-center">89</td><td class="text-center">32</td><td class="text-center font-bold" style="font-weight:700;">166</td></tr>
+                            <tr><td style="font-weight:500;">Sales</td><td class="text-center">38</td><td class="text-center">76</td><td class="text-center">28</td><td class="text-center font-bold" style="font-weight:700;">142</td></tr>
+                            <tr><td style="font-weight:500;">Operations</td><td class="text-center">42</td><td class="text-center">85</td><td class="text-center">24</td><td class="text-center font-bold" style="font-weight:700;">151</td></tr>
+                            <tr><td style="font-weight:500;">HR & Admin</td><td class="text-center">31</td><td class="text-center">64</td><td class="text-center">17</td><td class="text-center font-bold" style="font-weight:700;">112</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Recent Transactions + Monthly Report -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Recent Transactions -->
+                <div class="card p-6">
+                    <h4 style="font-size:1rem;" class="mb-5">Recent Wallet Transactions</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between p-3 rounded-xl bg-[var(--surface-alt)]">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600"><i class="fas fa-plus text-xs"></i></div>
+                                <div><p class="text-sm font-semibold" style="font-weight:600;">Wallet Top-up — Engineering</p><p class="text-[11px] text-neutral-400" style="font-weight:400;">Today, 10:30 AM</p></div>
+                            </div>
+                            <span class="text-sm font-bold text-green-600" style="font-weight:700;">+₹50,000</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 rounded-xl bg-[var(--surface-alt)]">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-600"><i class="fas fa-minus text-xs"></i></div>
+                                <div><p class="text-sm font-semibold" style="font-weight:600;">Lunch Deduction — 456 meals</p><p class="text-[11px] text-neutral-400" style="font-weight:400;">Today, 1:30 PM</p></div>
+                            </div>
+                            <span class="text-sm font-bold text-red-500" style="font-weight:700;">-₹22,800</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 rounded-xl bg-[var(--surface-alt)]">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600"><i class="fas fa-plus text-xs"></i></div>
+                                <div><p class="text-sm font-semibold" style="font-weight:600;">Wallet Top-up — Marketing</p><p class="text-[11px] text-neutral-400" style="font-weight:400;">Yesterday, 4:00 PM</p></div>
+                            </div>
+                            <span class="text-sm font-bold text-green-600" style="font-weight:700;">+₹30,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monthly Report -->
+                <div class="card p-6">
+                    <h4 style="font-size:1rem;" class="mb-5">Monthly Cost Report</h4>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm" style="font-weight:400;">Total Meals Served</span>
+                            <span class="text-sm font-bold" style="font-weight:700;">18,456</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm" style="font-weight:400;">Total Cost</span>
+                            <span class="text-sm font-bold" style="font-weight:700;">₹9,22,800</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm" style="font-weight:400;">Avg. Cost per Meal</span>
+                            <span class="text-sm font-bold" style="font-weight:700;">₹50</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm" style="font-weight:400;">Food Waste</span>
+                            <span class="text-sm font-bold text-green-600" style="font-weight:700;">2.1% (↓ 0.3%)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm" style="font-weight:400;">Employee Satisfaction</span>
+                            <span class="text-sm font-bold text-[#C2410C]" style="font-weight:700;">4.8 / 5.0</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-[var(--border-light)]">
+                        <button class="btn btn-primary btn-full btn-sm"><i class="fas fa-download text-xs"></i> Download August Report</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- ============================================================ -->
+        <!-- SECTION: MENU CONFIG -->
+        <!-- ============================================================ -->
+        <main id="section-menu-config" class="dashboard-body dash-section" style="display:none;">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
+                <div>
+                    <h2 style="font-size:clamp(1.4rem,3vw,1.8rem);margin-bottom:4px;">Menu Configuration</h2>
+                    <p class="text-sm text-neutral-500" style="font-weight:400;">Plan and manage weekly menus for your canteen — <span class="font-semibold" style="font-weight:600;">Week of Sep 7–11, 2026</span></p>
+                </div>
+                <button class="btn btn-primary btn-sm" id="add-menu-item-btn"><i class="fas fa-plus text-xs"></i> Add Item</button>
+            </div>
+
+            <!-- Week Selector -->
+            <div class="flex flex-wrap gap-2 mb-8">
+                <button class="btn btn-sm btn-secondary"><i class="fas fa-chevron-left text-xs"></i> Prev Week</button>
+                <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--primary-glow)] border border-[#C2410C]/20 text-sm font-bold text-[#C2410C]" style="font-weight:600;">
+                    <i class="fas fa-calendar-week text-xs"></i> Sep 7 – Sep 11, 2026
+                </div>
+                <button class="btn btn-sm btn-secondary">Next Week <i class="fas fa-chevron-right text-xs"></i></button>
+            </div>
+
+            <!-- Day-by-Day Menu Cards -->
+            <div class="space-y-6">
+                <!-- Monday -->
+                <div class="card p-6">
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 font-bold text-sm" style="font-family:'Outfit',sans-serif;">M</div>
+                            <div>
+                                <h4 style="font-size:1rem;margin-bottom:0;">Monday</h4>
+                                <p class="text-xs text-neutral-400" style="font-weight:400;">September 7, 2026</p>
+                            </div>
+                        </div>
+                        <span class="badge badge-teal">Published</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="p-4 rounded-xl bg-[var(--surface-alt)] border border-[var(--border-light)]">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-amber-600 uppercase tracking-wider" style="font-weight:700;"><i class="fas fa-sun text-[10px]"></i> Breakfast</span>
+                                <button class="text-neutral-400 hover:text-[#C2410C] transition-colors text-xs"><i class="fas fa-pen"></i></button>
+                            </div>
+                            <ul class="space-y-1.5">
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Poha with Sev</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Bread Toast & Butter</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Tea / Coffee</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[var(--surface-alt)] border border-[var(--border-light)]">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-orange-600 uppercase tracking-wider" style="font-weight:700;"><i class="fas fa-utensils text-[10px]"></i> Lunch</span>
+                                <button class="text-neutral-400 hover:text-[#C2410C] transition-colors text-xs"><i class="fas fa-pen"></i></button>
+                            </div>
+                            <ul class="space-y-1.5">
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Paneer Butter Masala</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Jeera Rice + Roti</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Dal Fry + Salad</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Gulab Jamun</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[var(--surface-alt)] border border-[var(--border-light)]">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-purple-600 uppercase tracking-wider" style="font-weight:700;"><i class="fas fa-cookie-bite text-[10px]"></i> Snacks</span>
+                                <button class="text-neutral-400 hover:text-[#C2410C] transition-colors text-xs"><i class="fas fa-pen"></i></button>
+                            </div>
+                            <ul class="space-y-1.5">
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Samosa (2 pcs)</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Masala Chai</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tuesday -->
+                <div class="card p-6" style="border-color:rgba(13,124,102,0.3);">
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#C2410C] to-[#9A3412] flex items-center justify-center text-white font-bold text-sm" style="font-family:'Outfit',sans-serif;">T</div>
+                            <div>
+                                <h4 style="font-size:1rem;margin-bottom:0;">Tuesday <span class="text-[#C2410C] text-xs">(Today)</span></h4>
+                                <p class="text-xs text-neutral-400" style="font-weight:400;">September 8, 2026</p>
+                            </div>
+                        </div>
+                        <span class="badge badge-success"><i class="fas fa-check text-[10px]"></i> Active</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="p-4 rounded-xl bg-[var(--surface-alt)] border border-[var(--border-light)]">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-amber-600 uppercase tracking-wider" style="font-weight:700;"><i class="fas fa-sun text-[10px]"></i> Breakfast</span>
+                                <button class="text-neutral-400 hover:text-[#C2410C] transition-colors text-xs"><i class="fas fa-pen"></i></button>
+                            </div>
+                            <ul class="space-y-1.5">
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Idli with Sambar</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Coconut Chutney</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Filter Coffee</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[var(--surface-alt)] border border-[var(--border-light)]">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-orange-600 uppercase tracking-wider" style="font-weight:700;"><i class="fas fa-utensils text-[10px]"></i> Lunch</span>
+                                <button class="text-neutral-400 hover:text-[#C2410C] transition-colors text-xs"><i class="fas fa-pen"></i></button>
+                            </div>
+                            <ul class="space-y-1.5">
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Dal Makhani</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Steamed Rice + Naan</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Mix Veg + Raita</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Kheer</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[var(--surface-alt)] border border-[var(--border-light)]">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-purple-600 uppercase tracking-wider" style="font-weight:700;"><i class="fas fa-cookie-bite text-[10px]"></i> Snacks</span>
+                                <button class="text-neutral-400 hover:text-[#C2410C] transition-colors text-xs"><i class="fas fa-pen"></i></button>
+                            </div>
+                            <ul class="space-y-1.5">
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Vada Pav</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Cutting Chai</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wednesday -->
+                <div class="card p-6">
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 font-bold text-sm" style="font-family:'Outfit',sans-serif;">W</div>
+                            <div>
+                                <h4 style="font-size:1rem;margin-bottom:0;">Wednesday</h4>
+                                <p class="text-xs text-neutral-400" style="font-weight:400;">September 9, 2026</p>
+                            </div>
+                        </div>
+                        <span class="badge badge-warning">Draft</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="p-4 rounded-xl bg-[var(--surface-alt)] border border-[var(--border-light)]">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-amber-600 uppercase tracking-wider" style="font-weight:700;"><i class="fas fa-sun text-[10px]"></i> Breakfast</span>
+                                <button class="text-neutral-400 hover:text-[#C2410C] transition-colors text-xs"><i class="fas fa-pen"></i></button>
+                            </div>
+                            <ul class="space-y-1.5">
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Masala Dosa</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Peanut Chutney</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Tea / Coffee</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[var(--surface-alt)] border border-[var(--border-light)]">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-orange-600 uppercase tracking-wider" style="font-weight:700;"><i class="fas fa-utensils text-[10px]"></i> Lunch</span>
+                                <button class="text-neutral-400 hover:text-[#C2410C] transition-colors text-xs"><i class="fas fa-pen"></i></button>
+                            </div>
+                            <ul class="space-y-1.5">
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Chole Bhature</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Pulao + Chapati</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Palak Paneer + Onion Salad</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Rasgulla</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[var(--surface-alt)] border border-[var(--border-light)]">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-purple-600 uppercase tracking-wider" style="font-weight:700;"><i class="fas fa-cookie-bite text-[10px]"></i> Snacks</span>
+                                <button class="text-neutral-400 hover:text-[#C2410C] transition-colors text-xs"><i class="fas fa-pen"></i></button>
+                            </div>
+                            <ul class="space-y-1.5">
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Pakora Platter</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Green Tea</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thursday -->
+                <div class="card p-6">
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 font-bold text-sm" style="font-family:'Outfit',sans-serif;">T</div>
+                            <div>
+                                <h4 style="font-size:1rem;margin-bottom:0;">Thursday</h4>
+                                <p class="text-xs text-neutral-400" style="font-weight:400;">September 10, 2026</p>
+                            </div>
+                        </div>
+                        <span class="badge badge-warning">Draft</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="p-4 rounded-xl bg-[var(--surface-alt)] border border-[var(--border-light)]">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-amber-600 uppercase tracking-wider" style="font-weight:700;"><i class="fas fa-sun text-[10px]"></i> Breakfast</span>
+                                <button class="text-neutral-400 hover:text-[#C2410C] transition-colors text-xs"><i class="fas fa-pen"></i></button>
+                            </div>
+                            <ul class="space-y-1.5">
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Puri Bhaji</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Fruit Bowl</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Masala Milk</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[var(--surface-alt)] border border-[var(--border-light)]">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-orange-600 uppercase tracking-wider" style="font-weight:700;"><i class="fas fa-utensils text-[10px]"></i> Lunch</span>
+                                <button class="text-neutral-400 hover:text-[#C2410C] transition-colors text-xs"><i class="fas fa-pen"></i></button>
+                            </div>
+                            <ul class="space-y-1.5">
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Rajma Chawal</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Tandoori Roti</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Aloo Gobi + Cucumber Raita</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Jalebi</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[var(--surface-alt)] border border-[var(--border-light)]">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-purple-600 uppercase tracking-wider" style="font-weight:700;"><i class="fas fa-cookie-bite text-[10px]"></i> Snacks</span>
+                                <button class="text-neutral-400 hover:text-[#C2410C] transition-colors text-xs"><i class="fas fa-pen"></i></button>
+                            </div>
+                            <ul class="space-y-1.5">
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Dhokla</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Lemon Soda</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Friday -->
+                <div class="card p-6">
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center text-rose-600 font-bold text-sm" style="font-family:'Outfit',sans-serif;">F</div>
+                            <div>
+                                <h4 style="font-size:1rem;margin-bottom:0;">Friday <span class="text-xs text-rose-500">(Special Menu)</span></h4>
+                                <p class="text-xs text-neutral-400" style="font-weight:400;">September 11, 2026</p>
+                            </div>
+                        </div>
+                        <span class="badge badge-warning">Draft</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="p-4 rounded-xl bg-[var(--surface-alt)] border border-[var(--border-light)]">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-amber-600 uppercase tracking-wider" style="font-weight:700;"><i class="fas fa-sun text-[10px]"></i> Breakfast</span>
+                                <button class="text-neutral-400 hover:text-[#C2410C] transition-colors text-xs"><i class="fas fa-pen"></i></button>
+                            </div>
+                            <ul class="space-y-1.5">
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Pancakes with Maple Syrup</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Fresh Juice</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Cappuccino</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[var(--surface-alt)] border border-[var(--border-light)]">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-orange-600 uppercase tracking-wider" style="font-weight:700;"><i class="fas fa-utensils text-[10px]"></i> Lunch</span>
+                                <button class="text-neutral-400 hover:text-[#C2410C] transition-colors text-xs"><i class="fas fa-pen"></i></button>
+                            </div>
+                            <ul class="space-y-1.5">
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Special Hyderabadi Biryani</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Mirchi Ka Salan + Raita</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Double Ka Meetha</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[var(--surface-alt)] border border-[var(--border-light)]">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-purple-600 uppercase tracking-wider" style="font-weight:700;"><i class="fas fa-cookie-bite text-[10px]"></i> Snacks</span>
+                                <button class="text-neutral-400 hover:text-[#C2410C] transition-colors text-xs"><i class="fas fa-pen"></i></button>
+                            </div>
+                            <ul class="space-y-1.5">
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Mini Pizza Slices</li>
+                                <li class="text-sm flex items-center gap-2" style="font-weight:400;"><span class="w-1.5 h-1.5 rounded-full bg-[#C2410C]"></span> Cold Coffee</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- ============================================================ -->
+        <!-- SECTION: SUBSCRIPTIONS -->
+        <!-- ============================================================ -->
+        <main id="section-subscriptions" class="dashboard-body dash-section" style="display:none;">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
+                <div>
+                    <h2 style="font-size:clamp(1.4rem,3vw,1.8rem);margin-bottom:4px;">Employee Subscriptions</h2>
+                    <p class="text-sm text-neutral-500" style="font-weight:400;">Manage meal subscription plans for all employees</p>
+                </div>
+                <button class="btn btn-primary btn-sm"><i class="fas fa-plus text-xs"></i> Add Subscription</button>
+            </div>
+
+            <!-- Plan Summary Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+                <div class="metric-card">
+                    <div class="flex items-center justify-between relative z-10">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600"><i class="fas fa-crown"></i></div>
+                        <span class="badge badge-success">Popular</span>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-2xl font-bold" style="font-family:'Outfit',sans-serif;font-weight:700;">684</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Premium Plan (₹3,500/mo)</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="flex items-center justify-between relative z-10">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600"><i class="fas fa-utensils"></i></div>
+                        <span class="badge badge-teal">Active</span>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-2xl font-bold" style="font-family:'Outfit',sans-serif;font-weight:700;">412</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Standard Plan (₹2,000/mo)</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="flex items-center justify-between relative z-10">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600"><i class="fas fa-coffee"></i></div>
+                        <span class="badge badge-warning">Basic</span>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-2xl font-bold" style="font-family:'Outfit',sans-serif;font-weight:700;">138</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Lunch Only (₹1,200/mo)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subscriptions Table -->
+            <div class="card p-6">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-3">
+                    <h4 style="font-size:1rem;">All Subscriptions</h4>
+                    <div class="flex gap-2 flex-wrap">
+                        <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-[var(--surface-alt)] border border-[var(--border-light)] text-sm">
+                            <i class="fas fa-search text-neutral-400 text-xs"></i>
+                            <input type="text" placeholder="Search employees..." class="bg-transparent outline-none text-sm w-40" style="font-weight:400;">
+                        </div>
+                        <select class="px-3 py-2 rounded-xl bg-[var(--surface-alt)] border border-[var(--border-light)] text-sm outline-none" style="font-weight:400;">
+                            <option>All Plans</option>
+                            <option>Premium</option>
+                            <option>Standard</option>
+                            <option>Lunch Only</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Employee</th><th>Department</th><th>Plan</th><th class="text-center">Start Date</th><th class="text-center">Expiry</th><th class="text-center">Status</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center text-white text-xs font-bold">AK</div><span style="font-weight:500;">Amit Kumar</span></div></td>
+                                <td style="font-weight:400;">Engineering</td>
+                                <td><span class="badge badge-success">Premium</span></td>
+                                <td class="text-center" style="font-weight:400;">Aug 1, 2026</td>
+                                <td class="text-center" style="font-weight:400;">Aug 31, 2026</td>
+                                <td class="text-center"><span class="badge badge-success">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-gradient-to-br from-pink-400 to-rose-600 flex items-center justify-center text-white text-xs font-bold">PS</div><span style="font-weight:500;">Priya Singh</span></div></td>
+                                <td style="font-weight:400;">Marketing</td>
+                                <td><span class="badge badge-teal">Standard</span></td>
+                                <td class="text-center" style="font-weight:400;">Aug 1, 2026</td>
+                                <td class="text-center" style="font-weight:400;">Aug 31, 2026</td>
+                                <td class="text-center"><span class="badge badge-success">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center text-white text-xs font-bold">RJ</div><span style="font-weight:500;">Ravi Joshi</span></div></td>
+                                <td style="font-weight:400;">Sales</td>
+                                <td><span class="badge badge-success">Premium</span></td>
+                                <td class="text-center" style="font-weight:400;">Jul 15, 2026</td>
+                                <td class="text-center" style="font-weight:400;">Aug 14, 2026</td>
+                                <td class="text-center"><span class="badge badge-error">Expired</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center text-white text-xs font-bold">NP</div><span style="font-weight:500;">Neha Patel</span></div></td>
+                                <td style="font-weight:400;">HR & Admin</td>
+                                <td><span class="badge badge-warning">Lunch Only</span></td>
+                                <td class="text-center" style="font-weight:400;">Aug 5, 2026</td>
+                                <td class="text-center" style="font-weight:400;">Sep 4, 2026</td>
+                                <td class="text-center"><span class="badge badge-warning">Expiring</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-gradient-to-br from-violet-400 to-purple-600 flex items-center justify-center text-white text-xs font-bold">SK</div><span style="font-weight:500;">Sunil Kapoor</span></div></td>
+                                <td style="font-weight:400;">Operations</td>
+                                <td><span class="badge badge-teal">Standard</span></td>
+                                <td class="text-center" style="font-weight:400;">Aug 10, 2026</td>
+                                <td class="text-center" style="font-weight:400;">Sep 9, 2026</td>
+                                <td class="text-center"><span class="badge badge-success">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-400 to-teal-600 flex items-center justify-center text-white text-xs font-bold">MD</div><span style="font-weight:500;">Meera Desai</span></div></td>
+                                <td style="font-weight:400;">Engineering</td>
+                                <td><span class="badge badge-success">Premium</span></td>
+                                <td class="text-center" style="font-weight:400;">Aug 1, 2026</td>
+                                <td class="text-center" style="font-weight:400;">Aug 31, 2026</td>
+                                <td class="text-center"><span class="badge badge-success">Active</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <!-- ============================================================ -->
+        <!-- SECTION: MEAL WALLET -->
+        <!-- ============================================================ -->
+        <main id="section-meal-wallet" class="dashboard-body dash-section" style="display:none;">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
+                <div>
+                    <h2 style="font-size:clamp(1.4rem,3vw,1.8rem);margin-bottom:4px;">Meal Wallet</h2>
+                    <p class="text-sm text-neutral-500" style="font-weight:400;">Manage department wallets, top-ups, and meal deductions</p>
+                </div>
+                <button class="btn btn-primary btn-sm"><i class="fas fa-plus text-xs"></i> Top-Up Wallet</button>
+            </div>
+
+            <!-- Wallet Overview -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+                <div class="metric-card">
+                    <div class="flex items-center justify-between relative z-10">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600"><i class="fas fa-wallet"></i></div>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-2xl font-bold" style="font-family:'Outfit',sans-serif;font-weight:700;">₹2,45,800</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Total Balance</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="flex items-center justify-between relative z-10">
+                        <div class="w-10 h-10 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600"><i class="fas fa-arrow-up"></i></div>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-2xl font-bold text-green-600" style="font-family:'Outfit',sans-serif;font-weight:700;">₹3,80,000</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Total Credits (This Month)</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="flex items-center justify-between relative z-10">
+                        <div class="w-10 h-10 rounded-xl bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-600"><i class="fas fa-arrow-down"></i></div>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-2xl font-bold text-red-500" style="font-family:'Outfit',sans-serif;font-weight:700;">₹1,34,200</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Total Debits (This Month)</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="flex items-center justify-between relative z-10">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600"><i class="fas fa-building"></i></div>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-2xl font-bold" style="font-family:'Outfit',sans-serif;font-weight:700;">5</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Active Departments</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Department Balances -->
+            <div class="card p-6 mb-8">
+                <h4 style="font-size:1rem;" class="mb-6">Department Wallet Balances</h4>
+                <div class="overflow-x-auto">
+                    <table class="data-table">
+                        <thead><tr><th>Department</th><th class="text-center">Allocated</th><th class="text-center">Spent</th><th class="text-center">Remaining</th><th class="text-center">Utilization</th><th class="text-center">Action</th></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td style="font-weight:500;">Engineering</td>
+                                <td class="text-center" style="font-weight:400;">₹1,20,000</td>
+                                <td class="text-center" style="font-weight:400;">₹52,400</td>
+                                <td class="text-center font-bold text-green-600" style="font-weight:700;">₹67,600</td>
+                                <td class="text-center"><div class="flex items-center gap-2 justify-center"><div class="w-20 h-1.5 rounded-full bg-[var(--border-light)]"><div class="h-full rounded-full bg-[#C2410C]" style="width:44%;"></div></div><span class="text-xs text-neutral-500">44%</span></div></td>
+                                <td class="text-center"><button class="text-xs text-[#C2410C] font-bold hover:underline" style="font-weight:600;">Top Up</button></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:500;">Marketing</td>
+                                <td class="text-center" style="font-weight:400;">₹80,000</td>
+                                <td class="text-center" style="font-weight:400;">₹31,200</td>
+                                <td class="text-center font-bold text-green-600" style="font-weight:700;">₹48,800</td>
+                                <td class="text-center"><div class="flex items-center gap-2 justify-center"><div class="w-20 h-1.5 rounded-full bg-[var(--border-light)]"><div class="h-full rounded-full bg-[#C2410C]" style="width:39%;"></div></div><span class="text-xs text-neutral-500">39%</span></div></td>
+                                <td class="text-center"><button class="text-xs text-[#C2410C] font-bold hover:underline" style="font-weight:600;">Top Up</button></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:500;">Sales</td>
+                                <td class="text-center" style="font-weight:400;">₹70,000</td>
+                                <td class="text-center" style="font-weight:400;">₹28,600</td>
+                                <td class="text-center font-bold text-green-600" style="font-weight:700;">₹41,400</td>
+                                <td class="text-center"><div class="flex items-center gap-2 justify-center"><div class="w-20 h-1.5 rounded-full bg-[var(--border-light)]"><div class="h-full rounded-full bg-amber-500" style="width:41%;"></div></div><span class="text-xs text-neutral-500">41%</span></div></td>
+                                <td class="text-center"><button class="text-xs text-[#C2410C] font-bold hover:underline" style="font-weight:600;">Top Up</button></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:500;">Operations</td>
+                                <td class="text-center" style="font-weight:400;">₹65,000</td>
+                                <td class="text-center" style="font-weight:400;">₹12,000</td>
+                                <td class="text-center font-bold text-green-600" style="font-weight:700;">₹53,000</td>
+                                <td class="text-center"><div class="flex items-center gap-2 justify-center"><div class="w-20 h-1.5 rounded-full bg-[var(--border-light)]"><div class="h-full rounded-full bg-[#C2410C]" style="width:18%;"></div></div><span class="text-xs text-neutral-500">18%</span></div></td>
+                                <td class="text-center"><button class="text-xs text-[#C2410C] font-bold hover:underline" style="font-weight:600;">Top Up</button></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:500;">HR & Admin</td>
+                                <td class="text-center" style="font-weight:400;">₹45,000</td>
+                                <td class="text-center" style="font-weight:400;">₹10,000</td>
+                                <td class="text-center font-bold text-green-600" style="font-weight:700;">₹35,000</td>
+                                <td class="text-center"><div class="flex items-center gap-2 justify-center"><div class="w-20 h-1.5 rounded-full bg-[var(--border-light)]"><div class="h-full rounded-full bg-[#C2410C]" style="width:22%;"></div></div><span class="text-xs text-neutral-500">22%</span></div></td>
+                                <td class="text-center"><button class="text-xs text-[#C2410C] font-bold hover:underline" style="font-weight:600;">Top Up</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Recent Transactions (Full) -->
+            <div class="card p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h4 style="font-size:1rem;">Transaction History</h4>
+                    <button class="btn btn-sm btn-secondary"><i class="fas fa-download text-xs"></i> Export</button>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between p-4 rounded-xl bg-[var(--surface-alt)]">
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600"><i class="fas fa-plus text-xs"></i></div>
+                            <div><p class="text-sm font-semibold" style="font-weight:600;">Wallet Top-up — Engineering</p><p class="text-[11px] text-neutral-400" style="font-weight:400;">Today, 10:30 AM • Txn #WLT-2026-0847</p></div>
+                        </div>
+                        <span class="text-sm font-bold text-green-600" style="font-weight:700;">+₹50,000</span>
+                    </div>
+                    <div class="flex items-center justify-between p-4 rounded-xl bg-[var(--surface-alt)]">
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-lg bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-600"><i class="fas fa-minus text-xs"></i></div>
+                            <div><p class="text-sm font-semibold" style="font-weight:600;">Lunch Deduction — 456 meals (All Depts)</p><p class="text-[11px] text-neutral-400" style="font-weight:400;">Today, 1:30 PM • Txn #DED-2026-1432</p></div>
+                        </div>
+                        <span class="text-sm font-bold text-red-500" style="font-weight:700;">-₹22,800</span>
+                    </div>
+                    <div class="flex items-center justify-between p-4 rounded-xl bg-[var(--surface-alt)]">
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600"><i class="fas fa-plus text-xs"></i></div>
+                            <div><p class="text-sm font-semibold" style="font-weight:600;">Wallet Top-up — Marketing</p><p class="text-[11px] text-neutral-400" style="font-weight:400;">Yesterday, 4:00 PM • Txn #WLT-2026-0846</p></div>
+                        </div>
+                        <span class="text-sm font-bold text-green-600" style="font-weight:700;">+₹30,000</span>
+                    </div>
+                    <div class="flex items-center justify-between p-4 rounded-xl bg-[var(--surface-alt)]">
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-lg bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-600"><i class="fas fa-minus text-xs"></i></div>
+                            <div><p class="text-sm font-semibold" style="font-weight:600;">Breakfast Deduction — 234 meals</p><p class="text-[11px] text-neutral-400" style="font-weight:400;">Yesterday, 9:30 AM • Txn #DED-2026-1431</p></div>
+                        </div>
+                        <span class="text-sm font-bold text-red-500" style="font-weight:700;">-₹7,020</span>
+                    </div>
+                    <div class="flex items-center justify-between p-4 rounded-xl bg-[var(--surface-alt)]">
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600"><i class="fas fa-plus text-xs"></i></div>
+                            <div><p class="text-sm font-semibold" style="font-weight:600;">Wallet Top-up — Operations</p><p class="text-[11px] text-neutral-400" style="font-weight:400;">Sep 5, 2026 • Txn #WLT-2026-0845</p></div>
+                        </div>
+                        <span class="text-sm font-bold text-green-600" style="font-weight:700;">+₹65,000</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- ============================================================ -->
+        <!-- SECTION: ORDERS -->
+        <!-- ============================================================ -->
+        <main id="section-orders" class="dashboard-body dash-section" style="display:none;">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
+                <div>
+                    <h2 style="font-size:clamp(1.4rem,3vw,1.8rem);margin-bottom:4px;">Order Management</h2>
+                    <p class="text-sm text-neutral-500" style="font-weight:400;">Track and manage all meal orders across departments</p>
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                    <select class="px-3 py-2 rounded-xl bg-[var(--surface)] border border-[var(--border-light)] text-sm outline-none" style="font-weight:400;">
+                        <option>Today</option>
+                        <option>Yesterday</option>
+                        <option>This Week</option>
+                        <option>This Month</option>
+                    </select>
+                    <button class="btn btn-sm btn-secondary"><i class="fas fa-download text-xs"></i> Export</button>
+                </div>
+            </div>
+
+            <!-- Order Stats -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+                <div class="metric-card">
+                    <div class="flex items-center justify-between relative z-10">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600"><i class="fas fa-clock"></i></div>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-2xl font-bold" style="font-family:'Outfit',sans-serif;font-weight:700;">124</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Pending</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="flex items-center justify-between relative z-10">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600"><i class="fas fa-fire"></i></div>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-2xl font-bold" style="font-family:'Outfit',sans-serif;font-weight:700;">312</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Preparing</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="flex items-center justify-between relative z-10">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600"><i class="fas fa-check-circle"></i></div>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-2xl font-bold" style="font-family:'Outfit',sans-serif;font-weight:700;">398</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Delivered</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="flex items-center justify-between relative z-10">
+                        <div class="w-10 h-10 rounded-xl bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-600"><i class="fas fa-times-circle"></i></div>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-2xl font-bold" style="font-family:'Outfit',sans-serif;font-weight:700;">13</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Cancelled</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders Table -->
+            <div class="card p-6">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-3">
+                    <h4 style="font-size:1rem;">Recent Orders</h4>
+                    <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-[var(--surface-alt)] border border-[var(--border-light)] text-sm">
+                        <i class="fas fa-search text-neutral-400 text-xs"></i>
+                        <input type="text" placeholder="Search orders..." class="bg-transparent outline-none text-sm w-40" style="font-weight:400;">
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Order ID</th><th>Employee</th><th>Meal Type</th><th>Items</th><th class="text-center">Amount</th><th class="text-center">Status</th><th class="text-center">Time</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="font-weight:600;color:var(--primary);">#ORD-8471</td>
+                                <td style="font-weight:500;">Amit Kumar</td>
+                                <td><span class="badge badge-warning">Lunch</span></td>
+                                <td style="font-weight:400;">Dal Makhani, Rice, Naan</td>
+                                <td class="text-center" style="font-weight:600;">₹65</td>
+                                <td class="text-center"><span class="badge badge-success">Delivered</span></td>
+                                <td class="text-center text-xs text-neutral-500" style="font-weight:400;">1:15 PM</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:600;color:var(--primary);">#ORD-8470</td>
+                                <td style="font-weight:500;">Priya Singh</td>
+                                <td><span class="badge badge-warning">Lunch</span></td>
+                                <td style="font-weight:400;">Paneer Butter Masala, Roti</td>
+                                <td class="text-center" style="font-weight:600;">₹55</td>
+                                <td class="text-center"><span class="badge badge-teal">Preparing</span></td>
+                                <td class="text-center text-xs text-neutral-500" style="font-weight:400;">1:05 PM</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:600;color:var(--primary);">#ORD-8469</td>
+                                <td style="font-weight:500;">Ravi Joshi</td>
+                                <td><span class="badge badge-teal">Breakfast</span></td>
+                                <td style="font-weight:400;">Idli Sambar, Coffee</td>
+                                <td class="text-center" style="font-weight:600;">₹30</td>
+                                <td class="text-center"><span class="badge badge-success">Delivered</span></td>
+                                <td class="text-center text-xs text-neutral-500" style="font-weight:400;">9:20 AM</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:600;color:var(--primary);">#ORD-8468</td>
+                                <td style="font-weight:500;">Neha Patel</td>
+                                <td><span class="badge badge-warning">Lunch</span></td>
+                                <td style="font-weight:400;">Chole Bhature, Salad</td>
+                                <td class="text-center" style="font-weight:600;">₹50</td>
+                                <td class="text-center"><span class="badge badge-error">Cancelled</span></td>
+                                <td class="text-center text-xs text-neutral-500" style="font-weight:400;">12:50 PM</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:600;color:var(--primary);">#ORD-8467</td>
+                                <td style="font-weight:500;">Sunil Kapoor</td>
+                                <td><span class="badge badge-teal">Snacks</span></td>
+                                <td style="font-weight:400;">Vada Pav, Cutting Chai</td>
+                                <td class="text-center" style="font-weight:600;">₹25</td>
+                                <td class="text-center"><span class="badge badge-success">Delivered</span></td>
+                                <td class="text-center text-xs text-neutral-500" style="font-weight:400;">4:30 PM</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:600;color:var(--primary);">#ORD-8466</td>
+                                <td style="font-weight:500;">Meera Desai</td>
+                                <td><span class="badge badge-warning">Lunch</span></td>
+                                <td style="font-weight:400;">Rajma Chawal, Raita</td>
+                                <td class="text-center" style="font-weight:600;">₹45</td>
+                                <td class="text-center"><span class="badge badge-success">Delivered</span></td>
+                                <td class="text-center text-xs text-neutral-500" style="font-weight:400;">1:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:600;color:var(--primary);">#ORD-8465</td>
+                                <td style="font-weight:500;">Vikram Rao</td>
+                                <td><span class="badge badge-teal">Breakfast</span></td>
+                                <td style="font-weight:400;">Poha, Tea</td>
+                                <td class="text-center" style="font-weight:600;">₹20</td>
+                                <td class="text-center"><span class="badge badge-success">Delivered</span></td>
+                                <td class="text-center text-xs text-neutral-500" style="font-weight:400;">8:45 AM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <!-- ============================================================ -->
+        <!-- SECTION: REPORTS -->
+        <!-- ============================================================ -->
+        <main id="section-reports" class="dashboard-body dash-section" style="display:none;">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
+                <div>
+                    <h2 style="font-size:clamp(1.4rem,3vw,1.8rem);margin-bottom:4px;">Reports & Analytics</h2>
+                    <p class="text-sm text-neutral-500" style="font-weight:400;">Comprehensive insights into your canteen operations</p>
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                    <select class="px-3 py-2 rounded-xl bg-[var(--surface)] border border-[var(--border-light)] text-sm outline-none" style="font-weight:400;">
+                        <option>August 2026</option>
+                        <option>July 2026</option>
+                        <option>June 2026</option>
+                    </select>
+                    <button class="btn btn-primary btn-sm"><i class="fas fa-download text-xs"></i> Download PDF</button>
+                </div>
+            </div>
+
+            <!-- Report Summary Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+                <div class="metric-card">
+                    <div class="flex items-center justify-between relative z-10">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600"><i class="fas fa-utensils"></i></div>
+                        <span class="badge badge-success">+8%</span>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-2xl font-bold" style="font-family:'Outfit',sans-serif;font-weight:700;">18,456</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Total Meals Served</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="flex items-center justify-between relative z-10">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600"><i class="fas fa-rupee-sign"></i></div>
+                        <span class="badge badge-teal">On Budget</span>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-2xl font-bold" style="font-family:'Outfit',sans-serif;font-weight:700;">₹9,22,800</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Total Revenue</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="flex items-center justify-between relative z-10">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600"><i class="fas fa-leaf"></i></div>
+                        <span class="badge badge-success">↓ 0.3%</span>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-2xl font-bold" style="font-family:'Outfit',sans-serif;font-weight:700;">2.1%</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Food Waste</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="flex items-center justify-between relative z-10">
+                        <div class="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center text-rose-600"><i class="fas fa-star"></i></div>
+                        <span class="badge badge-success">↑ 0.2</span>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-2xl font-bold" style="font-family:'Outfit',sans-serif;font-weight:700;">4.8 / 5.0</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Satisfaction Score</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <!-- Meal Type Breakdown -->
+                <div class="card p-6">
+                    <h4 style="font-size:1rem;" class="mb-6">Meal Type Distribution</h4>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2"><span style="font-weight:500;"><i class="fas fa-sun text-amber-500 text-xs"></i> Breakfast</span><span class="font-bold" style="font-weight:700;">4,614 meals (25%)</span></div>
+                            <div class="progress-bar"><div class="progress-fill" style="width:25%;"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2"><span style="font-weight:500;"><i class="fas fa-utensils text-orange-500 text-xs"></i> Lunch</span><span class="font-bold" style="font-weight:700;">9,965 meals (54%)</span></div>
+                            <div class="progress-bar"><div class="progress-fill" style="width:54%;"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2"><span style="font-weight:500;"><i class="fas fa-cookie-bite text-purple-500 text-xs"></i> Snacks</span><span class="font-bold" style="font-weight:700;">3,877 meals (21%)</span></div>
+                            <div class="progress-bar"><div class="progress-fill" style="width:21%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cost Breakdown -->
+                <div class="card p-6">
+                    <h4 style="font-size:1rem;" class="mb-6">Cost Analysis</h4>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-3 rounded-xl bg-[var(--surface-alt)]">
+                            <span class="text-sm" style="font-weight:400;">Raw Materials</span>
+                            <span class="text-sm font-bold" style="font-weight:700;">₹5,53,680 (60%)</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 rounded-xl bg-[var(--surface-alt)]">
+                            <span class="text-sm" style="font-weight:400;">Kitchen Staff</span>
+                            <span class="text-sm font-bold" style="font-weight:700;">₹1,84,560 (20%)</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 rounded-xl bg-[var(--surface-alt)]">
+                            <span class="text-sm" style="font-weight:400;">Utilities & Equipment</span>
+                            <span class="text-sm font-bold" style="font-weight:700;">₹92,280 (10%)</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 rounded-xl bg-[var(--surface-alt)]">
+                            <span class="text-sm" style="font-weight:400;">Packaging & Logistics</span>
+                            <span class="text-sm font-bold" style="font-weight:700;">₹55,368 (6%)</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 rounded-xl bg-[var(--surface-alt)]">
+                            <span class="text-sm" style="font-weight:400;">Waste & Overhead</span>
+                            <span class="text-sm font-bold" style="font-weight:700;">₹36,912 (4%)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Department Report -->
+            <div class="card p-6 mb-8">
+                <div class="flex items-center justify-between mb-6">
+                    <h4 style="font-size:1rem;">Department Performance</h4>
+                    <button class="btn btn-sm btn-secondary"><i class="fas fa-download text-xs"></i> Export CSV</button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="data-table">
+                        <thead><tr><th>Department</th><th class="text-center">Meals</th><th class="text-center">Cost</th><th class="text-center">Avg/Meal</th><th class="text-center">Waste</th><th class="text-center">Satisfaction</th></tr></thead>
+                        <tbody>
+                            <tr><td style="font-weight:500;">Engineering</td><td class="text-center">5,520</td><td class="text-center">₹2,76,000</td><td class="text-center">₹50</td><td class="text-center"><span class="badge badge-success">1.8%</span></td><td class="text-center font-bold text-[#C2410C]" style="font-weight:700;">4.9</td></tr>
+                            <tr><td style="font-weight:500;">Marketing</td><td class="text-center">3,320</td><td class="text-center">₹1,66,000</td><td class="text-center">₹50</td><td class="text-center"><span class="badge badge-success">2.0%</span></td><td class="text-center font-bold text-[#C2410C]" style="font-weight:700;">4.7</td></tr>
+                            <tr><td style="font-weight:500;">Sales</td><td class="text-center">2,840</td><td class="text-center">₹1,42,000</td><td class="text-center">₹50</td><td class="text-center"><span class="badge badge-warning">2.4%</span></td><td class="text-center font-bold text-[#C2410C]" style="font-weight:700;">4.8</td></tr>
+                            <tr><td style="font-weight:500;">Operations</td><td class="text-center">3,020</td><td class="text-center">₹1,51,000</td><td class="text-center">₹50</td><td class="text-center"><span class="badge badge-success">1.9%</span></td><td class="text-center font-bold text-[#C2410C]" style="font-weight:700;">4.7</td></tr>
+                            <tr><td style="font-weight:500;">HR & Admin</td><td class="text-center">3,756</td><td class="text-center">₹1,87,800</td><td class="text-center">₹50</td><td class="text-center"><span class="badge badge-warning">2.5%</span></td><td class="text-center font-bold text-[#C2410C]" style="font-weight:700;">4.8</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Downloadable Reports -->
+            <div class="card p-6">
+                <h4 style="font-size:1rem;" class="mb-6">Available Reports</h4>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between p-4 rounded-xl bg-[var(--surface-alt)] hover:border-[#C2410C]/30 border border-transparent transition-all">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-600"><i class="fas fa-file-pdf"></i></div>
+                            <div><p class="text-sm font-semibold" style="font-weight:600;">August 2026 — Monthly Summary</p><p class="text-[11px] text-neutral-400" style="font-weight:400;">Generated Sep 1, 2026 • 2.4 MB</p></div>
+                        </div>
+                        <button class="btn btn-sm btn-secondary"><i class="fas fa-download text-xs"></i></button>
+                    </div>
+                    <div class="flex items-center justify-between p-4 rounded-xl bg-[var(--surface-alt)] hover:border-[#C2410C]/30 border border-transparent transition-all">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600"><i class="fas fa-file-excel"></i></div>
+                            <div><p class="text-sm font-semibold" style="font-weight:600;">August 2026 — Cost Breakdown (Excel)</p><p class="text-[11px] text-neutral-400" style="font-weight:400;">Generated Sep 1, 2026 • 1.1 MB</p></div>
+                        </div>
+                        <button class="btn btn-sm btn-secondary"><i class="fas fa-download text-xs"></i></button>
+                    </div>
+                    <div class="flex items-center justify-between p-4 rounded-xl bg-[var(--surface-alt)] hover:border-[#C2410C]/30 border border-transparent transition-all">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600"><i class="fas fa-file-alt"></i></div>
+                            <div><p class="text-sm font-semibold" style="font-weight:600;">Hygiene Audit Report — August</p><p class="text-[11px] text-neutral-400" style="font-weight:400;">Generated Aug 28, 2026 • 890 KB</p></div>
+                        </div>
+                        <button class="btn btn-sm btn-secondary"><i class="fas fa-download text-xs"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- ============================================================ -->
+        <!-- SECTION: SETTINGS -->
+        <!-- ============================================================ -->
+        <main id="section-settings" class="dashboard-body dash-section" style="display:none;">
+            <div class="mb-8">
+                <h2 style="font-size:clamp(1.4rem,3vw,1.8rem);margin-bottom:4px;">Settings</h2>
+                <p class="text-sm text-neutral-500" style="font-weight:400;">Configure your canteen management preferences</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Profile Settings -->
+                <div class="card p-6">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600"><i class="fas fa-user"></i></div>
+                        <h4 style="font-size:1rem;margin-bottom:0;">Profile Settings</h4>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="form-group">
+                            <label class="form-label">Admin Name</label>
+                            <input type="text" class="form-input" value="Admin User" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-input" value="admin@culinacorp.com" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" class="form-input" value="+91 (800) 123-4567" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Role</label>
+                            <input type="text" class="form-input" value="Super Admin" disabled style="opacity:0.7;" />
+                        </div>
+                        <button class="btn btn-primary btn-sm"><i class="fas fa-save text-xs"></i> Save Changes</button>
+                    </div>
+                </div>
+
+                <!-- Notification Preferences -->
+                <div class="card p-6">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600"><i class="fas fa-bell"></i></div>
+                        <h4 style="font-size:1rem;margin-bottom:0;">Notification Preferences</h4>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-3 rounded-xl bg-[var(--surface-alt)]">
+                            <div><p class="text-sm font-semibold" style="font-weight:600;">Order Alerts</p><p class="text-xs text-neutral-400" style="font-weight:400;">Get notified for new and cancelled orders</p></div>
+                            <label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" checked class="sr-only peer"><div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#C2410C]"></div></label>
+                        </div>
+                        <div class="flex items-center justify-between p-3 rounded-xl bg-[var(--surface-alt)]">
+                            <div><p class="text-sm font-semibold" style="font-weight:600;">Wallet Low Balance</p><p class="text-xs text-neutral-400" style="font-weight:400;">Alert when any department wallet goes below ₹10,000</p></div>
+                            <label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" checked class="sr-only peer"><div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#C2410C]"></div></label>
+                        </div>
+                        <div class="flex items-center justify-between p-3 rounded-xl bg-[var(--surface-alt)]">
+                            <div><p class="text-sm font-semibold" style="font-weight:600;">Weekly Menu Reminders</p><p class="text-xs text-neutral-400" style="font-weight:400;">Remind to finalize next week's menu every Thursday</p></div>
+                            <label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" checked class="sr-only peer"><div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#C2410C]"></div></label>
+                        </div>
+                        <div class="flex items-center justify-between p-3 rounded-xl bg-[var(--surface-alt)]">
+                            <div><p class="text-sm font-semibold" style="font-weight:600;">Monthly Reports</p><p class="text-xs text-neutral-400" style="font-weight:400;">Auto-generate and email monthly cost reports</p></div>
+                            <label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" class="sr-only peer"><div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#C2410C]"></div></label>
+                        </div>
+                        <div class="flex items-center justify-between p-3 rounded-xl bg-[var(--surface-alt)]">
+                            <div><p class="text-sm font-semibold" style="font-weight:600;">Hygiene Audit Alerts</p><p class="text-xs text-neutral-400" style="font-weight:400;">Notify when hygiene score drops below 95%</p></div>
+                            <label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" checked class="sr-only peer"><div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#C2410C]"></div></label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Operating Hours -->
+                <div class="card p-6">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600"><i class="fas fa-clock"></i></div>
+                        <h4 style="font-size:1rem;margin-bottom:0;">Canteen Operating Hours</h4>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-3 rounded-xl bg-[var(--surface-alt)]">
+                            <span class="text-sm font-semibold" style="font-weight:600;"><i class="fas fa-sun text-amber-500 text-xs"></i> Breakfast</span>
+                            <div class="flex items-center gap-2">
+                                <input type="time" value="07:30" class="px-3 py-1.5 rounded-lg bg-[var(--surface)] border border-[var(--border-light)] text-sm outline-none" style="font-weight:400;">
+                                <span class="text-xs text-neutral-400">to</span>
+                                <input type="time" value="09:30" class="px-3 py-1.5 rounded-lg bg-[var(--surface)] border border-[var(--border-light)] text-sm outline-none" style="font-weight:400;">
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-3 rounded-xl bg-[var(--surface-alt)]">
+                            <span class="text-sm font-semibold" style="font-weight:600;"><i class="fas fa-utensils text-orange-500 text-xs"></i> Lunch</span>
+                            <div class="flex items-center gap-2">
+                                <input type="time" value="12:00" class="px-3 py-1.5 rounded-lg bg-[var(--surface)] border border-[var(--border-light)] text-sm outline-none" style="font-weight:400;">
+                                <span class="text-xs text-neutral-400">to</span>
+                                <input type="time" value="14:00" class="px-3 py-1.5 rounded-lg bg-[var(--surface)] border border-[var(--border-light)] text-sm outline-none" style="font-weight:400;">
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-3 rounded-xl bg-[var(--surface-alt)]">
+                            <span class="text-sm font-semibold" style="font-weight:600;"><i class="fas fa-cookie-bite text-purple-500 text-xs"></i> Snacks</span>
+                            <div class="flex items-center gap-2">
+                                <input type="time" value="16:00" class="px-3 py-1.5 rounded-lg bg-[var(--surface)] border border-[var(--border-light)] text-sm outline-none" style="font-weight:400;">
+                                <span class="text-xs text-neutral-400">to</span>
+                                <input type="time" value="17:30" class="px-3 py-1.5 rounded-lg bg-[var(--surface)] border border-[var(--border-light)] text-sm outline-none" style="font-weight:400;">
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-sm"><i class="fas fa-save text-xs"></i> Update Hours</button>
+                    </div>
+                </div>
+
+                <!-- General Configuration -->
+                <div class="card p-6">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600"><i class="fas fa-cogs"></i></div>
+                        <h4 style="font-size:1rem;margin-bottom:0;">General Configuration</h4>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="form-group">
+                            <label class="form-label">Company Name</label>
+                            <input type="text" class="form-input" value="TechNova Solutions Pvt. Ltd." />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Default Currency</label>
+                            <select class="form-input">
+                                <option selected>₹ INR — Indian Rupee</option>
+                                <option>$ USD — US Dollar</option>
+                                <option>€ EUR — Euro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Meal Cost Per Person (Default)</label>
+                            <input type="number" class="form-input" value="50" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Low Balance Alert Threshold</label>
+                            <input type="number" class="form-input" value="10000" />
+                        </div>
+                        <button class="btn btn-primary btn-sm"><i class="fas fa-save text-xs"></i> Save Configuration</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+</div>
+<script src="script.js"></script>
+<script>
+// Dashboard-specific theme/dir init + Section Switching
+(function(){
+    const html = document.documentElement;
+    const themeBtns = document.querySelectorAll('.js-theme-toggle');
+    const dirBtns = document.querySelectorAll('.js-dir-toggle');
+    
+    function setTheme(isDark) {
+        if (isDark) { html.classList.add('dark'); localStorage.setItem('cc-dark-mode','true'); }
+        else { html.classList.remove('dark'); localStorage.setItem('cc-dark-mode','false'); }
+        themeBtns.forEach(btn => { const i = btn.querySelector('i'); if(i) i.className = isDark ? 'fas fa-sun text-xs text-yellow-400' : 'fas fa-moon text-xs'; });
+    }
+    themeBtns.forEach(btn => btn.addEventListener('click', () => setTheme(!html.classList.contains('dark'))));
+    if (localStorage.getItem('cc-dark-mode') === 'true') setTheme(true);
+    
+    dirBtns.forEach(btn => btn.addEventListener('click', () => {
+        const isRTL = html.getAttribute('dir') === 'rtl';
+        html.setAttribute('dir', isRTL ? 'ltr' : 'rtl');
+        localStorage.setItem('cc-rtl', isRTL ? 'false' : 'true');
+    }));
+    if (localStorage.getItem('cc-rtl') === 'true') html.setAttribute('dir', 'rtl');
+
+    // --- Section Switching ---
+    const SECTION_TITLES = {
+        'dashboard': 'Dashboard',
+        'menu-config': 'Menu Configuration',
+        'subscriptions': 'Subscriptions',
+        'meal-wallet': 'Meal Wallet',
+        'orders': 'Orders',
+        'reports': 'Reports',
+        'settings': 'Settings'
+    };
+
+    window.switchSection = function(sectionId) {
+        // Hide all sections
+        document.querySelectorAll('.dash-section').forEach(s => s.style.display = 'none');
+        // Show target section
+        const target = document.getElementById('section-' + sectionId);
+        if (target) target.style.display = 'block';
+
+        // Update sidebar active state
+        document.querySelectorAll('.sidebar-link[data-section]').forEach(link => {
+            link.classList.toggle('active', link.getAttribute('data-section') === sectionId);
+        });
+
+        // Update header title
+        const headerTitle = document.getElementById('header-title');
+        if (headerTitle) headerTitle.textContent = SECTION_TITLES[sectionId] || 'Dashboard';
+
+        // Close mobile sidebar if open
+        const sidebar = document.querySelector('.sidebar');
+        const overlay = document.querySelector('.sidebar-overlay');
+        if (sidebar) sidebar.classList.remove('open');
+        if (overlay) overlay.classList.remove('show');
+
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    // Attach click handlers to sidebar links
+    document.querySelectorAll('.sidebar-link[data-section]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const section = this.getAttribute('data-section');
+            if (section) switchSection(section);
+        });
+    });
+})();
+</script>
+</body>
+</html>

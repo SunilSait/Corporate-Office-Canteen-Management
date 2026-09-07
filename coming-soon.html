@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CulinaCorp — Something exciting is cooking! Our new features are launching soon.">
+    <title>Coming Soon — CulinaCorp</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' stroke='%23C2410C' stroke-width='2.5' fill='none'/%3E%3Cline x1='38' y1='28' x2='38' y2='72' stroke='%23C2410C' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M55 58 Q68 38 62 28 Q54 36 55 58Z' fill='%23C2410C' fill-opacity='0.3' stroke='%23C2410C' stroke-width='2'/%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#C2410C',secondary:'#1E293B'}}}}</script>
+</head>
+<body>
+<div class="auth-page" style="min-height:100vh;">
+    <div class="auth-top-icons">
+        <button class="icon-btn dark-toggle" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+        <button class="icon-btn rtl-toggle" title="Toggle RTL"><i class="fas fa-exchange-alt"></i></button>
+    </div>
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute w-[600px] h-[600px] rounded-full" style="background:radial-gradient(circle,rgba(13,124,102,0.1) 0%,transparent 70%);top:-200px;left:50%;transform:translateX(-50%);"></div>
+        <div class="absolute w-[400px] h-[400px] rounded-full" style="background:radial-gradient(circle,rgba(13,124,102,0.06) 0%,transparent 70%);bottom:-100px;right:-100px;"></div>
+        <div class="absolute inset-0" style="background-image:linear-gradient(rgba(13,124,102,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(13,124,102,0.02) 1px,transparent 1px);background-size:48px 48px;"></div>
+    </div>
+    <div class="auth-card text-center" style="max-width:520px;">
+        <a href="index.html" class="auth-logo justify-center">
+            <svg width="32" height="32" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="46" stroke="var(--logo-primary)" stroke-width="2.5" fill="none" opacity="0.3"/><line x1="38" y1="28" x2="38" y2="72" stroke="var(--logo-primary)" stroke-width="3" stroke-linecap="round"/><line x1="32" y1="28" x2="32" y2="40" stroke="var(--logo-primary)" stroke-width="2.5" stroke-linecap="round"/><line x1="44" y1="28" x2="44" y2="40" stroke="var(--logo-primary)" stroke-width="2.5" stroke-linecap="round"/><path d="M32 40 Q38 48 44 40" fill="none" stroke="var(--logo-primary)" stroke-width="2" stroke-linecap="round"/><path d="M55 58 Q68 38 62 28 Q54 36 55 58Z" fill="var(--logo-primary)" fill-opacity="0.2" stroke="var(--logo-primary)" stroke-width="2"/></svg>
+            <span style="font-family:'Outfit',sans-serif;">CulinaCorp</span>
+        </a>
+
+        <!-- Animated cooking icon -->
+        <div class="mb-6">
+            <div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#C2410C] to-[#9A3412] flex items-center justify-center text-white text-3xl mx-auto shadow-lg shadow-[#C2410C]/30" style="animation:float 3s ease-in-out infinite;">
+                <i class="fas fa-fire-burner"></i>
+            </div>
+        </div>
+
+        <span class="section-tag mx-auto" style="display:inline-flex;"><i class="fas fa-clock text-[10px]"></i> Coming Soon</span>
+        <h1 style="font-size:clamp(1.6rem,4vw,2.2rem);margin-top:12px;margin-bottom:8px;">Something Delicious is Cooking!</h1>
+        <p class="text-neutral-500 mb-8" style="font-weight:400;font-size:0.95rem;line-height:1.7;">We're preparing an exciting new feature for your corporate dining experience. Stay tuned — it's going to be worth the wait.</p>
+
+        <!-- Countdown Timer -->
+        <div id="countdown" class="flex justify-center gap-4 mb-10">
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 rounded-2xl bg-[var(--surface-alt)] border border-[var(--border-light)] flex items-center justify-center">
+                    <span id="cd-days" class="text-2xl font-bold text-[#C2410C]" style="font-family:'Outfit',sans-serif;font-weight:700;">30</span>
+                </div>
+                <span class="text-[10px] uppercase tracking-widest text-neutral-400 mt-2" style="font-weight:600;">Days</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 rounded-2xl bg-[var(--surface-alt)] border border-[var(--border-light)] flex items-center justify-center">
+                    <span id="cd-hours" class="text-2xl font-bold text-[#C2410C]" style="font-family:'Outfit',sans-serif;font-weight:700;">00</span>
+                </div>
+                <span class="text-[10px] uppercase tracking-widest text-neutral-400 mt-2" style="font-weight:600;">Hours</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 rounded-2xl bg-[var(--surface-alt)] border border-[var(--border-light)] flex items-center justify-center">
+                    <span id="cd-mins" class="text-2xl font-bold text-[#C2410C]" style="font-family:'Outfit',sans-serif;font-weight:700;">00</span>
+                </div>
+                <span class="text-[10px] uppercase tracking-widest text-neutral-400 mt-2" style="font-weight:600;">Mins</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 rounded-2xl bg-[var(--surface-alt)] border border-[var(--border-light)] flex items-center justify-center">
+                    <span id="cd-secs" class="text-2xl font-bold text-[#C2410C]" style="font-family:'Outfit',sans-serif;font-weight:700;">00</span>
+                </div>
+                <span class="text-[10px] uppercase tracking-widest text-neutral-400 mt-2" style="font-weight:600;">Secs</span>
+            </div>
+        </div>
+
+        <!-- Notify Form -->
+        <p class="text-xs text-neutral-400 uppercase tracking-widest mb-3" style="font-weight:600;">Get Notified When We Launch</p>
+        <form class="flex gap-2" onsubmit="event.preventDefault();this.innerHTML='<p class=\'text-sm text-emerald-500 font-bold py-3\' style=\'font-weight:700;\'>✓ You\'ll be the first to know!</p>';">
+            <input type="email" required placeholder="your@email.com" class="form-input flex-1" style="border-radius:50px;padding:12px 20px;">
+            <button type="submit" class="btn btn-primary btn-shine" style="border-radius:50px;"><i class="fas fa-bell text-xs"></i> Notify Me</button>
+        </form>
+
+        <div class="mt-8 pt-6 border-t border-[var(--border-light)]">
+            <a href="index.html" class="text-sm text-[#C2410C] font-semibold hover:underline" style="font-weight:600;"><i class="fas fa-arrow-left text-xs mr-1"></i> Back to Home</a>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

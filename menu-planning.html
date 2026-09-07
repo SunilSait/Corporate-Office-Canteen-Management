@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CulinaCorp weekly menu planning — browse breakfast, lunch, snack menus curated by nutritionists. Seasonal specials and custom menu requests.">
+    <title>Menu Planning — CulinaCorp</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' stroke='%23C2410C' stroke-width='2.5' fill='none'/%3E%3Cline x1='38' y1='28' x2='38' y2='72' stroke='%23C2410C' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M55 58 Q68 38 62 28 Q54 36 55 58Z' fill='%23C2410C' fill-opacity='0.3' stroke='%23C2410C' stroke-width='2'/%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#C2410C',secondary:'#1E293B'}}}}</script>
+</head>
+<body>
+<div id="navbar-container"></div>
+
+<!-- Banner -->
+<section class="relative py-20 md:py-28 overflow-hidden" style="background:linear-gradient(135deg,#C2410C 0%,#9A3412 60%,#1E293B 100%);">
+    <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:50px 50px;"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-white/80 text-xs font-bold uppercase tracking-widest mb-5" style="backdrop-filter:blur(10px);background:rgba(255,255,255,0.08);"><i class="fas fa-calendar-alt text-[10px]"></i> Menu Planning</span>
+        <h1 class="text-white mb-4">Crafting the Perfect Weekly Menu</h1>
+        <p class="text-white/60 text-lg max-w-xl mx-auto" style="font-weight:400;">Nutritionist-designed, chef-prepared menus that rotate weekly. Every meal is a balance of flavor, health, and variety.</p>
+    </div>
+</section>
+
+<!-- Menu Planning Hero Image -->
+<section class="py-16" style="background:var(--cream);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            <div class="reveal rounded-2xl overflow-hidden shadow-xl border border-[#E2E8F0] dark:border-[#334155]">
+                <img src="assets/images/menu_planning.jpg" alt="Weekly meal planning workspace with food samples" class="w-full h-[380px] object-cover">
+            </div>
+            <div class="reveal">
+                <span class="section-tag"><i class="fas fa-brain text-[10px]"></i> Smart Planning</span>
+                <h2 class="section-title mb-5">Data-Driven Menu Design</h2>
+                <p class="text-neutral-500 mb-6" style="font-weight:400;line-height:1.8;">Our menu planning process combines employee preference data, seasonal availability, and nutritional science to create weekly menus that maximize satisfaction while maintaining balanced nutrition.</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-4 rounded-xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)] text-center">
+                        <p class="text-2xl font-bold text-[#C2410C]" style="font-family:'Outfit',sans-serif;">24</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Dishes per Week</p>
+                    </div>
+                    <div class="p-4 rounded-xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)] text-center">
+                        <p class="text-2xl font-bold text-[#C2410C]" style="font-family:'Outfit',sans-serif;">6</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Cuisine Types</p>
+                    </div>
+                    <div class="p-4 rounded-xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)] text-center">
+                        <p class="text-2xl font-bold text-[#C2410C]" style="font-family:'Outfit',sans-serif;">500</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Avg. Calories/Meal</p>
+                    </div>
+                    <div class="p-4 rounded-xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)] text-center">
+                        <p class="text-2xl font-bold text-[#C2410C]" style="font-family:'Outfit',sans-serif;">98%</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Satisfaction Rate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Weekly Menu Grid -->
+<section class="py-20" style="background:var(--surface-alt);">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+            <span class="section-tag reveal"><i class="fas fa-calendar-week text-[10px]"></i> This Week</span>
+            <h2 class="section-title mb-4 reveal">Sample Weekly Menu</h2>
+        </div>
+        <div class="reveal overflow-x-auto">
+            <table class="data-table w-full">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Breakfast</th>
+                        <th>Lunch</th>
+                        <th>Snacks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="font-semibold" style="font-weight:600;">Monday</td><td style="font-weight:400;">Masala Omelette, Poha</td><td style="font-weight:400;">Paneer Butter Masala, Rice</td><td style="font-weight:400;">Samosa, Chai</td></tr>
+                    <tr><td class="font-semibold" style="font-weight:600;">Tuesday</td><td style="font-weight:400;">Idli Sambar, Paratha</td><td style="font-weight:400;">Dal Makhani, Naan</td><td style="font-weight:400;">Vada Pav, Coffee</td></tr>
+                    <tr><td class="font-semibold" style="font-weight:600;">Wednesday</td><td style="font-weight:400;">Dosa, Upma</td><td style="font-weight:400;">Chole Bhature, Biryani</td><td style="font-weight:400;">Pakora, Buttermilk</td></tr>
+                    <tr><td class="font-semibold" style="font-weight:600;">Thursday</td><td style="font-weight:400;">Puri Bhaji, Cornflakes</td><td style="font-weight:400;">Rajma Chawal, Pasta</td><td style="font-weight:400;">Dhokla, Hot Chocolate</td></tr>
+                    <tr><td class="font-semibold" style="font-weight:600;">Friday</td><td style="font-weight:400;">Pancakes, Rava Dosa</td><td style="font-weight:400;">Special Biryani, Fish</td><td style="font-weight:400;">Pizza, Mango Lassi</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Seasonal Specials -->
+<section class="py-20" style="background:var(--cream);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-14">
+            <span class="section-tag reveal"><i class="fas fa-snowflake text-[10px]"></i> Seasonal</span>
+            <h2 class="section-title mb-4 reveal">Seasonal Specials</h2>
+            <p class="section-subtitle mx-auto reveal">We celebrate each season with limited-edition menus featuring the freshest local ingredients.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="card reveal">
+                <div class="overflow-hidden"><img src="assets/images/seasonal_specials.jpg" alt="Autumn harvest meal arrangement" class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"></div>
+                <div class="p-6"><span class="badge badge-warning mb-3">Autumn</span><h3 style="font-size:1.1rem;" class="mb-2">Harvest Festival Menu</h3><p class="text-sm text-neutral-500" style="font-weight:400;">Pumpkin soup, roasted root vegetables, warm spiced lentils, and cinnamon desserts.</p></div>
+            </div>
+            <div class="card reveal" style="transition-delay:0.1s;">
+                <div class="overflow-hidden h-48 flex items-center justify-center" style="background:linear-gradient(135deg,#E0F2FE,#BAE6FD);"><i class="fas fa-snowflake text-5xl text-sky-400"></i></div>
+                <div class="p-6"><span class="badge badge-teal mb-3">Winter</span><h3 style="font-size:1.1rem;" class="mb-2">Comfort Classics</h3><p class="text-sm text-neutral-500" style="font-weight:400;">Hot soups, stews, makki ki roti with sarson da saag, gajar ka halwa, and hot cocoa.</p></div>
+            </div>
+            <div class="card reveal" style="transition-delay:0.2s;">
+                <div class="overflow-hidden h-48 flex items-center justify-center" style="background:linear-gradient(135deg,#FEF3C7,#FDE68A);"><i class="fas fa-sun text-5xl text-amber-500"></i></div>
+                <div class="p-6"><span class="badge badge-success mb-3">Summer</span><h3 style="font-size:1.1rem;" class="mb-2">Cool & Refreshing</h3><p class="text-sm text-neutral-500" style="font-weight:400;">Chilled salads, fruit bowls, aam panna, coconut water, and light grilled options.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Custom Menu Request Form -->
+<section class="py-20" style="background:var(--surface-alt);">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+            <span class="section-tag reveal"><i class="fas fa-pen text-[10px]"></i> Custom Request</span>
+            <h2 class="section-title mb-4 reveal">Request a Custom Menu</h2>
+            <p class="section-subtitle mx-auto reveal">Have specific dietary requirements or cuisine preferences? Let us know and we'll design a menu just for your team.</p>
+        </div>
+        <div class="card p-8 reveal">
+            <form class="space-y-5" onsubmit="event.preventDefault();alert('Request submitted! We will contact you within 24 hours.');">
+                <div class="form-group"><label class="form-label" for="req-name">Company Name</label><input type="text" id="req-name" class="form-input" placeholder="Your company name" required></div>
+                <div class="form-group"><label class="form-label" for="req-email">Email</label><input type="email" id="req-email" class="form-input" placeholder="hr@yourcompany.com" required></div>
+                <div class="form-group"><label class="form-label" for="req-size">Team Size</label><input type="number" id="req-size" class="form-input" placeholder="e.g. 200" required></div>
+                <div class="form-group"><label class="form-label" for="req-notes">Special Requirements</label><textarea id="req-notes" class="form-input" placeholder="Describe your dietary needs, cuisine preferences, budget range..."></textarea></div>
+                <button type="submit" class="btn btn-primary btn-full btn-shine">Submit Request</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<div id="footer-container"></div>
+<script src="components.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

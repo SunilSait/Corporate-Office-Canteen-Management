@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CulinaCorp services — daily meal programs, snack vending, event catering, and dietary accommodation for corporate offices.">
+    <title>Services — CulinaCorp</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' stroke='%23C2410C' stroke-width='2.5' fill='none'/%3E%3Cline x1='38' y1='28' x2='38' y2='72' stroke='%23C2410C' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M55 58 Q68 38 62 28 Q54 36 55 58Z' fill='%23C2410C' fill-opacity='0.3' stroke='%23C2410C' stroke-width='2'/%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#C2410C',secondary:'#1E293B'}}}}</script>
+</head>
+<body>
+<div id="navbar-container"></div>
+
+<!-- Banner -->
+<section class="relative py-20 md:py-28 overflow-hidden" style="background:linear-gradient(135deg,#C2410C 0%,#9A3412 60%,#1E293B 100%);">
+    <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:50px 50px;"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-white/80 text-xs font-bold uppercase tracking-widest mb-5" style="backdrop-filter:blur(10px);background:rgba(255,255,255,0.08);"><i class="fas fa-concierge-bell text-[10px]"></i> Our Services</span>
+        <h1 class="text-white mb-4">What We Serve</h1>
+        <p class="text-white/60 text-lg max-w-xl mx-auto" style="font-weight:400;">Complete corporate dining solutions — from daily meals to special events — tailored to nourish and delight your entire workforce.</p>
+    </div>
+</section>
+
+<!-- Daily Meal Programs -->
+<section class="py-20" style="background:var(--cream);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            <div class="reveal rounded-2xl overflow-hidden shadow-xl border border-[#E2E8F0] dark:border-[#334155]">
+                <img src="assets/images/service_daily_meals.jpg" alt="Daily meal preparation in corporate kitchen" class="w-full h-[380px] object-cover">
+            </div>
+            <div class="reveal">
+                <span class="section-tag"><i class="fas fa-utensils text-[10px]"></i> Core Service</span>
+                <h2 class="section-title mb-5">Daily Meal Programs</h2>
+                <p class="text-neutral-500 mb-6" style="font-weight:400;line-height:1.8;">Our cornerstone offering provides nutritionally balanced breakfast, lunch, and dinner menus curated by certified nutritionists and prepared by experienced chefs. With a rotating weekly menu spanning multiple cuisines, your team never faces meal monotony.</p>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-center gap-3 text-sm text-neutral-600 dark:text-neutral-300"><i class="fas fa-check-circle text-[#C2410C]"></i><span style="font-weight:400;">Multi-cuisine weekly rotation (Indian, Continental, Asian)</span></li>
+                    <li class="flex items-center gap-3 text-sm text-neutral-600 dark:text-neutral-300"><i class="fas fa-check-circle text-[#C2410C]"></i><span style="font-weight:400;">Calorie-counted portions with macro breakdowns</span></li>
+                    <li class="flex items-center gap-3 text-sm text-neutral-600 dark:text-neutral-300"><i class="fas fa-check-circle text-[#C2410C]"></i><span style="font-weight:400;">Pre-order system via mobile app</span></li>
+                    <li class="flex items-center gap-3 text-sm text-neutral-600 dark:text-neutral-300"><i class="fas fa-check-circle text-[#C2410C]"></i><span style="font-weight:400;">Hot food guarantee — served within 15 minutes</span></li>
+                </ul>
+                <a href="menu-planning.html" class="btn btn-primary btn-shine"><i class="fas fa-calendar text-xs"></i> View Menu</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Snack Vending — Reversed -->
+<section class="py-20" style="background:var(--surface-alt);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            <div class="reveal order-2 lg:order-1">
+                <span class="section-tag"><i class="fas fa-apple-alt text-[10px]"></i> On-Demand</span>
+                <h2 class="section-title mb-5">Snack Vending & Pantry Stocking</h2>
+                <p class="text-neutral-500 mb-6" style="font-weight:400;line-height:1.8;">Keep your team fueled between meals with our curated snack stations. From healthy options like granola bars and fresh fruits to indulgent treats, our smart vending solutions support cashless payments and real-time inventory tracking.</p>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-center gap-3 text-sm text-neutral-600 dark:text-neutral-300"><i class="fas fa-check-circle text-[#C2410C]"></i><span style="font-weight:400;">Smart vending machines with tap-to-pay</span></li>
+                    <li class="flex items-center gap-3 text-sm text-neutral-600 dark:text-neutral-300"><i class="fas fa-check-circle text-[#C2410C]"></i><span style="font-weight:400;">Fresh fruit and salad bars restocked daily</span></li>
+                    <li class="flex items-center gap-3 text-sm text-neutral-600 dark:text-neutral-300"><i class="fas fa-check-circle text-[#C2410C]"></i><span style="font-weight:400;">Beverage corners — coffee, tea, juices</span></li>
+                    <li class="flex items-center gap-3 text-sm text-neutral-600 dark:text-neutral-300"><i class="fas fa-check-circle text-[#C2410C]"></i><span style="font-weight:400;">Automated inventory alerts and replenishment</span></li>
+                </ul>
+                <a href="pricing.html" class="btn btn-secondary"><i class="fas fa-tag text-xs"></i> Get Quote</a>
+            </div>
+            <div class="reveal rounded-2xl overflow-hidden shadow-xl border border-[#E2E8F0] dark:border-[#334155] order-1 lg:order-2">
+                <img src="assets/images/service_snack_vending.jpg" alt="Office snack vending area with healthy options" class="w-full h-[380px] object-cover">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Event Catering -->
+<section class="py-20" style="background:var(--cream);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            <div class="reveal rounded-2xl overflow-hidden shadow-xl border border-[#E2E8F0] dark:border-[#334155]">
+                <img src="assets/images/service_event_catering.jpg" alt="Corporate event catering with premium dishes" class="w-full h-[380px] object-cover">
+            </div>
+            <div class="reveal">
+                <span class="section-tag"><i class="fas fa-glass-cheers text-[10px]"></i> Premium</span>
+                <h2 class="section-title mb-5">Event & Conference Catering</h2>
+                <p class="text-neutral-500 mb-6" style="font-weight:400;line-height:1.8;">From board meetings to annual celebrations, our event catering brings restaurant-quality food to your corporate events. Custom menus, professional presentation, and seamless service — we handle everything so you can focus on what matters.</p>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-center gap-3 text-sm text-neutral-600 dark:text-neutral-300"><i class="fas fa-check-circle text-[#C2410C]"></i><span style="font-weight:400;">Customizable menus for any occasion</span></li>
+                    <li class="flex items-center gap-3 text-sm text-neutral-600 dark:text-neutral-300"><i class="fas fa-check-circle text-[#C2410C]"></i><span style="font-weight:400;">Professional service staff included</span></li>
+                    <li class="flex items-center gap-3 text-sm text-neutral-600 dark:text-neutral-300"><i class="fas fa-check-circle text-[#C2410C]"></i><span style="font-weight:400;">Events from 20 to 2000+ guests</span></li>
+                    <li class="flex items-center gap-3 text-sm text-neutral-600 dark:text-neutral-300"><i class="fas fa-check-circle text-[#C2410C]"></i><span style="font-weight:400;">Theme-based and cuisine-specific options</span></li>
+                </ul>
+                <a href="signup.html" class="btn btn-primary btn-shine"><i class="fas fa-calendar-check text-xs"></i> Book Event</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dietary Options -->
+<section class="py-20" style="background:var(--surface-alt);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-14">
+            <span class="section-tag reveal"><i class="fas fa-leaf text-[10px]"></i> Dietary Options</span>
+            <h2 class="section-title mb-4 reveal">Something for Everyone</h2>
+            <p class="section-subtitle mx-auto reveal">We accommodate all dietary needs so every team member feels included at the table.</p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5 reveal">
+            <div class="text-center p-5 rounded-2xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)] hover:border-[#C2410C]/30 transition-all hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 mx-auto mb-3"><i class="fas fa-seedling text-lg"></i></div>
+                <h4 style="font-size:0.9rem;">Vegetarian</h4>
+            </div>
+            <div class="text-center p-5 rounded-2xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)] hover:border-[#C2410C]/30 transition-all hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 mx-auto mb-3"><i class="fas fa-leaf text-lg"></i></div>
+                <h4 style="font-size:0.9rem;">Vegan</h4>
+            </div>
+            <div class="text-center p-5 rounded-2xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)] hover:border-[#C2410C]/30 transition-all hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600 mx-auto mb-3"><i class="fas fa-bread-slice text-lg"></i></div>
+                <h4 style="font-size:0.9rem;">Gluten-Free</h4>
+            </div>
+            <div class="text-center p-5 rounded-2xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)] hover:border-[#C2410C]/30 transition-all hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-xl bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-orange-600 mx-auto mb-3"><i class="fas fa-fire text-lg"></i></div>
+                <h4 style="font-size:0.9rem;">Keto</h4>
+            </div>
+            <div class="text-center p-5 rounded-2xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)] hover:border-[#C2410C]/30 transition-all hover:-translate-y-1 col-span-2 sm:col-span-1 max-w-[200px] mx-auto w-full sm:max-w-none">
+                <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 mx-auto mb-3"><i class="fas fa-globe-asia text-lg"></i></div>
+                <h4 style="font-size:0.9rem;">Regional</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-20" style="background:var(--cream);">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+            <span class="section-tag reveal"><i class="fas fa-question-circle text-[10px]"></i> FAQ</span>
+            <h2 class="section-title mb-4 reveal">Frequently Asked Questions</h2>
+        </div>
+        <div class="reveal">
+            <div class="faq-item open">
+                <button class="faq-question">How quickly can you set up our canteen? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer"><p>We can get your corporate canteen operational within 48 hours of contract signing. Our rapid deployment team handles equipment setup, staff onboarding, and initial menu planning simultaneously.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Can employees with allergies be accommodated? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer"><p>Absolutely. Our system flags allergens on every dish and allows employees to set dietary preferences in their profiles. Our kitchen maintains separate preparation areas for common allergens.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What's the minimum team size to get started? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer"><p>Our basic plan supports teams as small as 50 employees. For smaller teams, we offer our snack vending and pantry stocking service as a standalone solution.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Do you provide catering for off-site events? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer"><p>Yes! Our event catering team handles both on-site and off-site events. We manage logistics, setup, service, and cleanup — all you need to do is enjoy the event.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="footer-container"></div>
+<script src="components.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

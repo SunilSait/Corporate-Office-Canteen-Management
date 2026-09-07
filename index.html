@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CulinaCorp — Smart corporate canteen management. Nourishing your workforce with fresh, healthy meals, smart ordering, and hygiene-first kitchen operations.">
+    <title>CulinaCorp — Corporate Office Canteen Management</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' stroke='%23C2410C' stroke-width='2.5' fill='none'/%3E%3Cline x1='38' y1='28' x2='38' y2='72' stroke='%23C2410C' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M55 58 Q68 38 62 28 Q54 36 55 58Z' fill='%23C2410C' fill-opacity='0.3' stroke='%23C2410C' stroke-width='2'/%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#C2410C',secondary:'#1E293B'}}}}</script>
+</head>
+<body>
+<!-- Navbar -->
+<div id="navbar-container"></div>
+
+<!-- ===== HERO SECTION — Split Layout ===== -->
+<section class="hero relative overflow-hidden" style="background: linear-gradient(135deg, var(--cream) 0%, rgba(13,124,102,0.04) 100%);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Text -->
+            <div class="reveal text-center lg:text-left">
+                <span class="section-tag"><i class="fas fa-utensils text-[10px]"></i> Smart Canteen Solutions</span>
+                <h1 class="mb-6" style="line-height:1.15;">Nourishing Your Workforce, <span class="teal-text">Elevating</span> Your Workplace</h1>
+                <p class="section-subtitle mb-8 mx-auto lg:mx-0" style="max-width:520px;">From daily meal plans to real-time dashboards — we transform corporate dining into a seamless, healthy, and cost-efficient experience for every team.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                    <a href="services.html" class="btn btn-primary btn-lg btn-shine"><i class="fas fa-arrow-right text-xs"></i> Explore Services</a>
+                    <a href="pricing.html" class="btn btn-secondary btn-lg"><i class="fas fa-tag text-xs"></i> View Pricing</a>
+                </div>
+            </div>
+            <!-- Image -->
+            <div class="reveal relative">
+                <div class="rounded-2xl overflow-hidden shadow-2xl shadow-[#C2410C]/10 border border-[#E2E8F0] dark:border-[#334155]">
+                    <img src="assets/images/hero_home1.jpg" alt="Modern corporate canteen with employees enjoying healthy meals" class="w-full h-[400px] lg:h-[480px] object-cover">
+                </div>
+                <!-- Floating badge -->
+                <div class="absolute -bottom-4 -left-4 sm:left-auto sm:-right-4 glass-card px-5 py-3 flex items-center gap-3 animate-on-scroll slide-up visible" style="animation: float 4s ease-in-out infinite;">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#C2410C] to-[#9A3412] flex items-center justify-center text-white text-sm"><i class="fas fa-check"></i></div>
+                    <div>
+                        <p class="text-xs font-bold text-[#0F172A] dark:text-white" style="font-weight:600;">FSSAI Certified</p>
+                        <p class="text-[11px] text-neutral-500" style="font-weight:400;">100% Compliance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Wave Divider -->
+    <div class="absolute bottom-0 left-0 right-0">
+        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;height:60px;">
+            <path d="M0 30 Q360 0 720 30 T1440 30 V60 H0Z" fill="var(--cream)"/>
+        </svg>
+    </div>
+</section>
+
+<!-- ===== STATS BAR ===== -->
+<section class="py-14" style="background:var(--cream);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 reveal">
+            <div class="text-center p-6 rounded-2xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)]">
+                <p class="text-3xl font-bold text-[#C2410C] mb-1 counter" data-count="10000" data-suffix="+" style="font-family:'Outfit',sans-serif;">0</p>
+                <p class="text-sm text-neutral-500" style="font-weight:400;">Meals Served Daily</p>
+            </div>
+            <div class="text-center p-6 rounded-2xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)]">
+                <p class="text-3xl font-bold text-[#C2410C] mb-1 counter" data-count="200" data-suffix="+" style="font-family:'Outfit',sans-serif;">0</p>
+                <p class="text-sm text-neutral-500" style="font-weight:400;">Corporates Served</p>
+            </div>
+            <div class="text-center p-6 rounded-2xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)]">
+                <p class="text-3xl font-bold text-[#C2410C] mb-1 counter" data-count="99" data-suffix=".5%" style="font-family:'Outfit',sans-serif;">0</p>
+                <p class="text-sm text-neutral-500" style="font-weight:400;">Hygiene Score</p>
+            </div>
+            <div class="text-center p-6 rounded-2xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)]">
+                <p class="text-3xl font-bold text-[#C2410C] mb-1" style="font-family:'Outfit',sans-serif;">4.8 ★</p>
+                <p class="text-sm text-neutral-500" style="font-weight:400;">Client Rating</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== HOW IT WORKS — Timeline ===== -->
+<section class="py-20" style="background: var(--surface-alt);">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <span class="section-tag reveal"><i class="fas fa-cogs text-[10px]"></i> How It Works</span>
+        <h2 class="section-title mb-4 reveal">Three Simple Steps to Better Dining</h2>
+        <p class="section-subtitle mx-auto mb-16 reveal">Getting started is effortless. Our streamlined process ensures your office canteen runs like clockwork from day one.</p>
+    </div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Step 1 -->
+            <div class="reveal text-center">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#C2410C] to-[#9A3412] flex items-center justify-center text-white text-xl mx-auto mb-5 shadow-lg shadow-[#C2410C]/25">
+                    <i class="fas fa-clipboard-list"></i>
+                </div>
+                <span class="inline-block text-xs font-bold text-[#C2410C] uppercase tracking-widest mb-2" style="font-weight:600;">Step 01</span>
+                <h3 class="mb-3" style="font-size:1.2rem;">Configure Your Menu</h3>
+                <p class="text-sm text-neutral-500" style="font-weight:400;">Set up your weekly meal plan through our intuitive dashboard. Choose cuisines, dietary options, and portion sizes.</p>
+            </div>
+            <!-- Step 2 -->
+            <div class="reveal text-center" style="transition-delay:0.15s;">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#C2410C] to-[#9A3412] flex items-center justify-center text-white text-xl mx-auto mb-5 shadow-lg shadow-[#C2410C]/25">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <span class="inline-block text-xs font-bold text-[#C2410C] uppercase tracking-widest mb-2" style="font-weight:600;">Step 02</span>
+                <h3 class="mb-3" style="font-size:1.2rem;">Employees Order</h3>
+                <p class="text-sm text-neutral-500" style="font-weight:400;">Team members browse the daily menu, pre-order their meals, and pay via their prepaid wallet — all from their phone.</p>
+            </div>
+            <!-- Step 3 -->
+            <div class="reveal text-center" style="transition-delay:0.3s;">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#C2410C] to-[#9A3412] flex items-center justify-center text-white text-xl mx-auto mb-5 shadow-lg shadow-[#C2410C]/25">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <span class="inline-block text-xs font-bold text-[#C2410C] uppercase tracking-widest mb-2" style="font-weight:600;">Step 03</span>
+                <h3 class="mb-3" style="font-size:1.2rem;">We Deliver Fresh</h3>
+                <p class="text-sm text-neutral-500" style="font-weight:400;">Our certified kitchen team prepares and delivers piping-hot meals right to your office canteen — on time, every time.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SERVICES OVERVIEW ===== -->
+<section class="py-20" style="background:var(--cream);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-14">
+            <span class="section-tag reveal"><i class="fas fa-concierge-bell text-[10px]"></i> Our Services</span>
+            <h2 class="section-title mb-4 reveal">Everything Your Office Canteen Needs</h2>
+            <p class="section-subtitle mx-auto reveal">Comprehensive dining solutions tailored to keep your team energized, healthy, and productive throughout the day.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="card reveal">
+                <div class="overflow-hidden">
+                    <img src="assets/images/service_daily_meals.jpg" alt="Chef preparing daily corporate meals" class="w-full h-52 object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <span class="badge badge-teal mb-3 w-fit">Core Service</span>
+                    <h3 class="mb-2" style="font-size:1.15rem;">Daily Meal Programs</h3>
+                    <p class="text-sm text-neutral-500 mb-5 flex-1" style="font-weight:400;">Balanced breakfast, lunch, and dinner menus curated by nutritionists. Multi-cuisine options rotated weekly.</p>
+                    <a href="services.html" class="btn btn-secondary btn-sm w-full">Learn More</a>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="card reveal" style="transition-delay:0.1s;">
+                <div class="overflow-hidden">
+                    <img src="assets/images/service_snack_vending.jpg" alt="Modern snack vending station in office" class="w-full h-52 object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <span class="badge badge-teal mb-3 w-fit">On-Demand</span>
+                    <h3 class="mb-2" style="font-size:1.15rem;">Snack Vending & Pantry</h3>
+                    <p class="text-sm text-neutral-500 mb-5 flex-1" style="font-weight:400;">Healthy snack stations, fresh fruit bars, and beverage corners stocked daily. Smart vending with cashless payments.</p>
+                    <a href="services.html" class="btn btn-secondary btn-sm w-full">Learn More</a>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="card reveal" style="transition-delay:0.2s;">
+                <div class="overflow-hidden">
+                    <img src="assets/images/service_event_catering.jpg" alt="Corporate event catering setup" class="w-full h-52 object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <span class="badge badge-teal mb-3 w-fit">Premium</span>
+                    <h3 class="mb-2" style="font-size:1.15rem;">Event Catering</h3>
+                    <p class="text-sm text-neutral-500 mb-5 flex-1" style="font-weight:400;">Professional catering for meetings, conferences, celebrations, and town halls. Customizable menus for any occasion.</p>
+                    <a href="services.html" class="btn btn-secondary btn-sm w-full">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHY CHOOSE US — Asymmetric Layout ===== -->
+<section class="py-20" style="background:var(--surface-alt);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            <!-- Image -->
+            <div class="reveal rounded-2xl overflow-hidden shadow-xl border border-[#E2E8F0] dark:border-[#334155]">
+                <img src="assets/images/why_choose_us.jpg" alt="Happy employees enjoying lunch together" class="w-full h-[400px] object-cover">
+            </div>
+            <!-- Content -->
+            <div class="reveal">
+                <span class="section-tag"><i class="fas fa-award text-[10px]"></i> Why CulinaCorp</span>
+                <h2 class="section-title mb-6">The Smarter Way to Feed Your Team</h2>
+                <div class="space-y-5">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 rounded-xl bg-[#C2410C]/10 flex items-center justify-center text-[#C2410C] shrink-0"><i class="fas fa-sliders-h"></i></div>
+                        <div>
+                            <h4 class="mb-1" style="font-size:1rem;">Customizable Menus</h4>
+                            <p class="text-sm text-neutral-500" style="font-weight:400;">Tailor weekly menus to your team's preferences, cultural backgrounds, and dietary needs.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 rounded-xl bg-[#C2410C]/10 flex items-center justify-center text-[#C2410C] shrink-0"><i class="fas fa-heartbeat"></i></div>
+                        <div>
+                            <h4 class="mb-1" style="font-size:1rem;">Dietary Accommodation</h4>
+                            <p class="text-sm text-neutral-500" style="font-weight:400;">Vegetarian, vegan, gluten-free, keto, and regional cuisine options available every day.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 rounded-xl bg-[#C2410C]/10 flex items-center justify-center text-[#C2410C] shrink-0"><i class="fas fa-recycle"></i></div>
+                        <div>
+                            <h4 class="mb-1" style="font-size:1rem;">Zero Waste Policy</h4>
+                            <p class="text-sm text-neutral-500" style="font-weight:400;">Smart forecasting reduces food waste by 40%. Compostable packaging and eco-friendly practices.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 rounded-xl bg-[#C2410C]/10 flex items-center justify-center text-[#C2410C] shrink-0"><i class="fas fa-chart-line"></i></div>
+                        <div>
+                            <h4 class="mb-1" style="font-size:1rem;">Real-time Dashboard</h4>
+                            <p class="text-sm text-neutral-500" style="font-weight:400;">Track orders, subscriptions, meal costs, and hygiene audits with our powerful admin panel.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="py-20" style="background:var(--cream);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-14">
+            <span class="section-tag reveal"><i class="fas fa-quote-left text-[10px]"></i> Testimonials</span>
+            <h2 class="section-title mb-4 reveal">What Our Clients Say</h2>
+            <p class="section-subtitle mx-auto reveal">Trusted by HR leaders and facility managers across top corporates.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Testimonial 1 -->
+            <div class="card p-7 reveal">
+                <div class="flex items-center gap-1 mb-4">
+                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                </div>
+                <p class="text-sm text-neutral-600 dark:text-neutral-300 mb-6 flex-1" style="font-weight:400;line-height:1.8;">"CulinaCorp completely transformed our office canteen. Employee satisfaction scores jumped 35% within the first month. The dashboard makes managing meal plans incredibly easy."</p>
+                <div class="flex items-center gap-3 mt-auto">
+                    <img src="assets/images/testimonial_1.jpg" alt="Priya Sharma" class="w-11 h-11 rounded-full object-cover border-2 border-[#C2410C]/30">
+                    <div>
+                        <p class="text-sm font-bold" style="font-weight:600;">Priya Sharma</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">HR Director, TechNova Solutions</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="card p-7 reveal" style="transition-delay:0.1s;">
+                <div class="flex items-center gap-1 mb-4">
+                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                </div>
+                <p class="text-sm text-neutral-600 dark:text-neutral-300 mb-6 flex-1" style="font-weight:400;line-height:1.8;">"The hygiene standards are impeccable. Monthly audit reports give us complete transparency. Our facility management costs dropped by 20% since partnering with CulinaCorp."</p>
+                <div class="flex items-center gap-3 mt-auto">
+                    <img src="assets/images/testimonial_2.jpg" alt="Rajesh Mehta" class="w-11 h-11 rounded-full object-cover border-2 border-[#C2410C]/30">
+                    <div>
+                        <p class="text-sm font-bold" style="font-weight:600;">Rajesh Mehta</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Facility Manager, GlobalEdge Corp</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="card p-7 reveal" style="transition-delay:0.2s;">
+                <div class="flex items-center gap-1 mb-4">
+                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    <i class="fas fa-star-half-alt text-yellow-400 text-sm"></i>
+                </div>
+                <p class="text-sm text-neutral-600 dark:text-neutral-300 mb-6 flex-1" style="font-weight:400;line-height:1.8;">"The prepaid wallet system is a game changer. Employees love the convenience and we get detailed cost reports for payroll. Highly recommended for any mid-to-large enterprise."</p>
+                <div class="flex items-center gap-3 mt-auto">
+                    <img src="assets/images/testimonial_3.jpg" alt="Emily Watson" class="w-11 h-11 rounded-full object-cover border-2 border-[#C2410C]/30">
+                    <div>
+                        <p class="text-sm font-bold" style="font-weight:600;">Emily Watson</p>
+                        <p class="text-xs text-neutral-500" style="font-weight:400;">Ops Coordinator, Nexus Dynamics</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="py-20 relative overflow-hidden" style="background: linear-gradient(135deg, #C2410C 0%, #9A3412 40%, #1E293B 100%);">
+    <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:50px 50px;"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+        <h2 class="text-white mb-4 reveal" style="font-family:'Outfit',sans-serif;">Transform Your Office Dining Experience</h2>
+        <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto reveal" style="font-weight:400;">Join 200+ corporates already serving healthier, happier meals to their teams with CulinaCorp.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center reveal">
+            <a href="signup.html" class="btn btn-lg text-[#C2410C]" style="background:white;border:1.5px solid white;"><i class="fas fa-rocket text-xs"></i> Get Started Free</a>
+            <a href="pricing.html" class="btn btn-lg" style="border:1.5px solid rgba(255,255,255,0.4);color:white;"><i class="fas fa-phone text-xs"></i> Talk to Sales</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<div id="footer-container"></div>
+
+<script src="components.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

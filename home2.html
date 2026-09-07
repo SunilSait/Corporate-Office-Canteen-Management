@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CulinaCorp Premium — Experience the future of corporate dining with smart meal management, chef-curated menus, and real-time analytics.">
+    <title>CulinaCorp Premium — Elevated Corporate Dining</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' stroke='%23C2410C' stroke-width='2.5' fill='none'/%3E%3Cline x1='38' y1='28' x2='38' y2='72' stroke='%23C2410C' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M55 58 Q68 38 62 28 Q54 36 55 58Z' fill='%23C2410C' fill-opacity='0.3' stroke='%23C2410C' stroke-width='2'/%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#C2410C',secondary:'#1E293B'}}}}</script>
+</head>
+<body>
+<div id="navbar-container"></div>
+
+<!-- ===== HERO — Full Viewport Dark Overlay ===== -->
+<section class="hero relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+        <img src="assets/images/hero_home2.jpg" alt="Premium corporate dining spread" class="w-full h-full object-cover">
+        <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(15,23,42,0.7) 0%, rgba(15,23,42,0.85) 60%, rgba(13,124,102,0.3) 100%);"></div>
+    </div>
+    <div class="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 py-20">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-white/80 text-xs font-bold uppercase tracking-widest mb-6 reveal" style="backdrop-filter:blur(10px);background:rgba(255,255,255,0.08);">
+            <i class="fas fa-gem text-[10px] text-[#EA580C]"></i> Premium Experience
+        </span>
+        <h1 class="text-white mb-6 reveal" style="font-size:clamp(2.5rem,6vw,4rem);line-height:1.1;">Where Corporate Dining Meets <span style="color:#EA580C;">Culinary Excellence</span></h1>
+        <p class="text-white/60 text-lg max-w-2xl mx-auto mb-10 reveal" style="font-weight:400;">Elevate your workplace culture with chef-curated menus, smart wallet systems, and enterprise-grade canteen management.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center reveal">
+            <a href="signup.html" class="btn btn-primary btn-lg btn-shine"><i class="fas fa-arrow-right text-xs"></i> Start Your Journey</a>
+            <a href="#features" class="btn btn-lg" style="border:1.5px solid rgba(255,255,255,0.3);color:white;"><i class="fas fa-play text-xs"></i> See How It Works</a>
+        </div>
+    </div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <i class="fas fa-chevron-down text-white/30 text-xl"></i>
+    </div>
+</section>
+
+<!-- ===== CLIENTS MARQUEE ===== -->
+<section class="py-10 border-b border-[#E2E8F0] dark:border-[#334155]" style="background:var(--surface);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <p class="text-center text-xs font-bold uppercase tracking-[0.2em] text-neutral-400 mb-6" style="font-weight:600;">Trusted by Leading Enterprises</p>
+        <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16 opacity-40">
+            <span class="text-xl font-bold" style="font-family:'Outfit',sans-serif;font-weight:700;">TechNova</span>
+            <span class="text-xl font-bold" style="font-family:'Outfit',sans-serif;font-weight:700;">GlobalEdge</span>
+            <span class="text-xl font-bold" style="font-family:'Outfit',sans-serif;font-weight:700;">Nexus Dynamics</span>
+            <span class="text-xl font-bold" style="font-family:'Outfit',sans-serif;font-weight:700;">InfraCore</span>
+            <span class="text-xl font-bold" style="font-family:'Outfit',sans-serif;font-weight:700;">Vertex Labs</span>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FEATURE SHOWCASE — Zigzag ===== -->
+<section id="features" class="py-24" style="background:var(--cream);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <!-- Feature 1 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center mb-24">
+            <div class="reveal">
+                <span class="section-tag"><i class="fas fa-brain text-[10px]"></i> Smart Curation</span>
+                <h2 class="section-title mb-5">AI-Powered Menu Curation</h2>
+                <p class="text-neutral-500 mb-6" style="font-weight:400;line-height:1.8;">Our intelligent system learns your team's preferences over time and curates menus that maximize satisfaction while meeting nutritional guidelines. Seasonal ingredients, regional flavors, and dietary requirements — all handled automatically.</p>
+                <div class="flex flex-wrap gap-3">
+                    <span class="badge badge-teal">Machine Learning</span>
+                    <span class="badge badge-teal">Nutritional AI</span>
+                    <span class="badge badge-teal">Auto-Rotation</span>
+                </div>
+            </div>
+            <div class="reveal rounded-2xl overflow-hidden shadow-xl border border-[#E2E8F0] dark:border-[#334155]">
+                <img src="assets/images/menu_planning.jpg" alt="AI-powered meal planning workspace" class="w-full h-[360px] object-cover">
+            </div>
+        </div>
+
+        <!-- Feature 2 — Reversed -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center mb-24">
+            <div class="reveal rounded-2xl overflow-hidden shadow-xl border border-[#E2E8F0] dark:border-[#334155] order-2 lg:order-1">
+                <img src="assets/images/service_snack_vending.jpg" alt="Smart wallet and prepaid vending system" class="w-full h-[360px] object-cover">
+            </div>
+            <div class="reveal order-1 lg:order-2">
+                <span class="section-tag"><i class="fas fa-wallet text-[10px]"></i> Wallet System</span>
+                <h2 class="section-title mb-5">Prepaid Wallet & Cashless Dining</h2>
+                <p class="text-neutral-500 mb-6" style="font-weight:400;line-height:1.8;">Enable seamless transactions with company-sponsored meal wallets. HR can top up balances, set daily limits, and track spending per department. Employees simply tap and eat — no cash, no queues.</p>
+                <div class="flex flex-wrap gap-3">
+                    <span class="badge badge-teal">Cashless</span>
+                    <span class="badge badge-teal">Dept. Budgets</span>
+                    <span class="badge badge-teal">Auto Top-up</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            <div class="reveal">
+                <span class="section-tag"><i class="fas fa-shield-alt text-[10px]"></i> Transparency</span>
+                <h2 class="section-title mb-5">Hygiene You Can Verify</h2>
+                <p class="text-neutral-500 mb-6" style="font-weight:400;line-height:1.8;">Every kitchen undergoes monthly FSSAI audits with scores published on your dashboard in real-time. Temperature logs, staff health records, and ingredient traceability — complete transparency at your fingertips.</p>
+                <div class="flex flex-wrap gap-3">
+                    <span class="badge badge-teal">FSSAI Certified</span>
+                    <span class="badge badge-teal">ISO 22000</span>
+                    <span class="badge badge-teal">Live Audits</span>
+                </div>
+            </div>
+            <div class="reveal rounded-2xl overflow-hidden shadow-xl border border-[#E2E8F0] dark:border-[#334155]">
+                <img src="assets/images/hygiene_standards.jpg" alt="Food safety inspection in commercial kitchen" class="w-full h-[360px] object-cover">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ANIMATED STATS ===== -->
+<section class="py-20 relative overflow-hidden" style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);">
+    <div class="absolute inset-0" style="background-image:radial-gradient(circle at 20% 50%,rgba(13,124,102,0.15) 0%,transparent 50%),radial-gradient(circle at 80% 50%,rgba(13,124,102,0.1) 0%,transparent 50%);"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div class="reveal">
+                <p class="text-4xl md:text-5xl font-bold text-[#EA580C] mb-2 counter" data-count="847" style="font-family:'Outfit',sans-serif;">0</p>
+                <p class="text-sm text-white/50 uppercase tracking-widest" style="font-weight:400;">Daily Orders</p>
+            </div>
+            <div class="reveal" style="transition-delay:0.1s;">
+                <p class="text-4xl md:text-5xl font-bold text-[#EA580C] mb-2 counter" data-count="1234" style="font-family:'Outfit',sans-serif;">0</p>
+                <p class="text-sm text-white/50 uppercase tracking-widest" style="font-weight:400;">Subscriptions</p>
+            </div>
+            <div class="reveal" style="transition-delay:0.2s;">
+                <p class="text-4xl md:text-5xl font-bold text-[#EA580C] mb-2 counter" data-count="15" data-suffix=" Min" style="font-family:'Outfit',sans-serif;">0</p>
+                <p class="text-sm text-white/50 uppercase tracking-widest" style="font-weight:400;">Avg. Wait Time</p>
+            </div>
+            <div class="reveal" style="transition-delay:0.3s;">
+                <p class="text-4xl md:text-5xl font-bold text-[#EA580C] mb-2" style="font-family:'Outfit',sans-serif;">99.2%</p>
+                <p class="text-sm text-white/50 uppercase tracking-widest" style="font-weight:400;">Hygiene Score</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== MENU PREVIEW WITH TABS ===== -->
+<section class="py-20" style="background:var(--cream);">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+            <span class="section-tag reveal"><i class="fas fa-calendar-alt text-[10px]"></i> Weekly Menu</span>
+            <h2 class="section-title mb-4 reveal">This Week's Menu Preview</h2>
+            <p class="section-subtitle mx-auto reveal">A taste of what your team enjoys every day — fresh, diverse, and nutritiously balanced.</p>
+        </div>
+        <div class="reveal">
+            <div class="tab-bar mb-8 max-w-xl mx-auto flex-wrap">
+                <button class="tab-btn active" data-tab="tab-mon">Mon</button>
+                <button class="tab-btn" data-tab="tab-tue">Tue</button>
+                <button class="tab-btn" data-tab="tab-wed">Wed</button>
+                <button class="tab-btn" data-tab="tab-thu">Thu</button>
+                <button class="tab-btn" data-tab="tab-fri">Fri</button>
+            </div>
+            <div id="tab-mon" class="tab-panel">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div class="card p-5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-9 h-9 rounded-lg bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600"><i class="fas fa-sun text-sm"></i></div>
+                            <h4 style="font-size:0.95rem;">Breakfast</h4>
+                        </div>
+                        <ul class="text-sm text-neutral-500 space-y-1.5" style="font-weight:400;">
+                            <li>• Masala Omelette with Toast</li>
+                            <li>• Poha with Peanuts</li>
+                            <li>• Fresh Fruit Bowl</li>
+                            <li>• Filter Coffee / Green Tea</li>
+                        </ul>
+                    </div>
+                    <div class="card p-5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-9 h-9 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600"><i class="fas fa-utensils text-sm"></i></div>
+                            <h4 style="font-size:0.95rem;">Lunch</h4>
+                        </div>
+                        <ul class="text-sm text-neutral-500 space-y-1.5" style="font-weight:400;">
+                            <li>• Paneer Butter Masala</li>
+                            <li>• Grilled Chicken Breast</li>
+                            <li>• Steamed Rice & Roti</li>
+                            <li>• Mixed Veg Salad</li>
+                        </ul>
+                    </div>
+                    <div class="card p-5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-9 h-9 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600"><i class="fas fa-cookie-bite text-sm"></i></div>
+                            <h4 style="font-size:0.95rem;">Snacks</h4>
+                        </div>
+                        <ul class="text-sm text-neutral-500 space-y-1.5" style="font-weight:400;">
+                            <li>• Samosa with Chutney</li>
+                            <li>• Granola Bar</li>
+                            <li>• Masala Chai</li>
+                            <li>• Fresh Juice</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="tab-tue" class="tab-panel" style="display:none;">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div class="card p-5"><div class="flex items-center gap-3 mb-3"><div class="w-9 h-9 rounded-lg bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600"><i class="fas fa-sun text-sm"></i></div><h4 style="font-size:0.95rem;">Breakfast</h4></div><ul class="text-sm text-neutral-500 space-y-1.5" style="font-weight:400;"><li>• Idli Sambar</li><li>• Aloo Paratha</li><li>• Yogurt Parfait</li><li>• Herbal Tea</li></ul></div>
+                    <div class="card p-5"><div class="flex items-center gap-3 mb-3"><div class="w-9 h-9 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600"><i class="fas fa-utensils text-sm"></i></div><h4 style="font-size:0.95rem;">Lunch</h4></div><ul class="text-sm text-neutral-500 space-y-1.5" style="font-weight:400;"><li>• Dal Makhani</li><li>• Fish Curry</li><li>• Jeera Rice & Naan</li><li>• Cucumber Raita</li></ul></div>
+                    <div class="card p-5"><div class="flex items-center gap-3 mb-3"><div class="w-9 h-9 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600"><i class="fas fa-cookie-bite text-sm"></i></div><h4 style="font-size:0.95rem;">Snacks</h4></div><ul class="text-sm text-neutral-500 space-y-1.5" style="font-weight:400;"><li>• Vada Pav</li><li>• Trail Mix</li><li>• Cold Coffee</li><li>• Banana Chips</li></ul></div>
+                </div>
+            </div>
+            <div id="tab-wed" class="tab-panel" style="display:none;">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div class="card p-5"><div class="flex items-center gap-3 mb-3"><div class="w-9 h-9 rounded-lg bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600"><i class="fas fa-sun text-sm"></i></div><h4 style="font-size:0.95rem;">Breakfast</h4></div><ul class="text-sm text-neutral-500 space-y-1.5" style="font-weight:400;"><li>• Dosa with Chutneys</li><li>• Upma</li><li>• Boiled Eggs</li><li>• Orange Juice</li></ul></div>
+                    <div class="card p-5"><div class="flex items-center gap-3 mb-3"><div class="w-9 h-9 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600"><i class="fas fa-utensils text-sm"></i></div><h4 style="font-size:0.95rem;">Lunch</h4></div><ul class="text-sm text-neutral-500 space-y-1.5" style="font-weight:400;"><li>• Chole Bhature</li><li>• Tandoori Chicken</li><li>• Biryani</li><li>• Green Salad</li></ul></div>
+                    <div class="card p-5"><div class="flex items-center gap-3 mb-3"><div class="w-9 h-9 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600"><i class="fas fa-cookie-bite text-sm"></i></div><h4 style="font-size:0.95rem;">Snacks</h4></div><ul class="text-sm text-neutral-500 space-y-1.5" style="font-weight:400;"><li>• Pakora Assortment</li><li>• Energy Bar</li><li>• Butter Milk</li><li>• Cookies</li></ul></div>
+                </div>
+            </div>
+            <div id="tab-thu" class="tab-panel" style="display:none;">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div class="card p-5"><div class="flex items-center gap-3 mb-3"><div class="w-9 h-9 rounded-lg bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600"><i class="fas fa-sun text-sm"></i></div><h4 style="font-size:0.95rem;">Breakfast</h4></div><ul class="text-sm text-neutral-500 space-y-1.5" style="font-weight:400;"><li>• Puri Bhaji</li><li>• Corn Flakes Bowl</li><li>• Sprouts Chaat</li><li>• Masala Chai</li></ul></div>
+                    <div class="card p-5"><div class="flex items-center gap-3 mb-3"><div class="w-9 h-9 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600"><i class="fas fa-utensils text-sm"></i></div><h4 style="font-size:0.95rem;">Lunch</h4></div><ul class="text-sm text-neutral-500 space-y-1.5" style="font-weight:400;"><li>• Rajma Chawal</li><li>• Pasta Arrabiata</li><li>• Garlic Naan</li><li>• Fruit Custard</li></ul></div>
+                    <div class="card p-5"><div class="flex items-center gap-3 mb-3"><div class="w-9 h-9 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600"><i class="fas fa-cookie-bite text-sm"></i></div><h4 style="font-size:0.95rem;">Snacks</h4></div><ul class="text-sm text-neutral-500 space-y-1.5" style="font-weight:400;"><li>• Dhokla</li><li>• Mixed Nuts</li><li>• Hot Chocolate</li><li>• Fruit Smoothie</li></ul></div>
+                </div>
+            </div>
+            <div id="tab-fri" class="tab-panel" style="display:none;">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div class="card p-5"><div class="flex items-center gap-3 mb-3"><div class="w-9 h-9 rounded-lg bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600"><i class="fas fa-sun text-sm"></i></div><h4 style="font-size:0.95rem;">Breakfast</h4></div><ul class="text-sm text-neutral-500 space-y-1.5" style="font-weight:400;"><li>• Pancakes & Maple Syrup</li><li>• Rava Dosa</li><li>• Fresh Berries</li><li>• Cappuccino</li></ul></div>
+                    <div class="card p-5"><div class="flex items-center gap-3 mb-3"><div class="w-9 h-9 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600"><i class="fas fa-utensils text-sm"></i></div><h4 style="font-size:0.95rem;">Lunch</h4></div><ul class="text-sm text-neutral-500 space-y-1.5" style="font-weight:400;"><li>• Special Friday Biryani</li><li>• Grilled Fish</li><li>• Phulka & Ghee</li><li>• Ice Cream Dessert</li></ul></div>
+                    <div class="card p-5"><div class="flex items-center gap-3 mb-3"><div class="w-9 h-9 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600"><i class="fas fa-cookie-bite text-sm"></i></div><h4 style="font-size:0.95rem;">Snacks</h4></div><ul class="text-sm text-neutral-500 space-y-1.5" style="font-weight:400;"><li>• Pizza Slices</li><li>• Brownie</li><li>• Mango Lassi</li><li>• Nachos</li></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PROCESS — Horizontal Steps ===== -->
+<section class="py-20" style="background:var(--surface-alt);">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-14">
+            <span class="section-tag reveal"><i class="fas fa-route text-[10px]"></i> The Process</span>
+            <h2 class="section-title mb-4 reveal">From Setup to Serving in 48 Hours</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+            <div class="text-center p-6 rounded-2xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)] relative">
+                <div class="w-12 h-12 rounded-full bg-[#C2410C] text-white flex items-center justify-center text-lg font-bold mx-auto mb-4" style="font-family:'Outfit',sans-serif;">1</div>
+                <h4 class="mb-2" style="font-size:1rem;">Consultation</h4>
+                <p class="text-sm text-neutral-500" style="font-weight:400;">We assess your team size, dietary diversity, and budget parameters.</p>
+            </div>
+            <div class="text-center p-6 rounded-2xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)] relative">
+                <div class="w-12 h-12 rounded-full bg-[#C2410C] text-white flex items-center justify-center text-lg font-bold mx-auto mb-4" style="font-family:'Outfit',sans-serif;">2</div>
+                <h4 class="mb-2" style="font-size:1rem;">Kitchen Setup</h4>
+                <p class="text-sm text-neutral-500" style="font-weight:400;">Our team configures your canteen space with certified equipment and staffing.</p>
+            </div>
+            <div class="text-center p-6 rounded-2xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)] relative">
+                <div class="w-12 h-12 rounded-full bg-[#C2410C] text-white flex items-center justify-center text-lg font-bold mx-auto mb-4" style="font-family:'Outfit',sans-serif;">3</div>
+                <h4 class="mb-2" style="font-size:1rem;">Dashboard Access</h4>
+                <p class="text-sm text-neutral-500" style="font-weight:400;">Get full admin access to menus, wallets, orders, and reports.</p>
+            </div>
+            <div class="text-center p-6 rounded-2xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)] relative">
+                <div class="w-12 h-12 rounded-full bg-[#C2410C] text-white flex items-center justify-center text-lg font-bold mx-auto mb-4" style="font-family:'Outfit',sans-serif;">4</div>
+                <h4 class="mb-2" style="font-size:1rem;">Go Live</h4>
+                <p class="text-sm text-neutral-500" style="font-weight:400;">Start serving within 48 hours with ongoing support and optimization.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TESTIMONIAL — Magazine Style ===== -->
+<section class="py-20" style="background:var(--cream);">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center reveal">
+        <i class="fas fa-quote-left text-4xl text-[#C2410C]/20 mb-6"></i>
+        <blockquote class="text-xl md:text-2xl text-neutral-700 dark:text-neutral-200 mb-8" style="font-family:'Outfit',sans-serif;font-weight:600;line-height:1.6;">
+            "Switching to CulinaCorp was the best decision for our workplace culture. Our team looks forward to meals now — productivity during post-lunch hours has noticeably improved."
+        </blockquote>
+        <div class="flex items-center justify-center gap-4">
+            <img src="assets/images/testimonial_2.jpg" alt="Rajesh Mehta" class="w-14 h-14 rounded-full object-cover border-2 border-[#C2410C]/30">
+            <div class="text-left">
+                <p class="font-bold" style="font-weight:600;">Rajesh Mehta</p>
+                <p class="text-sm text-neutral-500" style="font-weight:400;">VP Operations, GlobalEdge Corp</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT CTA — Glass Card ===== -->
+<section class="py-20 relative overflow-hidden" style="background: linear-gradient(135deg, #C2410C, #9A3412);">
+    <div class="absolute inset-0 pointer-events-none" style="background-image:radial-gradient(circle at 30% 70%,rgba(255,255,255,0.06) 0%,transparent 50%);"></div>
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 relative z-10">
+        <div class="glass-card p-10 md:p-14 text-center" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.2);">
+            <h2 class="text-white mb-4" style="font-family:'Outfit',sans-serif;font-size:clamp(1.6rem,3vw,2.2rem);">Ready to Upgrade Your Canteen?</h2>
+            <p class="text-white/70 mb-8" style="font-weight:400;">Book a free consultation call. Our team will design a custom canteen solution tailored to your office.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="signup.html" class="btn btn-lg" style="background:white;color:#C2410C;"><i class="fas fa-calendar-check text-xs"></i> Book a Demo</a>
+                <a href="pricing.html" class="btn btn-lg" style="border:1.5px solid rgba(255,255,255,0.4);color:white;"><i class="fas fa-tag text-xs"></i> See Pricing</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="footer-container"></div>
+<script src="components.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
