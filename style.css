@@ -3083,8 +3083,51 @@ footer a[href="index.html"]:hover svg {
     }
 }
 
+/* ---- Brand Client Logos Marquee ---- */
+.brand-logo-item {
+    opacity: 0.9;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    cursor: pointer;
+}
 
+.brand-logo-item:hover {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.04);
+}
 
+.dark .brand-logo-item {
+    opacity: 0.95;
+}
 
+.dark .brand-logo-item:hover {
+    opacity: 1;
+}
+
+.brand-logos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 1.75rem;
+    column-gap: 2rem;
+    align-items: center;
+    justify-items: center;
+    max-width: 56rem;
+    margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+    .brand-logos-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: 3rem;
+        row-gap: 2rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .brand-logos-grid {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        max-width: 72rem;
+        column-gap: 2.5rem;
+    }
+}
 
 
