@@ -291,7 +291,7 @@
                 html.classList.add('dark');
                 themeBtns.forEach(btn => {
                     const icon = btn.querySelector('i');
-                    if (icon) icon.className = 'fas fa-sun text-sm';
+                    if (icon) icon.className = 'fas fa-moon text-sm';
                     const span = btn.querySelector('span');
                     if (span) span.textContent = 'Light Mode';
                 });

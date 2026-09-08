@@ -35,7 +35,9 @@
             <a href="#" class="sidebar-link" data-section="settings"><i class="fas fa-cog"></i> Settings</a>
         </nav>
         <div class="sidebar-footer">
-            <a href="login.html" class="sidebar-link" style="color:rgba(255,255,255,0.5);"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            <a href="login.html" id="logout-btn" class="sidebar-link-logout" onclick="openLogoutModal(event);" role="button" aria-haspopup="dialog" aria-label="Log out of CulinaCorp Admin">
+                <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
+            </a>
         </div>
     </aside>
 
@@ -50,9 +52,9 @@
                 </div>
             </div>
             <div class="flex items-center gap-3">
-                <button class="js-dir-toggle icon-btn" title="Toggle RTL" style="width:36px;height:36px;"><i class="fas fa-exchange-alt text-xs"></i></button>
-                <button class="js-theme-toggle icon-btn" title="Toggle Theme" style="width:36px;height:36px;"><i class="fas fa-moon text-xs"></i></button>
-                <button id="notif-btn" class="icon-btn relative" style="width:36px;height:36px;"><i class="fas fa-bell text-xs"></i><span class="notif-badge">3</span></button>
+                <button class="js-dir-toggle icon-btn" title="Toggle RTL" style="width:36px;height:36px;"><i class="fas fa-exchange-alt text-sm"></i></button>
+                <button class="js-theme-toggle icon-btn" title="Toggle Theme" style="width:36px;height:36px;"><i class="fas fa-moon text-sm"></i></button>
+                <button id="notif-btn" class="icon-btn relative" style="width:36px;height:36px;"><i class="fas fa-bell text-sm"></i><span class="notif-badge">3</span></button>
                 <div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#E11D48] to-[#9F1239] flex items-center justify-center text-white text-sm font-bold" style="font-family:'Outfit',sans-serif;">A</div>
             </div>
             <!-- Notification Panel -->
@@ -87,44 +89,67 @@
 
             <!-- Metrics -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+                <!-- Card 1: Today's Orders -->
                 <div class="metric-card">
-                    <div class="flex items-center justify-between relative z-10">
-                        <div class="w-10 h-10 rounded-xl bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48]"><i class="fas fa-shopping-bag"></i></div>
-                        <span class="badge badge-success">+12%</span>
+                    <div class="flex items-center justify-between">
+                        <div class="w-11 h-11 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-[#E11D48]">
+                            <i class="fas fa-shopping-bag text-base"></i>
+                        </div>
+                        <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-500 dark:text-emerald-400 border border-emerald-500/20">
+                            <i class="fas fa-arrow-up text-[10px]"></i> 12%
+                        </span>
                     </div>
-                    <div class="relative z-10">
-                        <p class="text-2xl font-medium" style="font-family:'Outfit',sans-serif;font-weight:500;">847</p>
-                        <p class="text-xs text-neutral-500" style="font-weight:400;">Today's Orders</p>
+                    <div>
+                        <p class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 dark:text-white" style="font-family:'Outfit',sans-serif;font-weight:700;">847</p>
+                        <p class="text-xs font-semibold text-neutral-600 dark:text-slate-300 mt-1">Today's Orders</p>
                     </div>
                 </div>
+
+                <!-- Card 2: Subscriptions -->
                 <div class="metric-card">
-                    <div class="flex items-center justify-between relative z-10">
-                        <div class="w-10 h-10 rounded-xl bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48]"><i class="fas fa-users"></i></div>
-                        <span class="badge badge-teal">Active</span>
+                    <div class="flex items-center justify-between">
+                        <div class="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-500 dark:text-blue-400">
+                            <i class="fas fa-users text-base"></i>
+                        </div>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
+                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 dark:bg-blue-400 animate-pulse"></span> Active
+                        </span>
                     </div>
-                    <div class="relative z-10">
-                        <p class="text-2xl font-medium" style="font-family:'Outfit',sans-serif;font-weight:500;">1,234</p>
-                        <p class="text-xs text-neutral-500" style="font-weight:400;">Subscriptions</p>
+                    <div>
+                        <p class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 dark:text-white" style="font-family:'Outfit',sans-serif;font-weight:700;">1,234</p>
+                        <p class="text-xs font-semibold text-neutral-600 dark:text-slate-300 mt-1">Subscriptions</p>
                     </div>
                 </div>
+
+                <!-- Card 3: Wallet Balance -->
                 <div class="metric-card">
-                    <div class="flex items-center justify-between relative z-10">
-                        <div class="w-10 h-10 rounded-xl bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48]"><i class="fas fa-wallet"></i></div>
-                        <span class="badge badge-warning">₹ INR</span>
+                    <div class="flex items-center justify-between">
+                        <div class="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500 dark:text-amber-400">
+                            <i class="fas fa-wallet text-base"></i>
+                        </div>
+                        <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-600 dark:text-amber-300 border border-amber-500/20">
+                            <i class="fas fa-bolt text-[10px]"></i> INR Live
+                        </span>
                     </div>
-                    <div class="relative z-10">
-                        <p class="text-2xl font-medium" style="font-family:'Outfit',sans-serif;font-weight:500;">₹2,45,800</p>
-                        <p class="text-xs text-neutral-500" style="font-weight:400;">Wallet Balance</p>
+                    <div>
+                        <p class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 dark:text-white" style="font-family:'Outfit',sans-serif;font-weight:700;">₹2,45,800</p>
+                        <p class="text-xs font-semibold text-neutral-600 dark:text-slate-300 mt-1">Wallet Balance</p>
                     </div>
                 </div>
+
+                <!-- Card 4: Hygiene Score -->
                 <div class="metric-card">
-                    <div class="flex items-center justify-between relative z-10">
-                        <div class="w-10 h-10 rounded-xl bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48]"><i class="fas fa-shield-alt"></i></div>
-                        <span class="badge badge-success">Excellent</span>
+                    <div class="flex items-center justify-between">
+                        <div class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-500 dark:text-emerald-400">
+                            <i class="fas fa-shield-alt text-base"></i>
+                        </div>
+                        <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                            <i class="fas fa-check text-[10px]"></i> Grade A+
+                        </span>
                     </div>
-                    <div class="relative z-10">
-                        <p class="text-2xl font-medium" style="font-family:'Outfit',sans-serif;font-weight:500;">99.2%</p>
-                        <p class="text-xs text-neutral-500" style="font-weight:400;">Hygiene Score</p>
+                    <div>
+                        <p class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 dark:text-white" style="font-family:'Outfit',sans-serif;font-weight:700;">99.2%</p>
+                        <p class="text-xs font-semibold text-neutral-600 dark:text-slate-300 mt-1">Hygiene Score</p>
                     </div>
                 </div>
             </div>
@@ -139,20 +164,29 @@
                     </div>
                     <div class="space-y-4">
                         <div>
-                            <div class="flex justify-between text-sm mb-1"><span style="font-weight:500;">Breakfast</span><span class="text-neutral-500" style="font-weight:400;">234 orders</span></div>
+                            <div class="flex justify-between text-sm mb-1.5">
+                                <span class="font-medium text-neutral-800 dark:text-slate-200">Breakfast</span>
+                                <span class="font-semibold text-neutral-700 dark:text-slate-200">234 orders</span>
+                            </div>
                             <div class="progress-bar"><div class="progress-fill" style="width:28%;"></div></div>
                         </div>
                         <div>
-                            <div class="flex justify-between text-sm mb-1"><span style="font-weight:500;">Lunch</span><span class="text-neutral-500" style="font-weight:400;">456 orders</span></div>
+                            <div class="flex justify-between text-sm mb-1.5">
+                                <span class="font-medium text-neutral-800 dark:text-slate-200">Lunch</span>
+                                <span class="font-semibold text-neutral-700 dark:text-slate-200">456 orders</span>
+                            </div>
                             <div class="progress-bar"><div class="progress-fill" style="width:54%;"></div></div>
                         </div>
                         <div>
-                            <div class="flex justify-between text-sm mb-1"><span style="font-weight:500;">Snacks</span><span class="text-neutral-500" style="font-weight:400;">157 orders</span></div>
+                            <div class="flex justify-between text-sm mb-1.5">
+                                <span class="font-medium text-neutral-800 dark:text-slate-200">Snacks</span>
+                                <span class="font-semibold text-neutral-700 dark:text-slate-200">157 orders</span>
+                            </div>
                             <div class="progress-bar"><div class="progress-fill" style="width:18%;"></div></div>
                         </div>
                     </div>
                     <div class="mt-6 pt-4 border-t border-[var(--border-light)] flex justify-between items-center">
-                        <span class="text-sm text-neutral-500" style="font-weight:400;">Total Today</span>
+                        <span class="text-sm font-semibold text-neutral-700 dark:text-slate-200">Total Today</span>
                         <span class="text-lg font-bold text-[#E11D48]" style="font-family:'Outfit',sans-serif;font-weight:700;">847</span>
                     </div>
                 </div>
@@ -190,14 +224,14 @@
             </div>
 
             <!-- Department Headcount Table -->
-            <div class="card p-6 mb-8">
-                <div class="flex items-center justify-between mb-6">
-                    <h4 style="font-size:1rem;">Department-wise Meal Count (Today)</h4>
+            <div class="card p-4 sm:p-6 mb-8">
+                <div class="flex items-center justify-between mb-4 sm:mb-6">
+                    <h4 style="font-size:1rem;margin-bottom:0;">Department-wise Meal Count (Today)</h4>
                     <button class="btn btn-sm btn-secondary"><i class="fas fa-download text-xs"></i> Export</button>
                 </div>
-                <div class="overflow-x-auto">
-                    <table class="data-table">
-                        <thead><tr><th>Department</th><th class="text-center">Breakfast</th><th class="text-center">Lunch</th><th class="text-center">Snacks</th><th class="text-center">Total</th></tr></thead>
+                <div class="w-full rounded-xl border border-[var(--border-light)] overflow-hidden">
+                    <table class="data-table w-full">
+                        <thead><tr><th><span class="hidden sm:inline">Department</span><span class="sm:hidden">Dept</span></th><th class="text-center"><span class="hidden sm:inline">Breakfast</span><span class="sm:hidden">B'fast</span></th><th class="text-center">Lunch</th><th class="text-center">Snacks</th><th class="text-center">Total</th></tr></thead>
                         <tbody>
                             <tr><td style="font-weight:500;">Engineering</td><td class="text-center">78</td><td class="text-center">142</td><td class="text-center">56</td><td class="text-center font-bold" style="font-weight:700;">276</td></tr>
                             <tr><td style="font-weight:500;">Marketing</td><td class="text-center">45</td><td class="text-center">89</td><td class="text-center">32</td><td class="text-center font-bold" style="font-weight:700;">166</td></tr>
@@ -212,29 +246,38 @@
             <!-- Recent Transactions + Monthly Report -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <!-- Recent Transactions -->
-                <div class="card p-6">
-                    <h4 style="font-size:1rem;" class="mb-5">Recent Wallet Transactions</h4>
+                <div class="card p-4 sm:p-6">
+                    <h4 style="font-size:1rem;" class="mb-4 sm:mb-5">Recent Wallet Transactions</h4>
                     <div class="space-y-3">
-                        <div class="flex items-center justify-between p-3 rounded-xl bg-[var(--surface-alt)]">
-                            <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 rounded-lg bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48]"><i class="fas fa-plus text-xs"></i></div>
-                                <div><p class="text-sm font-medium" style="font-weight:500;">Wallet Top-up — Engineering</p><p class="text-[11px] text-neutral-400" style="font-weight:400;">Today, 10:30 AM</p></div>
+                        <div class="flex items-center justify-between p-3 rounded-xl bg-[var(--surface-alt)] gap-3">
+                            <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+                                <div class="w-8 h-8 rounded-lg bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48] shrink-0"><i class="fas fa-plus text-xs"></i></div>
+                                <div class="min-w-0 flex-1">
+                                    <p class="text-xs sm:text-sm font-medium leading-snug truncate" title="Wallet Top-up — Engineering" style="font-weight:500;">Wallet Top-up — Engineering</p>
+                                    <p class="text-[11px] text-neutral-400 mt-0.5" style="font-weight:400;">Today, 10:30 AM</p>
+                                </div>
                             </div>
-                            <span class="text-sm font-bold text-green-600" style="font-weight:700;">+₹50,000</span>
+                            <span class="text-xs sm:text-sm font-bold text-green-600 shrink-0 whitespace-nowrap" style="font-weight:700;white-space:nowrap;">+₹50,000</span>
                         </div>
-                        <div class="flex items-center justify-between p-3 rounded-xl bg-[var(--surface-alt)]">
-                            <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 rounded-lg bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48]"><i class="fas fa-minus text-xs"></i></div>
-                                <div><p class="text-sm font-medium" style="font-weight:500;">Lunch Deduction — 456 meals</p><p class="text-[11px] text-neutral-400" style="font-weight:400;">Today, 1:30 PM</p></div>
+                        <div class="flex items-center justify-between p-3 rounded-xl bg-[var(--surface-alt)] gap-3">
+                            <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+                                <div class="w-8 h-8 rounded-lg bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48] shrink-0"><i class="fas fa-minus text-xs"></i></div>
+                                <div class="min-w-0 flex-1">
+                                    <p class="text-xs sm:text-sm font-medium leading-snug truncate" title="Lunch Deduction — 456 meals" style="font-weight:500;">Lunch Deduction — 456 meals</p>
+                                    <p class="text-[11px] text-neutral-400 mt-0.5" style="font-weight:400;">Today, 1:30 PM</p>
+                                </div>
                             </div>
-                            <span class="text-sm font-bold text-red-500" style="font-weight:700;">-₹22,800</span>
+                            <span class="text-xs sm:text-sm font-bold text-red-500 shrink-0 whitespace-nowrap" style="font-weight:700;white-space:nowrap;">-₹22,800</span>
                         </div>
-                        <div class="flex items-center justify-between p-3 rounded-xl bg-[var(--surface-alt)]">
-                            <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 rounded-lg bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48]"><i class="fas fa-plus text-xs"></i></div>
-                                <div><p class="text-sm font-medium" style="font-weight:500;">Wallet Top-up — Marketing</p><p class="text-[11px] text-neutral-400" style="font-weight:400;">Yesterday, 4:00 PM</p></div>
+                        <div class="flex items-center justify-between p-3 rounded-xl bg-[var(--surface-alt)] gap-3">
+                            <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+                                <div class="w-8 h-8 rounded-lg bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48] shrink-0"><i class="fas fa-plus text-xs"></i></div>
+                                <div class="min-w-0 flex-1">
+                                    <p class="text-xs sm:text-sm font-medium leading-snug truncate" title="Wallet Top-up — Marketing" style="font-weight:500;">Wallet Top-up — Marketing</p>
+                                    <p class="text-[11px] text-neutral-400 mt-0.5" style="font-weight:400;">Yesterday, 4:00 PM</p>
+                                </div>
                             </div>
-                            <span class="text-sm font-bold text-green-600" style="font-weight:700;">+₹30,000</span>
+                            <span class="text-xs sm:text-sm font-bold text-green-600 shrink-0 whitespace-nowrap" style="font-weight:700;white-space:nowrap;">+₹30,000</span>
                         </div>
                     </div>
                 </div>
@@ -571,7 +614,7 @@
                         <p class="text-xs text-neutral-500" style="font-weight:400;">Standard Plan (₹2,000/mo)</p>
                     </div>
                 </div>
-                <div class="metric-card">
+                <div class="metric-card sm:col-span-2 sm:w-full sm:max-w-[calc(50%-10px)] sm:mx-auto lg:col-span-1 lg:max-w-none lg:mx-0">
                     <div class="flex items-center justify-between relative z-10">
                         <div class="w-10 h-10 rounded-xl bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48]"><i class="fas fa-coffee"></i></div>
                         <span class="badge badge-warning">Basic</span>
@@ -600,58 +643,58 @@
                         </select>
                     </div>
                 </div>
-                <div class="overflow-x-auto">
-                    <table class="data-table">
+                <div class="w-full rounded-xl border border-[var(--border-light)] overflow-hidden">
+                    <table class="data-table w-full">
                         <thead>
-                            <tr><th>Employee</th><th>Department</th><th>Plan</th><th class="text-center">Start Date</th><th class="text-center">Expiry</th><th class="text-center">Status</th></tr>
+                            <tr><th>Employee</th><th class="hidden sm:table-cell">Department</th><th class="text-center sm:text-left">Plan</th><th class="text-center hidden md:table-cell">Start Date</th><th class="text-center hidden sm:table-cell">Expiry</th><th class="text-center">Status</th></tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center text-white text-xs font-bold">AK</div><span style="font-weight:500;">Amit Kumar</span></div></td>
-                                <td style="font-weight:400;">Engineering</td>
-                                <td><span class="badge badge-success">Premium</span></td>
-                                <td class="text-center" style="font-weight:400;">Aug 1, 2026</td>
-                                <td class="text-center" style="font-weight:400;">Aug 31, 2026</td>
+                                <td><div class="flex items-center gap-2 sm:gap-3"><div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center text-white text-[10px] sm:text-xs font-bold shrink-0">AK</div><div class="min-w-0"><span class="font-medium block truncate" style="font-weight:500;">Amit Kumar</span><span class="text-[10px] text-neutral-400 block sm:hidden truncate">Engineering • Aug 31</span></div></div></td>
+                                <td class="hidden sm:table-cell" style="font-weight:400;">Engineering</td>
+                                <td class="text-center sm:text-left"><span class="badge badge-success">Premium</span></td>
+                                <td class="text-center hidden md:table-cell" style="font-weight:400;">Aug 1, 2026</td>
+                                <td class="text-center hidden sm:table-cell" style="font-weight:400;">Aug 31, 2026</td>
                                 <td class="text-center"><span class="badge badge-success">Active</span></td>
                             </tr>
                             <tr>
-                                <td><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-gradient-to-br from-pink-400 to-rose-600 flex items-center justify-center text-white text-xs font-bold">PS</div><span style="font-weight:500;">Priya Singh</span></div></td>
-                                <td style="font-weight:400;">Marketing</td>
-                                <td><span class="badge badge-teal">Standard</span></td>
-                                <td class="text-center" style="font-weight:400;">Aug 1, 2026</td>
-                                <td class="text-center" style="font-weight:400;">Aug 31, 2026</td>
+                                <td><div class="flex items-center gap-2 sm:gap-3"><div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-pink-400 to-rose-600 flex items-center justify-center text-white text-[10px] sm:text-xs font-bold shrink-0">PS</div><div class="min-w-0"><span class="font-medium block truncate" style="font-weight:500;">Priya Singh</span><span class="text-[10px] text-neutral-400 block sm:hidden truncate">Marketing • Aug 31</span></div></div></td>
+                                <td class="hidden sm:table-cell" style="font-weight:400;">Marketing</td>
+                                <td class="text-center sm:text-left"><span class="badge badge-teal">Standard</span></td>
+                                <td class="text-center hidden md:table-cell" style="font-weight:400;">Aug 1, 2026</td>
+                                <td class="text-center hidden sm:table-cell" style="font-weight:400;">Aug 31, 2026</td>
                                 <td class="text-center"><span class="badge badge-success">Active</span></td>
                             </tr>
                             <tr>
-                                <td><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center text-white text-xs font-bold">RJ</div><span style="font-weight:500;">Ravi Joshi</span></div></td>
-                                <td style="font-weight:400;">Sales</td>
-                                <td><span class="badge badge-success">Premium</span></td>
-                                <td class="text-center" style="font-weight:400;">Jul 15, 2026</td>
-                                <td class="text-center" style="font-weight:400;">Aug 14, 2026</td>
+                                <td><div class="flex items-center gap-2 sm:gap-3"><div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center text-white text-[10px] sm:text-xs font-bold shrink-0">RJ</div><div class="min-w-0"><span class="font-medium block truncate" style="font-weight:500;">Ravi Joshi</span><span class="text-[10px] text-neutral-400 block sm:hidden truncate">Sales • Aug 14</span></div></div></td>
+                                <td class="hidden sm:table-cell" style="font-weight:400;">Sales</td>
+                                <td class="text-center sm:text-left"><span class="badge badge-success">Premium</span></td>
+                                <td class="text-center hidden md:table-cell" style="font-weight:400;">Jul 15, 2026</td>
+                                <td class="text-center hidden sm:table-cell" style="font-weight:400;">Aug 14, 2026</td>
                                 <td class="text-center"><span class="badge badge-error">Expired</span></td>
                             </tr>
                             <tr>
-                                <td><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center text-white text-xs font-bold">NP</div><span style="font-weight:500;">Neha Patel</span></div></td>
-                                <td style="font-weight:400;">HR & Admin</td>
-                                <td><span class="badge badge-warning">Lunch Only</span></td>
-                                <td class="text-center" style="font-weight:400;">Aug 5, 2026</td>
-                                <td class="text-center" style="font-weight:400;">Sep 4, 2026</td>
+                                <td><div class="flex items-center gap-2 sm:gap-3"><div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center text-white text-[10px] sm:text-xs font-bold shrink-0">NP</div><div class="min-w-0"><span class="font-medium block truncate" style="font-weight:500;">Neha Patel</span><span class="text-[10px] text-neutral-400 block sm:hidden truncate">HR & Admin • Sep 4</span></div></div></td>
+                                <td class="hidden sm:table-cell" style="font-weight:400;">HR & Admin</td>
+                                <td class="text-center sm:text-left"><span class="badge badge-warning">Lunch Only</span></td>
+                                <td class="text-center hidden md:table-cell" style="font-weight:400;">Aug 5, 2026</td>
+                                <td class="text-center hidden sm:table-cell" style="font-weight:400;">Sep 4, 2026</td>
                                 <td class="text-center"><span class="badge badge-warning">Expiring</span></td>
                             </tr>
                             <tr>
-                                <td><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-gradient-to-br from-violet-400 to-purple-600 flex items-center justify-center text-white text-xs font-bold">SK</div><span style="font-weight:500;">Sunil Kapoor</span></div></td>
-                                <td style="font-weight:400;">Operations</td>
-                                <td><span class="badge badge-teal">Standard</span></td>
-                                <td class="text-center" style="font-weight:400;">Aug 10, 2026</td>
-                                <td class="text-center" style="font-weight:400;">Sep 9, 2026</td>
+                                <td><div class="flex items-center gap-2 sm:gap-3"><div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-violet-400 to-purple-600 flex items-center justify-center text-white text-[10px] sm:text-xs font-bold shrink-0">SK</div><div class="min-w-0"><span class="font-medium block truncate" style="font-weight:500;">Sunil Kapoor</span><span class="text-[10px] text-neutral-400 block sm:hidden truncate">Operations • Sep 9</span></div></div></td>
+                                <td class="hidden sm:table-cell" style="font-weight:400;">Operations</td>
+                                <td class="text-center sm:text-left"><span class="badge badge-teal">Standard</span></td>
+                                <td class="text-center hidden md:table-cell" style="font-weight:400;">Aug 10, 2026</td>
+                                <td class="text-center hidden sm:table-cell" style="font-weight:400;">Sep 9, 2026</td>
                                 <td class="text-center"><span class="badge badge-success">Active</span></td>
                             </tr>
                             <tr>
-                                <td><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-400 to-teal-600 flex items-center justify-center text-white text-xs font-bold">MD</div><span style="font-weight:500;">Meera Desai</span></div></td>
-                                <td style="font-weight:400;">Engineering</td>
-                                <td><span class="badge badge-success">Premium</span></td>
-                                <td class="text-center" style="font-weight:400;">Aug 1, 2026</td>
-                                <td class="text-center" style="font-weight:400;">Aug 31, 2026</td>
+                                <td><div class="flex items-center gap-2 sm:gap-3"><div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-cyan-400 to-teal-600 flex items-center justify-center text-white text-[10px] sm:text-xs font-bold shrink-0">MD</div><div class="min-w-0"><span class="font-medium block truncate" style="font-weight:500;">Meera Desai</span><span class="text-[10px] text-neutral-400 block sm:hidden truncate">Engineering • Aug 31</span></div></div></td>
+                                <td class="hidden sm:table-cell" style="font-weight:400;">Engineering</td>
+                                <td class="text-center sm:text-left"><span class="badge badge-success">Premium</span></td>
+                                <td class="text-center hidden md:table-cell" style="font-weight:400;">Aug 1, 2026</td>
+                                <td class="text-center hidden sm:table-cell" style="font-weight:400;">Aug 31, 2026</td>
                                 <td class="text-center"><span class="badge badge-success">Active</span></td>
                             </tr>
                         </tbody>
@@ -713,51 +756,51 @@
             </div>
 
             <!-- Department Balances -->
-            <div class="card p-6 mb-8">
-                <h4 style="font-size:1rem;" class="mb-6">Department Wallet Balances</h4>
-                <div class="overflow-x-auto">
-                    <table class="data-table">
-                        <thead><tr><th>Department</th><th class="text-center">Allocated</th><th class="text-center">Spent</th><th class="text-center">Remaining</th><th class="text-center">Utilization</th><th class="text-center">Action</th></tr></thead>
+            <div class="card p-4 sm:p-6 mb-8">
+                <h4 style="font-size:1rem;" class="mb-4 sm:mb-6">Department Wallet Balances</h4>
+                <div class="w-full rounded-xl border border-[var(--border-light)] overflow-hidden">
+                    <table class="data-table w-full">
+                        <thead><tr><th>Department</th><th class="text-center hidden md:table-cell">Allocated</th><th class="text-center">Spent</th><th class="text-center">Remaining</th><th class="text-center hidden sm:table-cell">Utilization</th><th class="text-center">Action</th></tr></thead>
                         <tbody>
                             <tr>
-                                <td style="font-weight:500;">Engineering</td>
-                                <td class="text-center" style="font-weight:400;">₹1,20,000</td>
-                                <td class="text-center" style="font-weight:400;">₹52,400</td>
-                                <td class="text-center font-bold text-green-600" style="font-weight:700;">₹67,600</td>
-                                <td class="text-center"><div class="flex items-center gap-2 justify-center"><div class="w-20 h-1.5 rounded-full bg-[var(--border-light)]"><div class="h-full rounded-full bg-[#E11D48]" style="width:44%;"></div></div><span class="text-xs text-neutral-500">44%</span></div></td>
-                                <td class="text-center"><button class="text-xs text-[#E11D48] font-bold hover:underline" style="font-weight:600;">Top Up</button></td>
+                                <td><div style="font-weight:500;">Engineering</div><div class="text-[10px] text-neutral-400 block md:hidden">Alloc: ₹1.2L</div></td>
+                                <td class="text-center hidden md:table-cell" style="font-weight:400;">₹1,20,000</td>
+                                <td class="text-center whitespace-nowrap" style="font-weight:400;">₹52,400</td>
+                                <td class="text-center font-bold text-green-600 whitespace-nowrap" style="font-weight:700;">₹67,600</td>
+                                <td class="text-center hidden sm:table-cell"><div class="flex items-center gap-2 justify-center"><div class="w-20 h-1.5 rounded-full bg-[var(--border-light)]"><div class="h-full rounded-full bg-[#E11D48]" style="width:44%;"></div></div><span class="text-xs text-neutral-500">44%</span></div></td>
+                                <td class="text-center"><button class="text-xs text-[#E11D48] font-bold hover:underline whitespace-nowrap" style="font-weight:600;">Top Up</button></td>
                             </tr>
                             <tr>
-                                <td style="font-weight:500;">Marketing</td>
-                                <td class="text-center" style="font-weight:400;">₹80,000</td>
-                                <td class="text-center" style="font-weight:400;">₹31,200</td>
-                                <td class="text-center font-bold text-green-600" style="font-weight:700;">₹48,800</td>
-                                <td class="text-center"><div class="flex items-center gap-2 justify-center"><div class="w-20 h-1.5 rounded-full bg-[var(--border-light)]"><div class="h-full rounded-full bg-[#E11D48]" style="width:39%;"></div></div><span class="text-xs text-neutral-500">39%</span></div></td>
-                                <td class="text-center"><button class="text-xs text-[#E11D48] font-bold hover:underline" style="font-weight:600;">Top Up</button></td>
+                                <td><div style="font-weight:500;">Marketing</div><div class="text-[10px] text-neutral-400 block md:hidden">Alloc: ₹80k</div></td>
+                                <td class="text-center hidden md:table-cell" style="font-weight:400;">₹80,000</td>
+                                <td class="text-center whitespace-nowrap" style="font-weight:400;">₹31,200</td>
+                                <td class="text-center font-bold text-green-600 whitespace-nowrap" style="font-weight:700;">₹48,800</td>
+                                <td class="text-center hidden sm:table-cell"><div class="flex items-center gap-2 justify-center"><div class="w-20 h-1.5 rounded-full bg-[var(--border-light)]"><div class="h-full rounded-full bg-[#E11D48]" style="width:39%;"></div></div><span class="text-xs text-neutral-500">39%</span></div></td>
+                                <td class="text-center"><button class="text-xs text-[#E11D48] font-bold hover:underline whitespace-nowrap" style="font-weight:600;">Top Up</button></td>
                             </tr>
                             <tr>
-                                <td style="font-weight:500;">Sales</td>
-                                <td class="text-center" style="font-weight:400;">₹70,000</td>
-                                <td class="text-center" style="font-weight:400;">₹28,600</td>
-                                <td class="text-center font-bold text-green-600" style="font-weight:700;">₹41,400</td>
-                                <td class="text-center"><div class="flex items-center gap-2 justify-center"><div class="w-20 h-1.5 rounded-full bg-[var(--border-light)]"><div class="h-full rounded-full bg-amber-500" style="width:41%;"></div></div><span class="text-xs text-neutral-500">41%</span></div></td>
-                                <td class="text-center"><button class="text-xs text-[#E11D48] font-bold hover:underline" style="font-weight:600;">Top Up</button></td>
+                                <td><div style="font-weight:500;">Sales</div><div class="text-[10px] text-neutral-400 block md:hidden">Alloc: ₹70k</div></td>
+                                <td class="text-center hidden md:table-cell" style="font-weight:400;">₹70,000</td>
+                                <td class="text-center whitespace-nowrap" style="font-weight:400;">₹28,600</td>
+                                <td class="text-center font-bold text-green-600 whitespace-nowrap" style="font-weight:700;">₹41,400</td>
+                                <td class="text-center hidden sm:table-cell"><div class="flex items-center gap-2 justify-center"><div class="w-20 h-1.5 rounded-full bg-[var(--border-light)]"><div class="h-full rounded-full bg-amber-500" style="width:41%;"></div></div><span class="text-xs text-neutral-500">41%</span></div></td>
+                                <td class="text-center"><button class="text-xs text-[#E11D48] font-bold hover:underline whitespace-nowrap" style="font-weight:600;">Top Up</button></td>
                             </tr>
                             <tr>
-                                <td style="font-weight:500;">Operations</td>
-                                <td class="text-center" style="font-weight:400;">₹65,000</td>
-                                <td class="text-center" style="font-weight:400;">₹12,000</td>
-                                <td class="text-center font-bold text-green-600" style="font-weight:700;">₹53,000</td>
-                                <td class="text-center"><div class="flex items-center gap-2 justify-center"><div class="w-20 h-1.5 rounded-full bg-[var(--border-light)]"><div class="h-full rounded-full bg-[#E11D48]" style="width:18%;"></div></div><span class="text-xs text-neutral-500">18%</span></div></td>
-                                <td class="text-center"><button class="text-xs text-[#E11D48] font-bold hover:underline" style="font-weight:600;">Top Up</button></td>
+                                <td><div style="font-weight:500;">Operations</div><div class="text-[10px] text-neutral-400 block md:hidden">Alloc: ₹65k</div></td>
+                                <td class="text-center hidden md:table-cell" style="font-weight:400;">₹65,000</td>
+                                <td class="text-center whitespace-nowrap" style="font-weight:400;">₹12,000</td>
+                                <td class="text-center font-bold text-green-600 whitespace-nowrap" style="font-weight:700;">₹53,000</td>
+                                <td class="text-center hidden sm:table-cell"><div class="flex items-center gap-2 justify-center"><div class="w-20 h-1.5 rounded-full bg-[var(--border-light)]"><div class="h-full rounded-full bg-[#E11D48]" style="width:18%;"></div></div><span class="text-xs text-neutral-500">18%</span></div></td>
+                                <td class="text-center"><button class="text-xs text-[#E11D48] font-bold hover:underline whitespace-nowrap" style="font-weight:600;">Top Up</button></td>
                             </tr>
                             <tr>
-                                <td style="font-weight:500;">HR & Admin</td>
-                                <td class="text-center" style="font-weight:400;">₹45,000</td>
-                                <td class="text-center" style="font-weight:400;">₹10,000</td>
-                                <td class="text-center font-bold text-green-600" style="font-weight:700;">₹35,000</td>
-                                <td class="text-center"><div class="flex items-center gap-2 justify-center"><div class="w-20 h-1.5 rounded-full bg-[var(--border-light)]"><div class="h-full rounded-full bg-[#E11D48]" style="width:22%;"></div></div><span class="text-xs text-neutral-500">22%</span></div></td>
-                                <td class="text-center"><button class="text-xs text-[#E11D48] font-bold hover:underline" style="font-weight:600;">Top Up</button></td>
+                                <td><div style="font-weight:500;">HR & Admin</div><div class="text-[10px] text-neutral-400 block md:hidden">Alloc: ₹45k</div></td>
+                                <td class="text-center hidden md:table-cell" style="font-weight:400;">₹45,000</td>
+                                <td class="text-center whitespace-nowrap" style="font-weight:400;">₹10,000</td>
+                                <td class="text-center font-bold text-green-600 whitespace-nowrap" style="font-weight:700;">₹35,000</td>
+                                <td class="text-center hidden sm:table-cell"><div class="flex items-center gap-2 justify-center"><div class="w-20 h-1.5 rounded-full bg-[var(--border-light)]"><div class="h-full rounded-full bg-[#E11D48]" style="width:22%;"></div></div><span class="text-xs text-neutral-500">22%</span></div></td>
+                                <td class="text-center"><button class="text-xs text-[#E11D48] font-bold hover:underline whitespace-nowrap" style="font-weight:600;">Top Up</button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -765,46 +808,61 @@
             </div>
 
             <!-- Recent Transactions (Full) -->
-            <div class="card p-6">
-                <div class="flex items-center justify-between mb-6">
-                    <h4 style="font-size:1rem;">Transaction History</h4>
+            <div class="card p-4 sm:p-6">
+                <div class="flex items-center justify-between mb-4 sm:mb-6">
+                    <h4 style="font-size:1rem;margin-bottom:0;">Transaction History</h4>
                     <button class="btn btn-sm btn-secondary"><i class="fas fa-download text-xs"></i> Export</button>
                 </div>
                 <div class="space-y-3">
-                    <div class="flex items-center justify-between p-4 rounded-xl bg-[var(--surface-alt)]">
-                        <div class="flex items-center gap-3">
-                            <div class="w-9 h-9 rounded-lg bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48]"><i class="fas fa-plus text-xs"></i></div>
-                            <div><p class="text-sm font-medium" style="font-weight:500;">Wallet Top-up — Engineering</p><p class="text-[11px] text-neutral-400" style="font-weight:400;">Today, 10:30 AM • Txn #WLT-2026-0847</p></div>
+                    <div class="flex items-center justify-between p-3 sm:p-4 rounded-xl bg-[var(--surface-alt)] gap-3">
+                        <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+                            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48] shrink-0"><i class="fas fa-plus text-xs"></i></div>
+                            <div class="min-w-0 flex-1">
+                                <p class="text-xs sm:text-sm font-medium leading-snug truncate" title="Wallet Top-up — Engineering" style="font-weight:500;">Wallet Top-up — Engineering</p>
+                                <p class="text-[11px] text-neutral-400 truncate mt-0.5" style="font-weight:400;">Today, 10:30 AM • Txn #WLT-0847</p>
+                            </div>
                         </div>
-                        <span class="text-sm font-bold text-green-600" style="font-weight:700;">+₹50,000</span>
+                        <span class="text-xs sm:text-sm font-bold text-green-600 shrink-0 whitespace-nowrap" style="font-weight:700;white-space:nowrap;">+₹50,000</span>
                     </div>
-                    <div class="flex items-center justify-between p-4 rounded-xl bg-[var(--surface-alt)]">
-                        <div class="flex items-center gap-3">
-                            <div class="w-9 h-9 rounded-lg bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48]"><i class="fas fa-minus text-xs"></i></div>
-                            <div><p class="text-sm font-medium" style="font-weight:500;">Lunch Deduction — 456 meals (All Depts)</p><p class="text-[11px] text-neutral-400" style="font-weight:400;">Today, 1:30 PM • Txn #DED-2026-1432</p></div>
+                    <div class="flex items-center justify-between p-3 sm:p-4 rounded-xl bg-[var(--surface-alt)] gap-3">
+                        <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+                            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48] shrink-0"><i class="fas fa-minus text-xs"></i></div>
+                            <div class="min-w-0 flex-1">
+                                <p class="text-xs sm:text-sm font-medium leading-snug truncate" title="Lunch Deduction — 456 meals (All Depts)" style="font-weight:500;">Lunch Deduction — 456 meals (All Depts)</p>
+                                <p class="text-[11px] text-neutral-400 truncate mt-0.5" style="font-weight:400;">Today, 1:30 PM • Txn #DED-1432</p>
+                            </div>
                         </div>
-                        <span class="text-sm font-bold text-red-500" style="font-weight:700;">-₹22,800</span>
+                        <span class="text-xs sm:text-sm font-bold text-red-500 shrink-0 whitespace-nowrap" style="font-weight:700;white-space:nowrap;">-₹22,800</span>
                     </div>
-                    <div class="flex items-center justify-between p-4 rounded-xl bg-[var(--surface-alt)]">
-                        <div class="flex items-center gap-3">
-                            <div class="w-9 h-9 rounded-lg bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48]"><i class="fas fa-plus text-xs"></i></div>
-                            <div><p class="text-sm font-medium" style="font-weight:500;">Wallet Top-up — Marketing</p><p class="text-[11px] text-neutral-400" style="font-weight:400;">Yesterday, 4:00 PM • Txn #WLT-2026-0846</p></div>
+                    <div class="flex items-center justify-between p-3 sm:p-4 rounded-xl bg-[var(--surface-alt)] gap-3">
+                        <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+                            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48] shrink-0"><i class="fas fa-plus text-xs"></i></div>
+                            <div class="min-w-0 flex-1">
+                                <p class="text-xs sm:text-sm font-medium leading-snug truncate" title="Wallet Top-up — Marketing" style="font-weight:500;">Wallet Top-up — Marketing</p>
+                                <p class="text-[11px] text-neutral-400 truncate mt-0.5" style="font-weight:400;">Yesterday, 4:00 PM • Txn #WLT-0846</p>
+                            </div>
                         </div>
-                        <span class="text-sm font-bold text-green-600" style="font-weight:700;">+₹30,000</span>
+                        <span class="text-xs sm:text-sm font-bold text-green-600 shrink-0 whitespace-nowrap" style="font-weight:700;white-space:nowrap;">+₹30,000</span>
                     </div>
-                    <div class="flex items-center justify-between p-4 rounded-xl bg-[var(--surface-alt)]">
-                        <div class="flex items-center gap-3">
-                            <div class="w-9 h-9 rounded-lg bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48]"><i class="fas fa-minus text-xs"></i></div>
-                            <div><p class="text-sm font-medium" style="font-weight:500;">Breakfast Deduction — 234 meals</p><p class="text-[11px] text-neutral-400" style="font-weight:400;">Yesterday, 9:30 AM • Txn #DED-2026-1431</p></div>
+                    <div class="flex items-center justify-between p-3 sm:p-4 rounded-xl bg-[var(--surface-alt)] gap-3">
+                        <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+                            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48] shrink-0"><i class="fas fa-minus text-xs"></i></div>
+                            <div class="min-w-0 flex-1">
+                                <p class="text-xs sm:text-sm font-medium leading-snug truncate" title="Breakfast Deduction — 234 meals" style="font-weight:500;">Breakfast Deduction — 234 meals</p>
+                                <p class="text-[11px] text-neutral-400 truncate mt-0.5" style="font-weight:400;">Yesterday, 9:30 AM • Txn #DED-1431</p>
+                            </div>
                         </div>
-                        <span class="text-sm font-bold text-red-500" style="font-weight:700;">-₹7,020</span>
+                        <span class="text-xs sm:text-sm font-bold text-red-500 shrink-0 whitespace-nowrap" style="font-weight:700;white-space:nowrap;">-₹7,020</span>
                     </div>
-                    <div class="flex items-center justify-between p-4 rounded-xl bg-[var(--surface-alt)]">
-                        <div class="flex items-center gap-3">
-                            <div class="w-9 h-9 rounded-lg bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48]"><i class="fas fa-plus text-xs"></i></div>
-                            <div><p class="text-sm font-medium" style="font-weight:500;">Wallet Top-up — Operations</p><p class="text-[11px] text-neutral-400" style="font-weight:400;">Sep 5, 2026 • Txn #WLT-2026-0845</p></div>
+                    <div class="flex items-center justify-between p-3 sm:p-4 rounded-xl bg-[var(--surface-alt)] gap-3">
+                        <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+                            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48] shrink-0"><i class="fas fa-plus text-xs"></i></div>
+                            <div class="min-w-0 flex-1">
+                                <p class="text-xs sm:text-sm font-medium leading-snug truncate" title="Wallet Top-up — Operations" style="font-weight:500;">Wallet Top-up — Operations</p>
+                                <p class="text-[11px] text-neutral-400 truncate mt-0.5" style="font-weight:400;">Sep 5, 2026 • Txn #WLT-0845</p>
+                            </div>
                         </div>
-                        <span class="text-sm font-bold text-green-600" style="font-weight:700;">+₹65,000</span>
+                        <span class="text-xs sm:text-sm font-bold text-green-600 shrink-0 whitespace-nowrap" style="font-weight:700;white-space:nowrap;">+₹65,000</span>
                     </div>
                 </div>
             </div>
@@ -871,82 +929,90 @@
             </div>
 
             <!-- Orders Table -->
-            <div class="card p-6">
-                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-3">
-                    <h4 style="font-size:1rem;">Recent Orders</h4>
-                    <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-[var(--surface-alt)] border border-[var(--border-light)] text-sm">
+            <div class="card p-3.5 sm:p-4">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-3 gap-2.5">
+                    <h4 style="font-size:0.9rem;margin-bottom:0;">Recent Orders</h4>
+                    <div class="flex items-center gap-2 px-2.5 py-1.5 rounded-xl bg-[var(--surface-alt)] border border-[var(--border-light)] text-xs">
                         <i class="fas fa-search text-neutral-400 text-xs"></i>
-                        <input type="text" placeholder="Search orders..." class="bg-transparent outline-none text-sm w-40" style="font-weight:400;">
+                        <input type="text" placeholder="Search orders..." class="bg-transparent outline-none text-xs w-32 sm:w-40" style="font-weight:400;">
                     </div>
                 </div>
-                <div class="overflow-x-auto">
-                    <table class="data-table">
+                <div class="w-full rounded-xl border border-[var(--border-light)] overflow-hidden">
+                    <table class="data-table w-full">
                         <thead>
-                            <tr><th>Order ID</th><th>Employee</th><th>Meal Type</th><th>Items</th><th class="text-center">Amount</th><th class="text-center">Status</th><th class="text-center">Time</th></tr>
+                            <tr>
+                                <th class="text-left">Order ID</th>
+                                <th class="text-left">Employee</th>
+                                <th class="text-center hidden sm:table-cell">Meal Type</th>
+                                <th class="text-left hidden md:table-cell">Items</th>
+                                <th class="text-center">Amount</th>
+                                <th class="text-center">Status</th>
+                                <th class="text-center hidden sm:table-cell">Time</th>
+                            </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="font-weight:600;color:var(--primary);">#ORD-8471</td>
-                                <td style="font-weight:500;">Amit Kumar</td>
-                                <td><span class="badge badge-warning">Lunch</span></td>
-                                <td style="font-weight:400;">Dal Makhani, Rice, Naan</td>
-                                <td class="text-center" style="font-weight:600;">₹65</td>
+                                <td class="text-left"><span class="font-semibold block" style="font-weight:600;color:var(--primary);">#ORD-8471</span><span class="text-[10px] text-neutral-400 block sm:hidden">1:15 PM</span></td>
+                                <td class="text-left"><span class="font-medium block truncate" style="font-weight:500;">Amit Kumar</span><span class="text-[10px] text-neutral-400 block md:hidden truncate max-w-[120px]">Dal Makhani, Rice, Naan</span></td>
+                                <td class="text-center hidden sm:table-cell"><span class="badge badge-warning">Lunch</span></td>
+                                <td class="text-left hidden md:table-cell" style="font-weight:400;">Dal Makhani, Rice, Naan</td>
+                                <td class="text-center whitespace-nowrap" style="font-weight:600;">₹65</td>
                                 <td class="text-center"><span class="badge badge-success">Delivered</span></td>
-                                <td class="text-center text-xs text-neutral-500" style="font-weight:400;">1:15 PM</td>
+                                <td class="text-center text-xs text-neutral-500 hidden sm:table-cell" style="font-weight:400;">1:15 PM</td>
                             </tr>
                             <tr>
-                                <td style="font-weight:600;color:var(--primary);">#ORD-8470</td>
-                                <td style="font-weight:500;">Priya Singh</td>
-                                <td><span class="badge badge-warning">Lunch</span></td>
-                                <td style="font-weight:400;">Paneer Butter Masala, Roti</td>
-                                <td class="text-center" style="font-weight:600;">₹55</td>
+                                <td class="text-left"><span class="font-semibold block" style="font-weight:600;color:var(--primary);">#ORD-8470</span><span class="text-[10px] text-neutral-400 block sm:hidden">1:05 PM</span></td>
+                                <td class="text-left"><span class="font-medium block truncate" style="font-weight:500;">Priya Singh</span><span class="text-[10px] text-neutral-400 block md:hidden truncate max-w-[120px]">Paneer Butter Masala, Roti</span></td>
+                                <td class="text-center hidden sm:table-cell"><span class="badge badge-warning">Lunch</span></td>
+                                <td class="text-left hidden md:table-cell" style="font-weight:400;">Paneer Butter Masala, Roti</td>
+                                <td class="text-center whitespace-nowrap" style="font-weight:600;">₹55</td>
                                 <td class="text-center"><span class="badge badge-teal">Preparing</span></td>
-                                <td class="text-center text-xs text-neutral-500" style="font-weight:400;">1:05 PM</td>
+                                <td class="text-center text-xs text-neutral-500 hidden sm:table-cell" style="font-weight:400;">1:05 PM</td>
                             </tr>
                             <tr>
-                                <td style="font-weight:600;color:var(--primary);">#ORD-8469</td>
-                                <td style="font-weight:500;">Ravi Joshi</td>
-                                <td><span class="badge badge-teal">Breakfast</span></td>
-                                <td style="font-weight:400;">Idli Sambar, Coffee</td>
-                                <td class="text-center" style="font-weight:600;">₹30</td>
+                                <td class="text-left"><span class="font-semibold block" style="font-weight:600;color:var(--primary);">#ORD-8469</span><span class="text-[10px] text-neutral-400 block sm:hidden">9:20 AM</span></td>
+                                <td class="text-left"><span class="font-medium block truncate" style="font-weight:500;">Ravi Joshi</span><span class="text-[10px] text-neutral-400 block md:hidden truncate max-w-[120px]">Idli Sambar, Coffee</span></td>
+                                <td class="text-center hidden sm:table-cell"><span class="badge badge-teal">Breakfast</span></td>
+                                <td class="text-left hidden md:table-cell" style="font-weight:400;">Idli Sambar, Coffee</td>
+                                <td class="text-center whitespace-nowrap" style="font-weight:600;">₹30</td>
                                 <td class="text-center"><span class="badge badge-success">Delivered</span></td>
-                                <td class="text-center text-xs text-neutral-500" style="font-weight:400;">9:20 AM</td>
+                                <td class="text-center text-xs text-neutral-500 hidden sm:table-cell" style="font-weight:400;">9:20 AM</td>
                             </tr>
                             <tr>
-                                <td style="font-weight:600;color:var(--primary);">#ORD-8468</td>
-                                <td style="font-weight:500;">Neha Patel</td>
-                                <td><span class="badge badge-warning">Lunch</span></td>
-                                <td style="font-weight:400;">Chole Bhature, Salad</td>
-                                <td class="text-center" style="font-weight:600;">₹50</td>
+                                <td class="text-left"><span class="font-semibold block" style="font-weight:600;color:var(--primary);">#ORD-8468</span><span class="text-[10px] text-neutral-400 block sm:hidden">12:50 PM</span></td>
+                                <td class="text-left"><span class="font-medium block truncate" style="font-weight:500;">Neha Patel</span><span class="text-[10px] text-neutral-400 block md:hidden truncate max-w-[120px]">Chole Bhature, Salad</span></td>
+                                <td class="text-center hidden sm:table-cell"><span class="badge badge-warning">Lunch</span></td>
+                                <td class="text-left hidden md:table-cell" style="font-weight:400;">Chole Bhature, Salad</td>
+                                <td class="text-center whitespace-nowrap" style="font-weight:600;">₹50</td>
                                 <td class="text-center"><span class="badge badge-error">Cancelled</span></td>
-                                <td class="text-center text-xs text-neutral-500" style="font-weight:400;">12:50 PM</td>
+                                <td class="text-center text-xs text-neutral-500 hidden sm:table-cell" style="font-weight:400;">12:50 PM</td>
                             </tr>
                             <tr>
-                                <td style="font-weight:600;color:var(--primary);">#ORD-8467</td>
-                                <td style="font-weight:500;">Sunil Kapoor</td>
-                                <td><span class="badge badge-teal">Snacks</span></td>
-                                <td style="font-weight:400;">Vada Pav, Cutting Chai</td>
-                                <td class="text-center" style="font-weight:600;">₹25</td>
+                                <td class="text-left"><span class="font-semibold block" style="font-weight:600;color:var(--primary);">#ORD-8467</span><span class="text-[10px] text-neutral-400 block sm:hidden">4:30 PM</span></td>
+                                <td class="text-left"><span class="font-medium block truncate" style="font-weight:500;">Sunil Kapoor</span><span class="text-[10px] text-neutral-400 block md:hidden truncate max-w-[120px]">Vada Pav, Cutting Chai</span></td>
+                                <td class="text-center hidden sm:table-cell"><span class="badge badge-teal">Snacks</span></td>
+                                <td class="text-left hidden md:table-cell" style="font-weight:400;">Vada Pav, Cutting Chai</td>
+                                <td class="text-center whitespace-nowrap" style="font-weight:600;">₹25</td>
                                 <td class="text-center"><span class="badge badge-success">Delivered</span></td>
-                                <td class="text-center text-xs text-neutral-500" style="font-weight:400;">4:30 PM</td>
+                                <td class="text-center text-xs text-neutral-500 hidden sm:table-cell" style="font-weight:400;">4:30 PM</td>
                             </tr>
                             <tr>
-                                <td style="font-weight:600;color:var(--primary);">#ORD-8466</td>
-                                <td style="font-weight:500;">Meera Desai</td>
-                                <td><span class="badge badge-warning">Lunch</span></td>
-                                <td style="font-weight:400;">Rajma Chawal, Raita</td>
-                                <td class="text-center" style="font-weight:600;">₹45</td>
+                                <td class="text-left"><span class="font-semibold block" style="font-weight:600;color:var(--primary);">#ORD-8466</span><span class="text-[10px] text-neutral-400 block sm:hidden">1:00 PM</span></td>
+                                <td class="text-left"><span class="font-medium block truncate" style="font-weight:500;">Meera Desai</span><span class="text-[10px] text-neutral-400 block md:hidden truncate max-w-[120px]">Rajma Chawal, Raita</span></td>
+                                <td class="text-center hidden sm:table-cell"><span class="badge badge-warning">Lunch</span></td>
+                                <td class="text-left hidden md:table-cell" style="font-weight:400;">Rajma Chawal, Raita</td>
+                                <td class="text-center whitespace-nowrap" style="font-weight:600;">₹45</td>
                                 <td class="text-center"><span class="badge badge-success">Delivered</span></td>
-                                <td class="text-center text-xs text-neutral-500" style="font-weight:400;">1:00 PM</td>
+                                <td class="text-center text-xs text-neutral-500 hidden sm:table-cell" style="font-weight:400;">1:00 PM</td>
                             </tr>
                             <tr>
-                                <td style="font-weight:600;color:var(--primary);">#ORD-8465</td>
-                                <td style="font-weight:500;">Vikram Rao</td>
-                                <td><span class="badge badge-teal">Breakfast</span></td>
-                                <td style="font-weight:400;">Poha, Tea</td>
-                                <td class="text-center" style="font-weight:600;">₹20</td>
+                                <td class="text-left"><span class="font-semibold block" style="font-weight:600;color:var(--primary);">#ORD-8465</span><span class="text-[10px] text-neutral-400 block sm:hidden">8:45 AM</span></td>
+                                <td class="text-left"><span class="font-medium block truncate" style="font-weight:500;">Vikram Rao</span><span class="text-[10px] text-neutral-400 block md:hidden truncate max-w-[120px]">Poha, Tea</span></td>
+                                <td class="text-center hidden sm:table-cell"><span class="badge badge-teal">Breakfast</span></td>
+                                <td class="text-left hidden md:table-cell" style="font-weight:400;">Poha, Tea</td>
+                                <td class="text-center whitespace-nowrap" style="font-weight:600;">₹20</td>
                                 <td class="text-center"><span class="badge badge-success">Delivered</span></td>
-                                <td class="text-center text-xs text-neutral-500" style="font-weight:400;">8:45 AM</td>
+                                <td class="text-center text-xs text-neutral-500 hidden sm:table-cell" style="font-weight:400;">8:45 AM</td>
                             </tr>
                         </tbody>
                     </table>
@@ -1066,20 +1132,55 @@
             </div>
 
             <!-- Department Report -->
-            <div class="card p-6 mb-8">
-                <div class="flex items-center justify-between mb-6">
-                    <h4 style="font-size:1rem;">Department Performance</h4>
+            <div class="card p-4 sm:p-6 mb-8">
+                <div class="flex items-center justify-between mb-4 sm:mb-6">
+                    <h4 style="font-size:1rem;margin-bottom:0;">Department Performance</h4>
                     <button class="btn btn-sm btn-secondary"><i class="fas fa-download text-xs"></i> Export CSV</button>
                 </div>
-                <div class="overflow-x-auto">
-                    <table class="data-table">
-                        <thead><tr><th>Department</th><th class="text-center">Meals</th><th class="text-center">Cost</th><th class="text-center">Avg/Meal</th><th class="text-center">Waste</th><th class="text-center">Satisfaction</th></tr></thead>
+                <div class="w-full rounded-xl border border-[var(--border-light)] overflow-hidden">
+                    <table class="data-table w-full">
+                        <thead><tr><th>Department</th><th class="text-center">Meals</th><th class="text-center">Cost</th><th class="text-center hidden sm:table-cell">Avg/Meal</th><th class="text-center hidden md:table-cell">Waste</th><th class="text-center"><span class="hidden sm:inline">Satisfaction</span><span class="sm:hidden">Rating</span></th></tr></thead>
                         <tbody>
-                            <tr><td style="font-weight:500;">Engineering</td><td class="text-center">5,520</td><td class="text-center">₹2,76,000</td><td class="text-center">₹50</td><td class="text-center"><span class="badge badge-success">1.8%</span></td><td class="text-center font-bold text-[#E11D48]" style="font-weight:700;">4.9</td></tr>
-                            <tr><td style="font-weight:500;">Marketing</td><td class="text-center">3,320</td><td class="text-center">₹1,66,000</td><td class="text-center">₹50</td><td class="text-center"><span class="badge badge-success">2.0%</span></td><td class="text-center font-bold text-[#E11D48]" style="font-weight:700;">4.7</td></tr>
-                            <tr><td style="font-weight:500;">Sales</td><td class="text-center">2,840</td><td class="text-center">₹1,42,000</td><td class="text-center">₹50</td><td class="text-center"><span class="badge badge-warning">2.4%</span></td><td class="text-center font-bold text-[#E11D48]" style="font-weight:700;">4.8</td></tr>
-                            <tr><td style="font-weight:500;">Operations</td><td class="text-center">3,020</td><td class="text-center">₹1,51,000</td><td class="text-center">₹50</td><td class="text-center"><span class="badge badge-success">1.9%</span></td><td class="text-center font-bold text-[#E11D48]" style="font-weight:700;">4.7</td></tr>
-                            <tr><td style="font-weight:500;">HR & Admin</td><td class="text-center">3,756</td><td class="text-center">₹1,87,800</td><td class="text-center">₹50</td><td class="text-center"><span class="badge badge-warning">2.5%</span></td><td class="text-center font-bold text-[#E11D48]" style="font-weight:700;">4.8</td></tr>
+                            <tr>
+                                <td><div style="font-weight:500;">Engineering</div><div class="text-[10px] text-neutral-400 block sm:hidden">Waste: 1.8%</div></td>
+                                <td class="text-center whitespace-nowrap">5,520</td>
+                                <td class="text-center whitespace-nowrap">₹2,76,000</td>
+                                <td class="text-center hidden sm:table-cell">₹50</td>
+                                <td class="text-center hidden md:table-cell"><span class="badge badge-success">1.8%</span></td>
+                                <td class="text-center font-bold text-[#E11D48] whitespace-nowrap" style="font-weight:700;"><i class="fas fa-star text-[10px] mr-0.5 text-amber-400"></i>4.9</td>
+                            </tr>
+                            <tr>
+                                <td><div style="font-weight:500;">Marketing</div><div class="text-[10px] text-neutral-400 block sm:hidden">Waste: 2.0%</div></td>
+                                <td class="text-center whitespace-nowrap">3,320</td>
+                                <td class="text-center whitespace-nowrap">₹1,66,000</td>
+                                <td class="text-center hidden sm:table-cell">₹50</td>
+                                <td class="text-center hidden md:table-cell"><span class="badge badge-success">2.0%</span></td>
+                                <td class="text-center font-bold text-[#E11D48] whitespace-nowrap" style="font-weight:700;"><i class="fas fa-star text-[10px] mr-0.5 text-amber-400"></i>4.7</td>
+                            </tr>
+                            <tr>
+                                <td><div style="font-weight:500;">Sales</div><div class="text-[10px] text-neutral-400 block sm:hidden">Waste: 2.4%</div></td>
+                                <td class="text-center whitespace-nowrap">2,840</td>
+                                <td class="text-center whitespace-nowrap">₹1,42,000</td>
+                                <td class="text-center hidden sm:table-cell">₹50</td>
+                                <td class="text-center hidden md:table-cell"><span class="badge badge-warning">2.4%</span></td>
+                                <td class="text-center font-bold text-[#E11D48] whitespace-nowrap" style="font-weight:700;"><i class="fas fa-star text-[10px] mr-0.5 text-amber-400"></i>4.8</td>
+                            </tr>
+                            <tr>
+                                <td><div style="font-weight:500;">Operations</div><div class="text-[10px] text-neutral-400 block sm:hidden">Waste: 1.9%</div></td>
+                                <td class="text-center whitespace-nowrap">3,020</td>
+                                <td class="text-center whitespace-nowrap">₹1,51,000</td>
+                                <td class="text-center hidden sm:table-cell">₹50</td>
+                                <td class="text-center hidden md:table-cell"><span class="badge badge-success">1.9%</span></td>
+                                <td class="text-center font-bold text-[#E11D48] whitespace-nowrap" style="font-weight:700;"><i class="fas fa-star text-[10px] mr-0.5 text-amber-400"></i>4.7</td>
+                            </tr>
+                            <tr>
+                                <td><div style="font-weight:500;">HR & Admin</div><div class="text-[10px] text-neutral-400 block sm:hidden">Waste: 2.5%</div></td>
+                                <td class="text-center whitespace-nowrap">3,756</td>
+                                <td class="text-center whitespace-nowrap">₹1,87,800</td>
+                                <td class="text-center hidden sm:table-cell">₹50</td>
+                                <td class="text-center hidden md:table-cell"><span class="badge badge-warning">2.5%</span></td>
+                                <td class="text-center font-bold text-[#E11D48] whitespace-nowrap" style="font-weight:700;"><i class="fas fa-star text-[10px] mr-0.5 text-amber-400"></i>4.8</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -1182,34 +1283,34 @@
                 </div>
 
                 <!-- Operating Hours -->
-                <div class="card p-6">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-xl bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48]"><i class="fas fa-clock"></i></div>
+                <div class="card p-4 sm:p-6">
+                    <div class="flex items-center gap-3 mb-4 sm:mb-5">
+                        <div class="w-10 h-10 rounded-xl bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48] shrink-0"><i class="fas fa-clock"></i></div>
                         <h4 style="font-size:1rem;margin-bottom:0;">Canteen Operating Hours</h4>
                     </div>
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between p-3 rounded-xl bg-[var(--surface-alt)]">
-                            <span class="text-sm font-semibold" style="font-weight:600;"><i class="fas fa-sun text-xs mr-1 text-[#E11D48]"></i> Breakfast</span>
-                            <div class="flex items-center gap-2">
-                                <input type="time" value="07:30" class="px-3 py-1.5 rounded-lg bg-[var(--surface)] border border-[var(--border-light)] text-sm outline-none" style="font-weight:400;">
-                                <span class="text-xs text-neutral-400">to</span>
-                                <input type="time" value="09:30" class="px-3 py-1.5 rounded-lg bg-[var(--surface)] border border-[var(--border-light)] text-sm outline-none" style="font-weight:400;">
+                    <div class="space-y-3 sm:space-y-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3 sm:p-3.5 rounded-xl bg-[var(--surface-alt)] gap-2.5">
+                            <span class="text-xs sm:text-sm font-semibold flex items-center gap-1.5 shrink-0" style="font-weight:600;"><i class="fas fa-sun text-xs text-[#E11D48]"></i> Breakfast</span>
+                            <div class="flex items-center gap-2 w-full sm:w-auto">
+                                <input type="time" value="07:30" class="px-2.5 py-1.5 rounded-lg bg-[var(--surface)] border border-[var(--border-light)] text-xs outline-none flex-1 sm:flex-initial" style="font-weight:400;min-width:96px;max-width:130px;">
+                                <span class="text-xs text-neutral-400 shrink-0">to</span>
+                                <input type="time" value="09:30" class="px-2.5 py-1.5 rounded-lg bg-[var(--surface)] border border-[var(--border-light)] text-xs outline-none flex-1 sm:flex-initial" style="font-weight:400;min-width:96px;max-width:130px;">
                             </div>
                         </div>
-                        <div class="flex items-center justify-between p-3 rounded-xl bg-[var(--surface-alt)]">
-                            <span class="text-sm font-semibold" style="font-weight:600;"><i class="fas fa-utensils text-xs mr-1 text-[#E11D48]"></i> Lunch</span>
-                            <div class="flex items-center gap-2">
-                                <input type="time" value="12:00" class="px-3 py-1.5 rounded-lg bg-[var(--surface)] border border-[var(--border-light)] text-sm outline-none" style="font-weight:400;">
-                                <span class="text-xs text-neutral-400">to</span>
-                                <input type="time" value="14:00" class="px-3 py-1.5 rounded-lg bg-[var(--surface)] border border-[var(--border-light)] text-sm outline-none" style="font-weight:400;">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3 sm:p-3.5 rounded-xl bg-[var(--surface-alt)] gap-2.5">
+                            <span class="text-xs sm:text-sm font-semibold flex items-center gap-1.5 shrink-0" style="font-weight:600;"><i class="fas fa-utensils text-xs text-[#E11D48]"></i> Lunch</span>
+                            <div class="flex items-center gap-2 w-full sm:w-auto">
+                                <input type="time" value="12:00" class="px-2.5 py-1.5 rounded-lg bg-[var(--surface)] border border-[var(--border-light)] text-xs outline-none flex-1 sm:flex-initial" style="font-weight:400;min-width:96px;max-width:130px;">
+                                <span class="text-xs text-neutral-400 shrink-0">to</span>
+                                <input type="time" value="14:00" class="px-2.5 py-1.5 rounded-lg bg-[var(--surface)] border border-[var(--border-light)] text-xs outline-none flex-1 sm:flex-initial" style="font-weight:400;min-width:96px;max-width:130px;">
                             </div>
                         </div>
-                        <div class="flex items-center justify-between p-3 rounded-xl bg-[var(--surface-alt)]">
-                            <span class="text-sm font-semibold" style="font-weight:600;"><i class="fas fa-cookie-bite text-xs mr-1 text-[#E11D48]"></i> Snacks</span>
-                            <div class="flex items-center gap-2">
-                                <input type="time" value="16:00" class="px-3 py-1.5 rounded-lg bg-[var(--surface)] border border-[var(--border-light)] text-sm outline-none" style="font-weight:400;">
-                                <span class="text-xs text-neutral-400">to</span>
-                                <input type="time" value="17:30" class="px-3 py-1.5 rounded-lg bg-[var(--surface)] border border-[var(--border-light)] text-sm outline-none" style="font-weight:400;">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3 sm:p-3.5 rounded-xl bg-[var(--surface-alt)] gap-2.5">
+                            <span class="text-xs sm:text-sm font-semibold flex items-center gap-1.5 shrink-0" style="font-weight:600;"><i class="fas fa-cookie-bite text-xs text-[#E11D48]"></i> Snacks</span>
+                            <div class="flex items-center gap-2 w-full sm:w-auto">
+                                <input type="time" value="16:00" class="px-2.5 py-1.5 rounded-lg bg-[var(--surface)] border border-[var(--border-light)] text-xs outline-none flex-1 sm:flex-initial" style="font-weight:400;min-width:96px;max-width:130px;">
+                                <span class="text-xs text-neutral-400 shrink-0">to</span>
+                                <input type="time" value="17:30" class="px-2.5 py-1.5 rounded-lg bg-[var(--surface)] border border-[var(--border-light)] text-xs outline-none flex-1 sm:flex-initial" style="font-weight:400;min-width:96px;max-width:130px;">
                             </div>
                         </div>
                         <button class="btn btn-primary btn-sm"><i class="fas fa-save text-xs"></i> Update Hours</button>
@@ -1251,6 +1352,32 @@
 
     </div>
 </div>
+
+<!-- ============================================================ -->
+<!-- LOGOUT CONFIRMATION POPUP MODAL (2 Options) -->
+<!-- ============================================================ -->
+<div id="logout-modal" class="logout-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="logout-modal-title">
+    <div class="logout-modal-card">
+        <button id="logout-modal-close" class="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center text-neutral-400 hover:text-neutral-600 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors" title="Close" aria-label="Close dialog">
+            <i class="fas fa-times text-xs"></i>
+        </button>
+        <div class="logout-modal-icon">
+            <i class="fas fa-sign-out-alt"></i>
+        </div>
+        <h3 id="logout-modal-title" class="logout-modal-title">Confirm Logout</h3>
+        <div class="logout-modal-actions">
+            <!-- Option 1: Cancel -->
+            <button type="button" id="logout-cancel-btn" class="btn-logout-cancel">
+                <i class="fas fa-times text-xs"></i> Cancel
+            </button>
+            <!-- Option 2: Yes, Log Out -->
+            <button type="button" id="logout-confirm-btn" class="btn-logout-confirm">
+                <i class="fas fa-sign-out-alt text-xs"></i> Yes, Log Out
+            </button>
+        </div>
+    </div>
+</div>
+
 <script src="script.js"></script>
 <script>
 // Dashboard-specific theme/dir init + Section Switching
@@ -1262,7 +1389,7 @@
     function setTheme(isDark) {
         if (isDark) { html.classList.add('dark'); localStorage.setItem('cc-dark-mode','true'); }
         else { html.classList.remove('dark'); localStorage.setItem('cc-dark-mode','false'); }
-        themeBtns.forEach(btn => { const i = btn.querySelector('i'); if(i) i.className = isDark ? 'fas fa-sun text-xs' : 'fas fa-moon text-xs'; });
+        themeBtns.forEach(btn => { const i = btn.querySelector('i'); if(i) i.className = 'fas fa-moon text-sm'; });
     }
     themeBtns.forEach(btn => btn.addEventListener('click', () => setTheme(!html.classList.contains('dark'))));
     if (localStorage.getItem('cc-dark-mode') === 'true') setTheme(true);
@@ -1318,6 +1445,60 @@
             const section = this.getAttribute('data-section');
             if (section) switchSection(section);
         });
+    });
+
+    // --- Logout Confirmation Modal Handling ---
+    window.openLogoutModal = function(e) {
+        if (e && e.preventDefault) e.preventDefault();
+        const modal = document.getElementById('logout-modal');
+        const cancelBtn = document.getElementById('logout-cancel-btn');
+        if (modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            if (cancelBtn) cancelBtn.focus();
+        }
+    };
+
+    window.closeLogoutModal = function(e) {
+        if (e && e.preventDefault) e.preventDefault();
+        const modal = document.getElementById('logout-modal');
+        const logoutBtn = document.getElementById('logout-btn');
+        if (modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            if (logoutBtn) logoutBtn.focus();
+        }
+    };
+
+    // Global event listeners for modal interactions
+    document.addEventListener('click', function(e) {
+        const modal = document.getElementById('logout-modal');
+        if (!modal) return;
+
+        if (e.target.closest('#logout-btn')) {
+            e.preventDefault();
+            window.openLogoutModal(e);
+        } else if (e.target.closest('#logout-cancel-btn') || e.target.closest('#logout-modal-close') || e.target === modal) {
+            e.preventDefault();
+            window.closeLogoutModal(e);
+        } else if (e.target.closest('#logout-confirm-btn')) {
+            e.preventDefault();
+            const confirmBtn = e.target.closest('#logout-confirm-btn');
+            confirmBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin text-xs"></i> Logging out...';
+            confirmBtn.disabled = true;
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 300);
+        }
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const modal = document.getElementById('logout-modal');
+            if (modal && modal.classList.contains('active')) {
+                window.closeLogoutModal(e);
+            }
+        }
     });
 })();
 </script>

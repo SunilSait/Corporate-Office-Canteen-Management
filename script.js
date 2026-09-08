@@ -26,7 +26,7 @@
             const isDark = html.classList.toggle('dark');
             localStorage.setItem('cc-dark-mode', isDark ? 'true' : 'false');
             const icon = btn.querySelector('i');
-            if (icon) icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+            if (icon) icon.className = 'fas fa-moon';
         });
     });
 
@@ -47,7 +47,7 @@
         if (localStorage.getItem('cc-dark-mode') === 'true' ||
             (!localStorage.getItem('cc-dark-mode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             html.classList.add('dark');
-            document.querySelectorAll('.dark-toggle i').forEach(i => i.className = 'fas fa-sun');
+            document.querySelectorAll('.dark-toggle i').forEach(i => i.className = 'fas fa-moon');
         }
         if (localStorage.getItem('cc-rtl') === 'true') {
             html.setAttribute('dir', 'rtl');
@@ -508,7 +508,7 @@
                 title: "Executive HQ Boutique Bistro",
                 subtitle: "Plated Gastronomy & Barista Hospitality for Corporate HQs",
                 desc: "Curated for corporate headquarters, client dining suites, and leadership hubs. White-glove plated presentations, artisanal single-origin coffee roasteries, and quiet meeting booths that leave a lasting impression.",
-                image: "assets/images/hero_premium_dining.jpg",
+                image: "assets/images/executive_hq_bistro.jpg",
                 imageAlt: "Executive HQ Boutique Bistro and Plated Dining",
                 badgeTop: "Michelin-Inspired Chefs",
                 badgeBottomTitle: "99.2% Executive Approval",
@@ -532,7 +532,7 @@
                 title: "24/7 Smart Micro-Market & Shift Pantry",
                 subtitle: "Autonomous Fresh Food Access for Hybrid & Round-the-Clock Teams",
                 desc: "The modern answer to vending machines and late-night shift hunger. Automated, unattended micro-markets stocked twice daily with fresh salads, high-protein wraps, cold-pressed juices, and barista-grade automated coffee.",
-                image: "assets/images/service_snack_vending.jpg",
+                image: "assets/images/smart_micromarket_pantry.jpg",
                 imageAlt: "24/7 Autonomous Smart Micro-Market and Fresh Pantry",
                 badgeTop: "24/7/365 Always Open",
                 badgeBottomTitle: "Restocked 2x Daily",
