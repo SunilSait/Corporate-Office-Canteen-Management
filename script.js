@@ -520,9 +520,9 @@
                 ],
                 features: [
                     { icon: "fa-utensils", title: "Plated Multi-Course Menus", desc: "Table-side seasonal culinary creations by master chefs." },
-                    { icon: "fa-mug-hot", title: "Artisanal Barista Lounge", desc: "Single-origin espresso, specialty teas, and pastry bar." },
+                    { icon: "fa-mug-hot", title: "Artisanal Barista Lounge", desc: "Single-origin espresso, specialty teas, and pastry." },
                     { icon: "fa-calendar-check", title: "VIP Boardroom Catering", desc: "App-based VIP booking with dedicated butler service." },
-                    { icon: "fa-award", title: "Certified Organic Sourcing", desc: "100% farm-traceable produce with micro-nutrient labeling." }
+                    { icon: "fa-award", title: "Certified Organic Sourcing", desc: "100% farm-traceable produce with micro-nutrient." }
                 ],
                 primaryBtn: { text: "Request Executive Tasting", href: "contact.html", icon: "fa-calendar-check" },
                 secondaryBtn: { text: "View Bistro Menus", href: "menu-planning.html", icon: "fa-utensils" }

@@ -2970,6 +2970,18 @@ footer a[href="index.html"]:hover svg {
     box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
 }
 
+.menu-section-badges {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0 !important;
+}
+
+.menu-section-badges > span {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+}
+
 .menu-section-filter-btn {
     padding: 8px 18px;
     border-radius: 50px;
@@ -3059,6 +3071,15 @@ footer a[href="index.html"]:hover svg {
 @media (min-width: 1024px) and (max-width: 1279px) {
     .menu-days-grid {
         gap: 1.25rem !important;
+    }
+}
+
+/* Center 3rd card on 2-column tablet/intermediate screens (640px to 1023px) */
+@media (min-width: 640px) and (max-width: 1023px) {
+    .weekly-menu-grid > :nth-child(3) {
+        grid-column: span 2 !important;
+        width: calc(50% - 0.625rem) !important;
+        margin-inline: auto !important;
     }
 }
 
