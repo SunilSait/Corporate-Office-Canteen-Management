@@ -5,75 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CulinaCorp pricing — transparent per-employee pricing for corporate canteen management. Basic, Professional, and Enterprise plans.">
     <title>Pricing — CulinaCorp</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' stroke='%23C2410C' stroke-width='2.5' fill='none'/%3E%3Cline x1='38' y1='28' x2='38' y2='72' stroke='%23C2410C' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M55 58 Q68 38 62 28 Q54 36 55 58Z' fill='%23C2410C' fill-opacity='0.3' stroke='%23C2410C' stroke-width='2'/%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' stroke='%23E11D48' stroke-width='2.5' fill='none'/%3E%3Cline x1='38' y1='28' x2='38' y2='72' stroke='%23E11D48' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M55 58 Q68 38 62 28 Q54 36 55 58Z' fill='%23E11D48' fill-opacity='0.3' stroke='%23E11D48' stroke-width='2'/%3E%3C/svg%3E">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#C2410C',secondary:'#1E293B'}}}}</script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#E11D48',secondary:'#1E293B'}}}}</script>
 </head>
 <body>
 <div id="navbar-container"></div>
 
 <!-- Banner -->
-<section class="relative py-20 md:py-28 overflow-hidden" style="background:linear-gradient(135deg,#C2410C 0%,#9A3412 60%,#1E293B 100%);">
+<section class="relative py-20 md:py-28 overflow-hidden" style="background:linear-gradient(135deg,#E11D48 0%,#9F1239 60%,#1E293B 100%);">
     <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:50px 50px;"></div>
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
-        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-white/80 text-xs font-bold uppercase tracking-widest mb-5" style="backdrop-filter:blur(10px);background:rgba(255,255,255,0.08);"><i class="fas fa-tag text-[10px]"></i> Pricing</span>
-        <h1 class="text-white mb-4">Transparent Pricing for Every Office</h1>
-        <p class="text-white/60 text-lg max-w-xl mx-auto" style="font-weight:400;">Simple per-employee monthly pricing. No hidden fees, no long-term contracts. Scale up or down anytime.</p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-white/90 text-xs font-bold uppercase tracking-widest mb-5" style="backdrop-filter:blur(10px);background:rgba(255,255,255,0.08);"><i class="fas fa-tag text-[10px] text-[#E11D48]"></i> Pricing</span>
+            <h1 class="text-white mb-4">Transparent Pricing for Every Office</h1>
+            <p class="text-white/60 text-lg max-w-xl mx-auto" style="font-weight:400;">Simple per-employee monthly pricing. No hidden fees, no long-term contracts. Scale up or down anytime.</p>
+        </div>
     </div>
 </section>
 
 <!-- Pricing Cards -->
 <section class="py-20" style="background:var(--cream);">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="pricing-grid gap-8 max-w-6xl mx-auto">
             <!-- Basic -->
             <div class="pricing-card reveal text-center">
                 <h3 class="mb-2" style="font-size:1.3rem;">Basic</h3>
                 <p class="text-sm text-neutral-500 mb-6" style="font-weight:400;">For small teams getting started</p>
-                <div class="price mb-1"><sup>₹</sup>120</div>
-                <p class="price-period mb-8">per employee / month</p>
-                <ul class="text-sm text-neutral-600 dark:text-neutral-300 space-y-3 mb-8 text-left" style="font-weight:400;">
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-[#C2410C] text-xs"></i> Daily lunch (1 meal)</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-[#C2410C] text-xs"></i> 3 cuisine options</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-[#C2410C] text-xs"></i> Basic dashboard access</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-[#C2410C] text-xs"></i> Monthly reports</li>
-                    <li class="flex items-center gap-2 text-neutral-400"><i class="fas fa-times text-xs"></i> Snack vending</li>
-                    <li class="flex items-center gap-2 text-neutral-400"><i class="fas fa-times text-xs"></i> Event catering</li>
+                <div class="price mb-1 flex items-baseline justify-center gap-1">
+                    <span class="text-2xl font-bold opacity-80">₹</span>
+                    <span class="text-5xl font-extrabold tracking-tight">120</span>
+                </div>
+                <p class="price-period mb-8 text-xs text-neutral-400">per employee / month</p>
+                <ul class="text-sm text-neutral-600 dark:text-neutral-300 space-y-3 mb-8 text-center" style="font-weight:400;">
+                    <li class="flex items-center justify-center gap-2"><i class="fas fa-check text-[#E11D48] text-xs"></i> Daily lunch (1 meal)</li>
+                    <li class="flex items-center justify-center gap-2"><i class="fas fa-check text-[#E11D48] text-xs"></i> 3 cuisine options</li>
+                    <li class="flex items-center justify-center gap-2"><i class="fas fa-check text-[#E11D48] text-xs"></i> Basic dashboard access</li>
+                    <li class="flex items-center justify-center gap-2"><i class="fas fa-check text-[#E11D48] text-xs"></i> Monthly reports</li>
+                    <li class="flex items-center justify-center gap-2 text-neutral-400 opacity-60"><i class="fas fa-times text-xs"></i> Snack vending</li>
+                    <li class="flex items-center justify-center gap-2 text-neutral-400 opacity-60"><i class="fas fa-times text-xs"></i> Event catering</li>
                 </ul>
                 <a href="signup.html" class="btn btn-secondary btn-full mt-auto">Get Started</a>
             </div>
             <!-- Professional (Popular) -->
             <div class="pricing-card featured reveal text-center" style="transition-delay:0.1s;">
-                <span class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 badge" style="background:#EA580C;color:white;border:none;padding:5px 16px;">Most Popular</span>
+                <span class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 badge" style="background:#E11D48;color:white;border:none;padding:5px 16px;">Most Popular</span>
                 <h3 class="mb-2" style="font-size:1.3rem;">Professional</h3>
                 <p class="text-sm text-white/60 mb-6" style="font-weight:400;">For growing offices</p>
-                <div class="price mb-1"><sup>₹</sup>280</div>
-                <p class="price-period mb-8" style="color:rgba(255,255,255,0.5);">per employee / month</p>
-                <ul class="text-sm space-y-3 mb-8 text-left" style="font-weight:400;">
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-[#EA580C] text-xs"></i> Breakfast + Lunch + Snacks</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-[#EA580C] text-xs"></i> 6 cuisine options</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-[#EA580C] text-xs"></i> Full dashboard + analytics</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-[#EA580C] text-xs"></i> Prepaid wallet system</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-[#EA580C] text-xs"></i> Snack vending stations</li>
-                    <li class="flex items-center gap-2 text-white/40"><i class="fas fa-times text-xs"></i> Event catering</li>
+                <div class="price mb-1 flex items-baseline justify-center gap-1">
+                    <span class="text-2xl font-bold opacity-90 text-[#F43F5E]">₹</span>
+                    <span class="text-5xl font-extrabold tracking-tight text-[#F43F5E]">280</span>
+                </div>
+                <p class="price-period mb-8 text-xs" style="color:rgba(255,255,255,0.7);">per employee / month</p>
+                <ul class="text-sm space-y-3 mb-8 text-center" style="font-weight:400;">
+                    <li class="flex items-center justify-center gap-2"><i class="fas fa-check text-[#E11D48] bg-white rounded-full p-0.5 text-[10px]"></i> Breakfast + Lunch + Snacks</li>
+                    <li class="flex items-center justify-center gap-2"><i class="fas fa-check text-[#E11D48] bg-white rounded-full p-0.5 text-[10px]"></i> 6 cuisine options</li>
+                    <li class="flex items-center justify-center gap-2"><i class="fas fa-check text-[#E11D48] bg-white rounded-full p-0.5 text-[10px]"></i> Full dashboard + analytics</li>
+                    <li class="flex items-center justify-center gap-2"><i class="fas fa-check text-[#E11D48] bg-white rounded-full p-0.5 text-[10px]"></i> Prepaid wallet system</li>
+                    <li class="flex items-center justify-center gap-2"><i class="fas fa-check text-[#E11D48] bg-white rounded-full p-0.5 text-[10px]"></i> Snack vending stations</li>
+                    <li class="flex items-center justify-center gap-2 text-white/40"><i class="fas fa-times text-xs"></i> Event catering</li>
                 </ul>
-                <a href="signup.html" class="btn btn-lg btn-full btn-shine mt-auto" style="background:white;color:#C2410C;">Choose Professional</a>
+                <a href="signup.html" class="btn btn-lg btn-full btn-shine mt-auto" style="background:white;color:#E11D48;">Choose Professional</a>
             </div>
             <!-- Enterprise -->
-            <div class="pricing-card reveal text-center" style="transition-delay:0.2s;">
+            <div class="pricing-card reveal text-center md:col-span-2 lg:col-span-1 md:max-w-md md:mx-auto md:w-full lg:max-w-none" style="transition-delay:0.2s;">
                 <h3 class="mb-2" style="font-size:1.3rem;">Enterprise</h3>
                 <p class="text-sm text-neutral-500 mb-6" style="font-weight:400;">For large corporations</p>
-                <div class="price mb-1"><sup>₹</sup>450</div>
-                <p class="price-period mb-8">per employee / month</p>
-                <ul class="text-sm text-neutral-600 dark:text-neutral-300 space-y-3 mb-8 text-left" style="font-weight:400;">
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-[#C2410C] text-xs"></i> All meals + snacks + beverages</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-[#C2410C] text-xs"></i> Unlimited cuisine options</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-[#C2410C] text-xs"></i> Advanced analytics + API</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-[#C2410C] text-xs"></i> Event catering included</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-[#C2410C] text-xs"></i> Dedicated account manager</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-[#C2410C] text-xs"></i> Custom menu planning</li>
+                <div class="price mb-1 flex items-baseline justify-center gap-1">
+                    <span class="text-2xl font-bold opacity-80">₹</span>
+                    <span class="text-5xl font-extrabold tracking-tight">450</span>
+                </div>
+                <p class="price-period mb-8 text-xs text-neutral-400">per employee / month</p>
+                <ul class="text-sm text-neutral-600 dark:text-neutral-300 space-y-3 mb-8 text-center" style="font-weight:400;">
+                    <li class="flex items-center justify-center gap-2"><i class="fas fa-check text-[#E11D48] text-xs"></i> All meals + snacks + beverages</li>
+                    <li class="flex items-center justify-center gap-2"><i class="fas fa-check text-[#E11D48] text-xs"></i> Unlimited cuisine options</li>
+                    <li class="flex items-center justify-center gap-2"><i class="fas fa-check text-[#E11D48] text-xs"></i> Advanced analytics + API</li>
+                    <li class="flex items-center justify-center gap-2"><i class="fas fa-check text-[#E11D48] text-xs"></i> Event catering included</li>
+                    <li class="flex items-center justify-center gap-2"><i class="fas fa-check text-[#E11D48] text-xs"></i> Dedicated account manager</li>
+                    <li class="flex items-center justify-center gap-2"><i class="fas fa-check text-[#E11D48] text-xs"></i> Custom menu planning</li>
                 </ul>
                 <a href="signup.html" class="btn btn-secondary btn-full mt-auto">Contact Sales</a>
             </div>
@@ -83,22 +94,75 @@
 
 <!-- Feature Comparison -->
 <section class="py-20" style="background:var(--surface-alt);">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="text-center mb-12">
             <h2 class="section-title mb-4 reveal">Feature Comparison</h2>
         </div>
-        <div class="reveal overflow-x-auto">
-            <table class="data-table">
-                <thead><tr><th>Feature</th><th class="text-center">Basic</th><th class="text-center">Professional</th><th class="text-center">Enterprise</th></tr></thead>
+        <div class="reveal pricing-comparison-table-wrapper overflow-x-auto rounded-2xl border border-[var(--border-light)] shadow-sm bg-[var(--surface)]">
+            <table class="data-table pricing-comparison-table w-full" style="table-layout:fixed;width:100%;">
+                <colgroup>
+                    <col style="width:31%;">
+                    <col style="width:23%;">
+                    <col style="width:23%;">
+                    <col style="width:23%;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th style="text-align:left;">Feature</th>
+                        <th style="text-align:center;">Basic</th>
+                        <th style="text-align:center;"><span class="col-pro-full">Professional</span><span class="col-pro-short">Pro</span></th>
+                        <th style="text-align:center;">Enterprise</th>
+                    </tr>
+                </thead>
                 <tbody>
-                    <tr><td style="font-weight:500;">Daily Meals</td><td class="text-center">Lunch only</td><td class="text-center">B + L + S</td><td class="text-center">All meals</td></tr>
-                    <tr><td style="font-weight:500;">Cuisine Options</td><td class="text-center">3</td><td class="text-center">6</td><td class="text-center">Unlimited</td></tr>
-                    <tr><td style="font-weight:500;">Dashboard</td><td class="text-center">Basic</td><td class="text-center">Full</td><td class="text-center">Advanced + API</td></tr>
-                    <tr><td style="font-weight:500;">Prepaid Wallet</td><td class="text-center"><i class="fas fa-times text-neutral-400"></i></td><td class="text-center"><i class="fas fa-check text-[#C2410C]"></i></td><td class="text-center"><i class="fas fa-check text-[#C2410C]"></i></td></tr>
-                    <tr><td style="font-weight:500;">Snack Vending</td><td class="text-center"><i class="fas fa-times text-neutral-400"></i></td><td class="text-center"><i class="fas fa-check text-[#C2410C]"></i></td><td class="text-center"><i class="fas fa-check text-[#C2410C]"></i></td></tr>
-                    <tr><td style="font-weight:500;">Event Catering</td><td class="text-center"><i class="fas fa-times text-neutral-400"></i></td><td class="text-center"><i class="fas fa-times text-neutral-400"></i></td><td class="text-center"><i class="fas fa-check text-[#C2410C]"></i></td></tr>
-                    <tr><td style="font-weight:500;">Account Manager</td><td class="text-center"><i class="fas fa-times text-neutral-400"></i></td><td class="text-center"><i class="fas fa-times text-neutral-400"></i></td><td class="text-center"><i class="fas fa-check text-[#C2410C]"></i></td></tr>
-                    <tr><td style="font-weight:500;">Support</td><td class="text-center">Email</td><td class="text-center">Priority</td><td class="text-center">24/7 Dedicated</td></tr>
+                    <tr>
+                        <td style="font-weight:600;">Daily Meals</td>
+                        <td>Lunch only</td>
+                        <td>B + L + S</td>
+                        <td>All meals</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;">Cuisine Options</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;">Dashboard</td>
+                        <td>Basic</td>
+                        <td>Full</td>
+                        <td>Advanced + API</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;">Prepaid Wallet</td>
+                        <td><i class="fas fa-times text-neutral-400 opacity-60"></i></td>
+                        <td><i class="fas fa-check text-[#E11D48]"></i></td>
+                        <td><i class="fas fa-check text-[#E11D48]"></i></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;">Snack Vending</td>
+                        <td><i class="fas fa-times text-neutral-400 opacity-60"></i></td>
+                        <td><i class="fas fa-check text-[#E11D48]"></i></td>
+                        <td><i class="fas fa-check text-[#E11D48]"></i></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;">Event Catering</td>
+                        <td><i class="fas fa-times text-neutral-400 opacity-60"></i></td>
+                        <td><i class="fas fa-times text-neutral-400 opacity-60"></i></td>
+                        <td><i class="fas fa-check text-[#E11D48]"></i></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;">Account Manager</td>
+                        <td><i class="fas fa-times text-neutral-400 opacity-60"></i></td>
+                        <td><i class="fas fa-times text-neutral-400 opacity-60"></i></td>
+                        <td><i class="fas fa-check text-[#E11D48]"></i></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;">Support</td>
+                        <td>Email</td>
+                        <td>Priority</td>
+                        <td>24/7 Dedicated</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -107,33 +171,68 @@
 
 <!-- FAQ -->
 <section class="py-20" style="background:var(--cream);">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6">
-        <div class="text-center mb-12">
-            <h2 class="section-title mb-4 reveal">Pricing FAQ</h2>
-        </div>
-        <div class="reveal">
-            <div class="faq-item open">
-                <button class="faq-question">Is there a minimum contract period? <i class="fas fa-chevron-down"></i></button>
-                <div class="faq-answer"><p>No long-term contracts required. All plans are month-to-month. You can upgrade, downgrade, or cancel anytime with 30 days notice.</p></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="section-title mb-4 reveal">Pricing FAQ</h2>
             </div>
-            <div class="faq-item">
-                <button class="faq-question">Are there any setup fees? <i class="fas fa-chevron-down"></i></button>
-                <div class="faq-answer"><p>No setup fees for Professional and Enterprise plans. Basic plan has a one-time ₹5,000 onboarding fee which covers kitchen assessment and initial configuration.</p></div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">Can we customize our plan? <i class="fas fa-chevron-down"></i></button>
-                <div class="faq-answer"><p>Absolutely! Enterprise clients can build custom plans. Contact our sales team for a tailored quote based on your specific requirements.</p></div>
+            <div class="reveal">
+                <div class="faq-item open">
+                    <button class="faq-question"><span>Is there a minimum contract period?</span> <i class="fas fa-chevron-down text-xs text-[#E11D48]"></i></button>
+                    <div class="faq-answer"><p>No long-term contracts required. All plans are month-to-month. You can upgrade, downgrade, or cancel anytime with 30 days notice.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question"><span>Are there any setup fees?</span> <i class="fas fa-chevron-down text-xs text-[#E11D48]"></i></button>
+                    <div class="faq-answer"><p>No setup fees for Professional and Enterprise plans. Basic plan has a one-time ₹5,000 onboarding fee which covers kitchen assessment and initial configuration.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question"><span>Can we customize our plan?</span> <i class="fas fa-chevron-down text-xs text-[#E11D48]"></i></button>
+                    <div class="faq-answer"><p>Absolutely! Enterprise clients can build custom plans. Contact our sales team for a tailored quote based on your specific requirements.</p></div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- CTA -->
-<section class="py-16" style="background:var(--surface-alt);">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center reveal">
-        <h2 class="section-title mb-4">Need a Custom Quote?</h2>
-        <p class="section-subtitle mx-auto mb-8">For teams above 500 employees, we offer volume discounts and bespoke configurations.</p>
-        <a href="signup.html" class="btn btn-primary btn-lg btn-shine"><i class="fas fa-phone text-xs"></i> Talk to Sales</a>
+<section class="py-16 md:py-20" style="background:var(--surface-alt);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="pricing-quote-card p-8 sm:p-12 lg:p-14">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <!-- Left: Content & CTAs -->
+                <div class="lg:col-span-6 text-left reveal">
+                    <span class="section-tag mb-3 inline-flex items-center gap-2 self-start w-fit">
+                        <i class="fas fa-calculator text-[10px] text-[#E11D48]"></i> Enterprise Solutions
+                    </span>
+                    <h2 class="section-title text-3xl sm:text-4xl font-semibold mb-4" style="font-family:'Outfit',sans-serif;">
+                        Need a Custom Quote?
+                    </h2>
+                    <p class="text-neutral-500 dark:text-neutral-300 text-base leading-relaxed mb-8" style="font-weight:400;">
+                        For teams above 500 employees, we offer tailored volume discounts, dedicated operational accounts, custom menu tiers, and bespoke hybrid-attendance configurations.
+                    </p>
+                    <div class="flex flex-wrap gap-4 items-center">
+                        <a href="signup.html" class="btn btn-primary btn-lg btn-shine">
+                            <i class="fas fa-phone text-xs"></i> Talk to Sales
+                        </a>
+                        <a href="tel:+918001234567" class="btn btn-secondary btn-lg">
+                            <i class="fas fa-headset text-xs text-[#E11D48]"></i> +91 (800) 123-4567
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: High-Res Consultation Image -->
+                <div class="lg:col-span-6 relative rounded-2xl overflow-hidden shadow-2xl border border-slate-300/80 dark:border-white/20 reveal" style="transition-delay:0.1s;">
+                    <img src="assets/images/custom_quote.jpg" alt="Enterprise Corporate Dining Plan Consultation" class="w-full h-72 sm:h-96 object-cover hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4 p-3.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-between text-xs text-white">
+                        <span class="font-semibold flex items-center gap-2">
+                            <i class="fas fa-users text-[#E11D48]"></i> 500+ Employee Enterprise Plans
+                        </span>
+                        <span class="text-[11px] font-bold text-emerald-400">Custom Slates</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

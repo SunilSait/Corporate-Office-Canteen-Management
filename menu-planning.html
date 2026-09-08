@@ -5,22 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CulinaCorp weekly menu planning — browse breakfast, lunch, snack menus curated by nutritionists. Seasonal specials and custom menu requests.">
     <title>Menu Planning — CulinaCorp</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' stroke='%23C2410C' stroke-width='2.5' fill='none'/%3E%3Cline x1='38' y1='28' x2='38' y2='72' stroke='%23C2410C' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M55 58 Q68 38 62 28 Q54 36 55 58Z' fill='%23C2410C' fill-opacity='0.3' stroke='%23C2410C' stroke-width='2'/%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' stroke='%23E11D48' stroke-width='2.5' fill='none'/%3E%3Cline x1='38' y1='28' x2='38' y2='72' stroke='%23E11D48' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M55 58 Q68 38 62 28 Q54 36 55 58Z' fill='%23E11D48' fill-opacity='0.3' stroke='%23E11D48' stroke-width='2'/%3E%3C/svg%3E">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#C2410C',secondary:'#1E293B'}}}}</script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#E11D48',secondary:'#1E293B'}}}}</script>
 </head>
 <body>
 <div id="navbar-container"></div>
 
 <!-- Banner -->
-<section class="relative py-20 md:py-28 overflow-hidden" style="background:linear-gradient(135deg,#C2410C 0%,#9A3412 60%,#1E293B 100%);">
+<section class="relative py-20 md:py-28 overflow-hidden" style="background:linear-gradient(135deg,#E11D48 0%,#9F1239 60%,#1E293B 100%);">
     <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:50px 50px;"></div>
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
-        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-white/80 text-xs font-bold uppercase tracking-widest mb-5" style="backdrop-filter:blur(10px);background:rgba(255,255,255,0.08);"><i class="fas fa-calendar-alt text-[10px]"></i> Menu Planning</span>
-        <h1 class="text-white mb-4">Crafting the Perfect Weekly Menu</h1>
-        <p class="text-white/60 text-lg max-w-xl mx-auto" style="font-weight:400;">Nutritionist-designed, chef-prepared menus that rotate weekly. Every meal is a balance of flavor, health, and variety.</p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-white/80 text-xs font-bold uppercase tracking-widest mb-5" style="backdrop-filter:blur(10px);background:rgba(255,255,255,0.08);"><i class="fas fa-calendar-alt text-[10px]"></i> Menu Planning</span>
+            <h1 class="text-white mb-4">Crafting the Perfect Weekly Menu</h1>
+            <p class="text-white/60 text-lg max-w-xl mx-auto" style="font-weight:400;">Nutritionist-designed, chef-prepared menus that rotate weekly. Every meal is a balance of flavor, health, and variety.</p>
+        </div>
     </div>
 </section>
 
@@ -37,19 +39,19 @@
                 <p class="text-neutral-500 mb-6" style="font-weight:400;line-height:1.8;">Our menu planning process combines employee preference data, seasonal availability, and nutritional science to create weekly menus that maximize satisfaction while maintaining balanced nutrition.</p>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="p-4 rounded-xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)] text-center">
-                        <p class="text-2xl font-bold text-[#C2410C]" style="font-family:'Outfit',sans-serif;">24</p>
+                        <p class="text-2xl font-medium text-[#E11D48]" style="font-family:'Outfit',sans-serif;">24</p>
                         <p class="text-xs text-neutral-500" style="font-weight:400;">Dishes per Week</p>
                     </div>
                     <div class="p-4 rounded-xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)] text-center">
-                        <p class="text-2xl font-bold text-[#C2410C]" style="font-family:'Outfit',sans-serif;">6</p>
+                        <p class="text-2xl font-medium text-[#E11D48]" style="font-family:'Outfit',sans-serif;">6</p>
                         <p class="text-xs text-neutral-500" style="font-weight:400;">Cuisine Types</p>
                     </div>
                     <div class="p-4 rounded-xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)] text-center">
-                        <p class="text-2xl font-bold text-[#C2410C]" style="font-family:'Outfit',sans-serif;">500</p>
+                        <p class="text-2xl font-medium text-[#E11D48]" style="font-family:'Outfit',sans-serif;">500</p>
                         <p class="text-xs text-neutral-500" style="font-weight:400;">Avg. Calories/Meal</p>
                     </div>
                     <div class="p-4 rounded-xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)] text-center">
-                        <p class="text-2xl font-bold text-[#C2410C]" style="font-family:'Outfit',sans-serif;">98%</p>
+                        <p class="text-2xl font-medium text-[#E11D48]" style="font-family:'Outfit',sans-serif;">98%</p>
                         <p class="text-xs text-neutral-500" style="font-weight:400;">Satisfaction Rate</p>
                     </div>
                 </div>
@@ -60,30 +62,702 @@
 
 <!-- Weekly Menu Grid -->
 <section class="py-20" style="background:var(--surface-alt);">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="text-center mb-12">
             <span class="section-tag reveal"><i class="fas fa-calendar-week text-[10px]"></i> This Week</span>
             <h2 class="section-title mb-4 reveal">Sample Weekly Menu</h2>
+            <p class="section-subtitle mx-auto reveal">Freshly prepared, balanced corporate meals curated by our executive culinary chefs each day.</p>
         </div>
-        <div class="reveal overflow-x-auto">
-            <table class="data-table w-full">
-                <thead>
-                    <tr>
-                        <th>Day</th>
-                        <th>Breakfast</th>
-                        <th>Lunch</th>
-                        <th>Snacks</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td class="font-semibold" style="font-weight:600;">Monday</td><td style="font-weight:400;">Masala Omelette, Poha</td><td style="font-weight:400;">Paneer Butter Masala, Rice</td><td style="font-weight:400;">Samosa, Chai</td></tr>
-                    <tr><td class="font-semibold" style="font-weight:600;">Tuesday</td><td style="font-weight:400;">Idli Sambar, Paratha</td><td style="font-weight:400;">Dal Makhani, Naan</td><td style="font-weight:400;">Vada Pav, Coffee</td></tr>
-                    <tr><td class="font-semibold" style="font-weight:600;">Wednesday</td><td style="font-weight:400;">Dosa, Upma</td><td style="font-weight:400;">Chole Bhature, Biryani</td><td style="font-weight:400;">Pakora, Buttermilk</td></tr>
-                    <tr><td class="font-semibold" style="font-weight:600;">Thursday</td><td style="font-weight:400;">Puri Bhaji, Cornflakes</td><td style="font-weight:400;">Rajma Chawal, Pasta</td><td style="font-weight:400;">Dhokla, Hot Chocolate</td></tr>
-                    <tr><td class="font-semibold" style="font-weight:600;">Friday</td><td style="font-weight:400;">Pancakes, Rava Dosa</td><td style="font-weight:400;">Special Biryani, Fish</td><td style="font-weight:400;">Pizza, Mango Lassi</td></tr>
-                </tbody>
-            </table>
+        <!-- Section Filter & View Toggle Controls -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10 reveal">
+            <!-- Meal Category Filter Tabs -->
+            <div class="flex flex-wrap items-center justify-center gap-2.5">
+                <button type="button" class="menu-section-filter-btn active" data-filter="all">
+                    <i class="fas fa-layer-group text-xs"></i> All Sections (15 Dishes)
+                </button>
+                <button type="button" class="menu-section-filter-btn" data-filter="breakfast">
+                    <i class="fas fa-sun text-xs text-amber-500"></i> Breakfast Section
+                </button>
+                <button type="button" class="menu-section-filter-btn" data-filter="lunch">
+                    <i class="fas fa-utensils text-xs text-rose-500"></i> Lunch Section
+                </button>
+                <button type="button" class="menu-section-filter-btn" data-filter="snacks">
+                    <i class="fas fa-mug-hot text-xs text-orange-500"></i> Snacks &amp; Drinks
+                </button>
+            </div>
+
+            <!-- View Mode Switch -->
+            <div class="inline-flex p-1 rounded-full bg-[var(--surface)] border border-[var(--border-light)] text-xs font-semibold">
+                <button type="button" id="view-mode-section" class="px-3.5 py-1.5 rounded-full bg-[#E11D48] text-white shadow-sm transition-all flex items-center gap-1.5 cursor-pointer">
+                    <i class="fas fa-th-large text-[11px]"></i> By Section
+                </button>
+                <button type="button" id="view-mode-day" class="px-3.5 py-1.5 rounded-full text-neutral-500 hover:text-neutral-800 dark:hover:text-white transition-all flex items-center gap-1.5 cursor-pointer">
+                    <i class="fas fa-calendar-alt text-[11px]"></i> By Day
+                </button>
+            </div>
         </div>
+
+        <!-- ================= BY SECTION VIEW (DEFAULT) ================= -->
+        <div id="menu-sections-container">
+            
+            <!-- SECTION 1: BREAKFAST -->
+            <div id="section-breakfast" class="menu-section-block reveal">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 mb-6 border-b border-[var(--border-light)]">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-lg shrink-0">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-[var(--text-dark)]" style="font-family:'Outfit',sans-serif;font-weight:600;">Breakfast Section</h3>
+                            <p class="text-xs text-neutral-500 dark:text-neutral-400" style="font-weight:400;">Energy-rich wholesome breakfast rotations served hot every morning</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--surface-alt)] border border-[var(--border-light)] text-xs text-neutral-600 dark:text-neutral-300 font-medium">
+                            <i class="fas fa-clock text-[10px] text-[#E11D48]"></i> 07:30 AM – 10:30 AM
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 text-xs text-emerald-600 dark:text-emerald-400 font-semibold">
+                            5 Days
+                        </span>
+                    </div>
+                </div>
+
+                <!-- 5 Day Breakfast Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <!-- Mon -->
+                    <div class="rounded-2xl overflow-hidden border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface-alt)] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group">
+                        <div class="px-3.5 py-2.5 border-b border-[var(--border-light)] dark:border-[#334155]/60 flex items-center justify-between">
+                            <span class="text-xs font-bold text-[var(--text-dark)]" style="font-family:'Outfit',sans-serif;font-weight:600;">Monday</span>
+                            <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#E11D48]/10 text-[#E11D48]">Vitality Start</span>
+                        </div>
+                        <div class="relative h-36 overflow-hidden bg-neutral-900">
+                            <img src="assets/images/menu_mon_breakfast.jpg" alt="Masala Omelette, Poha" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" loading="lazy">
+                            <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-[10px] font-bold text-white">380 kcal</div>
+                        </div>
+                        <div class="p-3.5 flex flex-col flex-1 justify-between">
+                            <h4 class="text-xs sm:text-sm font-semibold text-[var(--text-dark)] mb-2 line-clamp-1 group-hover:text-[#E11D48] transition-colors" style="font-family:'Outfit',sans-serif;font-weight:600;" title="Masala Omelette, Poha">Masala Omelette, Poha</h4>
+                            <div class="flex items-center justify-between text-xs pt-2 border-t border-[var(--border-light)] dark:border-[#334155]/60">
+                                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-600 dark:text-emerald-400"><i class="fas fa-check-circle text-[9px]"></i> High Protein</span>
+                                <span class="text-[10px] text-neutral-400 font-medium">Fresh Daily</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tue -->
+                    <div class="rounded-2xl overflow-hidden border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface-alt)] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group">
+                        <div class="px-3.5 py-2.5 border-b border-[var(--border-light)] dark:border-[#334155]/60 flex items-center justify-between">
+                            <span class="text-xs font-bold text-[var(--text-dark)]" style="font-family:'Outfit',sans-serif;font-weight:600;">Tuesday</span>
+                            <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#E11D48]/10 text-[#E11D48]">North &amp; South</span>
+                        </div>
+                        <div class="relative h-36 overflow-hidden bg-neutral-900">
+                            <img src="assets/images/menu_tue_breakfast.jpg" alt="Idli Sambar, Paratha" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" loading="lazy">
+                            <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-[10px] font-bold text-white">340 kcal</div>
+                        </div>
+                        <div class="p-3.5 flex flex-col flex-1 justify-between">
+                            <h4 class="text-xs sm:text-sm font-semibold text-[var(--text-dark)] mb-2 line-clamp-1 group-hover:text-[#E11D48] transition-colors" style="font-family:'Outfit',sans-serif;font-weight:600;" title="Idli Sambar, Paratha">Idli Sambar, Paratha</h4>
+                            <div class="flex items-center justify-between text-xs pt-2 border-t border-[var(--border-light)] dark:border-[#334155]/60">
+                                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-600 dark:text-emerald-400"><i class="fas fa-leaf text-[9px]"></i> Steamed &amp; Fresh</span>
+                                <span class="text-[10px] text-neutral-400 font-medium">Fresh Daily</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wed -->
+                    <div class="rounded-2xl overflow-hidden border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface-alt)] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group">
+                        <div class="px-3.5 py-2.5 border-b border-[var(--border-light)] dark:border-[#334155]/60 flex items-center justify-between">
+                            <span class="text-xs font-bold text-[var(--text-dark)]" style="font-family:'Outfit',sans-serif;font-weight:600;">Wednesday</span>
+                            <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#E11D48]/10 text-[#E11D48]">Coastal Saffron</span>
+                        </div>
+                        <div class="relative h-36 overflow-hidden bg-neutral-900">
+                            <img src="assets/images/menu_wed_breakfast.jpg" alt="Dosa, Upma" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" loading="lazy">
+                            <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-[10px] font-bold text-white">360 kcal</div>
+                        </div>
+                        <div class="p-3.5 flex flex-col flex-1 justify-between">
+                            <h4 class="text-xs sm:text-sm font-semibold text-[var(--text-dark)] mb-2 line-clamp-1 group-hover:text-[#E11D48] transition-colors" style="font-family:'Outfit',sans-serif;font-weight:600;" title="Dosa, Upma">Dosa, Upma</h4>
+                            <div class="flex items-center justify-between text-xs pt-2 border-t border-[var(--border-light)] dark:border-[#334155]/60">
+                                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-600 dark:text-emerald-400"><i class="fas fa-leaf text-[9px]"></i> Crispy Roast</span>
+                                <span class="text-[10px] text-neutral-400 font-medium">Fresh Daily</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Thu -->
+                    <div class="rounded-2xl overflow-hidden border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface-alt)] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group">
+                        <div class="px-3.5 py-2.5 border-b border-[var(--border-light)] dark:border-[#334155]/60 flex items-center justify-between">
+                            <span class="text-xs font-bold text-[var(--text-dark)]" style="font-family:'Outfit',sans-serif;font-weight:600;">Thursday</span>
+                            <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#E11D48]/10 text-[#E11D48]">Comfort Classics</span>
+                        </div>
+                        <div class="relative h-36 overflow-hidden bg-neutral-900">
+                            <img src="assets/images/menu_thu_breakfast.jpg" alt="Puri Bhaji, Cornflakes" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" loading="lazy">
+                            <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-[10px] font-bold text-white">410 kcal</div>
+                        </div>
+                        <div class="p-3.5 flex flex-col flex-1 justify-between">
+                            <h4 class="text-xs sm:text-sm font-semibold text-[var(--text-dark)] mb-2 line-clamp-1 group-hover:text-[#E11D48] transition-colors" style="font-family:'Outfit',sans-serif;font-weight:600;" title="Puri Bhaji, Cornflakes">Puri Bhaji, Cornflakes</h4>
+                            <div class="flex items-center justify-between text-xs pt-2 border-t border-[var(--border-light)] dark:border-[#334155]/60">
+                                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-600 dark:text-emerald-400"><i class="fas fa-seedling text-[9px]"></i> Energy Blend</span>
+                                <span class="text-[10px] text-neutral-400 font-medium">Fresh Daily</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fri -->
+                    <div class="rounded-2xl overflow-hidden border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface-alt)] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group">
+                        <div class="px-3.5 py-2.5 border-b border-[var(--border-light)] dark:border-[#334155]/60 flex items-center justify-between">
+                            <span class="text-xs font-bold text-[var(--text-dark)]" style="font-family:'Outfit',sans-serif;font-weight:600;">Friday</span>
+                            <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#E11D48]/10 text-[#E11D48]">Grand Finale</span>
+                        </div>
+                        <div class="relative h-36 overflow-hidden bg-neutral-900">
+                            <img src="assets/images/menu_fri_breakfast.jpg" alt="Pancakes, Rava Dosa" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" loading="lazy">
+                            <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-[10px] font-bold text-white">420 kcal</div>
+                        </div>
+                        <div class="p-3.5 flex flex-col flex-1 justify-between">
+                            <h4 class="text-xs sm:text-sm font-semibold text-[var(--text-dark)] mb-2 line-clamp-1 group-hover:text-[#E11D48] transition-colors" style="font-family:'Outfit',sans-serif;font-weight:600;" title="Pancakes, Rava Dosa">Pancakes, Rava Dosa</h4>
+                            <div class="flex items-center justify-between text-xs pt-2 border-t border-[var(--border-light)] dark:border-[#334155]/60">
+                                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-600 dark:text-emerald-400"><i class="fas fa-award text-[9px]"></i> Gourmet Brunch</span>
+                                <span class="text-[10px] text-neutral-400 font-medium">Fresh Daily</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: LUNCH -->
+            <div id="section-lunch" class="menu-section-block reveal">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 mb-6 border-b border-[var(--border-light)]">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-[#E11D48]/10 text-[#E11D48] flex items-center justify-center text-lg shrink-0">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-[var(--text-dark)]" style="font-family:'Outfit',sans-serif;font-weight:600;">Lunch Section</h3>
+                            <p class="text-xs text-neutral-500 dark:text-neutral-400" style="font-weight:400;">Multi-cuisine regional thalis, healthy bowls, and chef specialties</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--surface-alt)] border border-[var(--border-light)] text-xs text-neutral-600 dark:text-neutral-300 font-medium">
+                            <i class="fas fa-clock text-[10px] text-[#E11D48]"></i> 12:30 PM – 03:00 PM
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 text-xs text-emerald-600 dark:text-emerald-400 font-semibold">
+                            5 Days
+                        </span>
+                    </div>
+                </div>
+
+                <!-- 5 Day Lunch Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <!-- Mon -->
+                    <div class="rounded-2xl overflow-hidden border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface-alt)] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group">
+                        <div class="px-3.5 py-2.5 border-b border-[var(--border-light)] dark:border-[#334155]/60 flex items-center justify-between">
+                            <span class="text-xs font-bold text-[var(--text-dark)]" style="font-family:'Outfit',sans-serif;font-weight:600;">Monday</span>
+                            <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#E11D48]/10 text-[#E11D48]">Vitality Start</span>
+                        </div>
+                        <div class="relative h-36 overflow-hidden bg-neutral-900">
+                            <img src="assets/images/menu_mon_lunch.jpg" alt="Paneer Butter Masala, Rice" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" loading="lazy">
+                            <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-[10px] font-bold text-white">520 kcal</div>
+                        </div>
+                        <div class="p-3.5 flex flex-col flex-1 justify-between">
+                            <h4 class="text-xs sm:text-sm font-semibold text-[var(--text-dark)] mb-2 line-clamp-1 group-hover:text-[#E11D48] transition-colors" style="font-family:'Outfit',sans-serif;font-weight:600;" title="Paneer Butter Masala, Rice">Paneer Butter Masala, Rice</h4>
+                            <div class="flex items-center justify-between text-xs pt-2 border-t border-[var(--border-light)] dark:border-[#334155]/60">
+                                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-600 dark:text-emerald-400"><i class="fas fa-leaf text-[9px]"></i> Vegetarian</span>
+                                <span class="text-[10px] text-neutral-400 font-medium">Chef Made</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tue -->
+                    <div class="rounded-2xl overflow-hidden border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface-alt)] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group">
+                        <div class="px-3.5 py-2.5 border-b border-[var(--border-light)] dark:border-[#334155]/60 flex items-center justify-between">
+                            <span class="text-xs font-bold text-[var(--text-dark)]" style="font-family:'Outfit',sans-serif;font-weight:600;">Tuesday</span>
+                            <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#E11D48]/10 text-[#E11D48]">North &amp; South</span>
+                        </div>
+                        <div class="relative h-36 overflow-hidden bg-neutral-900">
+                            <img src="assets/images/menu_tue_lunch.jpg" alt="Dal Makhani, Naan" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" loading="lazy">
+                            <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-[10px] font-bold text-white">560 kcal</div>
+                        </div>
+                        <div class="p-3.5 flex flex-col flex-1 justify-between">
+                            <h4 class="text-xs sm:text-sm font-semibold text-[var(--text-dark)] mb-2 line-clamp-1 group-hover:text-[#E11D48] transition-colors" style="font-family:'Outfit',sans-serif;font-weight:600;" title="Dal Makhani, Naan">Dal Makhani, Naan</h4>
+                            <div class="flex items-center justify-between text-xs pt-2 border-t border-[var(--border-light)] dark:border-[#334155]/60">
+                                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-amber-600 dark:text-amber-400"><i class="fas fa-star text-[9px]"></i> Chef Classic</span>
+                                <span class="text-[10px] text-neutral-400 font-medium">Chef Made</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wed -->
+                    <div class="rounded-2xl overflow-hidden border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface-alt)] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group">
+                        <div class="px-3.5 py-2.5 border-b border-[var(--border-light)] dark:border-[#334155]/60 flex items-center justify-between">
+                            <span class="text-xs font-bold text-[var(--text-dark)]" style="font-family:'Outfit',sans-serif;font-weight:600;">Wednesday</span>
+                            <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#E11D48]/10 text-[#E11D48]">Coastal Saffron</span>
+                        </div>
+                        <div class="relative h-36 overflow-hidden bg-neutral-900">
+                            <img src="assets/images/menu_wed_lunch.jpg" alt="Chole Bhature, Biryani" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" loading="lazy">
+                            <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-[10px] font-bold text-white">610 kcal</div>
+                        </div>
+                        <div class="p-3.5 flex flex-col flex-1 justify-between">
+                            <h4 class="text-xs sm:text-sm font-semibold text-[var(--text-dark)] mb-2 line-clamp-1 group-hover:text-[#E11D48] transition-colors" style="font-family:'Outfit',sans-serif;font-weight:600;" title="Chole Bhature, Biryani">Chole Bhature, Biryani</h4>
+                            <div class="flex items-center justify-between text-xs pt-2 border-t border-[var(--border-light)] dark:border-[#334155]/60">
+                                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-rose-600 dark:text-rose-400"><i class="fas fa-fire text-[9px]"></i> Mid-Week Feast</span>
+                                <span class="text-[10px] text-neutral-400 font-medium">Chef Made</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Thu -->
+                    <div class="rounded-2xl overflow-hidden border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface-alt)] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group">
+                        <div class="px-3.5 py-2.5 border-b border-[var(--border-light)] dark:border-[#334155]/60 flex items-center justify-between">
+                            <span class="text-xs font-bold text-[var(--text-dark)]" style="font-family:'Outfit',sans-serif;font-weight:600;">Thursday</span>
+                            <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#E11D48]/10 text-[#E11D48]">Comfort Classics</span>
+                        </div>
+                        <div class="relative h-36 overflow-hidden bg-neutral-900">
+                            <img src="assets/images/menu_thu_lunch.jpg" alt="Rajma Chawal, Pasta" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" loading="lazy">
+                            <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-[10px] font-bold text-white">540 kcal</div>
+                        </div>
+                        <div class="p-3.5 flex flex-col flex-1 justify-between">
+                            <h4 class="text-xs sm:text-sm font-semibold text-[var(--text-dark)] mb-2 line-clamp-1 group-hover:text-[#E11D48] transition-colors" style="font-family:'Outfit',sans-serif;font-weight:600;" title="Rajma Chawal, Pasta">Rajma Chawal, Pasta</h4>
+                            <div class="flex items-center justify-between text-xs pt-2 border-t border-[var(--border-light)] dark:border-[#334155]/60">
+                                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-rose-600 dark:text-rose-400"><i class="fas fa-heart text-[9px]"></i> Desi &amp; Continental</span>
+                                <span class="text-[10px] text-neutral-400 font-medium">Chef Made</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fri -->
+                    <div class="rounded-2xl overflow-hidden border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface-alt)] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group">
+                        <div class="px-3.5 py-2.5 border-b border-[var(--border-light)] dark:border-[#334155]/60 flex items-center justify-between">
+                            <span class="text-xs font-bold text-[var(--text-dark)]" style="font-family:'Outfit',sans-serif;font-weight:600;">Friday</span>
+                            <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#E11D48]/10 text-[#E11D48]">Grand Finale</span>
+                        </div>
+                        <div class="relative h-36 overflow-hidden bg-neutral-900">
+                            <img src="assets/images/menu_fri_lunch.jpg" alt="Special Biryani, Fish" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" loading="lazy">
+                            <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-[10px] font-bold text-white">640 kcal</div>
+                        </div>
+                        <div class="p-3.5 flex flex-col flex-1 justify-between">
+                            <h4 class="text-xs sm:text-sm font-semibold text-[var(--text-dark)] mb-2 line-clamp-1 group-hover:text-[#E11D48] transition-colors" style="font-family:'Outfit',sans-serif;font-weight:600;" title="Special Biryani, Fish">Special Biryani, Fish</h4>
+                            <div class="flex items-center justify-between text-xs pt-2 border-t border-[var(--border-light)] dark:border-[#334155]/60">
+                                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-amber-600 dark:text-amber-400"><i class="fas fa-crown text-[9px]"></i> Friday Special</span>
+                                <span class="text-[10px] text-neutral-400 font-medium">Chef Made</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: SNACKS & REFRESHMENTS -->
+            <div id="section-snacks" class="menu-section-block reveal">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 mb-6 border-b border-[var(--border-light)]">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-orange-500/10 text-orange-500 flex items-center justify-center text-lg shrink-0">
+                            <i class="fas fa-mug-hot"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-[var(--text-dark)]" style="font-family:'Outfit',sans-serif;font-weight:600;">Snacks &amp; Drinks Section</h3>
+                            <p class="text-xs text-neutral-500 dark:text-neutral-400" style="font-weight:400;">Afternoon street food favorites, bakery items, filter roasts, and seasonal coolers</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--surface-alt)] border border-[var(--border-light)] text-xs text-neutral-600 dark:text-neutral-300 font-medium">
+                            <i class="fas fa-clock text-[10px] text-[#E11D48]"></i> 04:30 PM – 06:30 PM
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 text-xs text-emerald-600 dark:text-emerald-400 font-semibold">
+                            5 Days
+                        </span>
+                    </div>
+                </div>
+
+                <!-- 5 Day Snack Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <!-- Mon -->
+                    <div class="rounded-2xl overflow-hidden border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface-alt)] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group">
+                        <div class="px-3.5 py-2.5 border-b border-[var(--border-light)] dark:border-[#334155]/60 flex items-center justify-between">
+                            <span class="text-xs font-bold text-[var(--text-dark)]" style="font-family:'Outfit',sans-serif;font-weight:600;">Monday</span>
+                            <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#E11D48]/10 text-[#E11D48]">Vitality Start</span>
+                        </div>
+                        <div class="relative h-36 overflow-hidden bg-neutral-900">
+                            <img src="assets/images/menu_mon_snacks.jpg" alt="Samosa, Chai" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" loading="lazy">
+                            <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-[10px] font-bold text-white">240 kcal</div>
+                        </div>
+                        <div class="p-3.5 flex flex-col flex-1 justify-between">
+                            <h4 class="text-xs sm:text-sm font-semibold text-[var(--text-dark)] mb-2 line-clamp-1 group-hover:text-[#E11D48] transition-colors" style="font-family:'Outfit',sans-serif;font-weight:600;" title="Samosa, Chai">Samosa, Chai</h4>
+                            <div class="flex items-center justify-between text-xs pt-2 border-t border-[var(--border-light)] dark:border-[#334155]/60">
+                                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-amber-600 dark:text-amber-400"><i class="fas fa-fire-flame-curry text-[9px]"></i> Evening Bite</span>
+                                <span class="text-[10px] text-neutral-400 font-medium">Fresh Daily</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tue -->
+                    <div class="rounded-2xl overflow-hidden border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface-alt)] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group">
+                        <div class="px-3.5 py-2.5 border-b border-[var(--border-light)] dark:border-[#334155]/60 flex items-center justify-between">
+                            <span class="text-xs font-bold text-[var(--text-dark)]" style="font-family:'Outfit',sans-serif;font-weight:600;">Tuesday</span>
+                            <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#E11D48]/10 text-[#E11D48]">North &amp; South</span>
+                        </div>
+                        <div class="relative h-36 overflow-hidden bg-neutral-900">
+                            <img src="assets/images/menu_tue_snacks.jpg" alt="Vada Pav, Coffee" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" loading="lazy">
+                            <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-[10px] font-bold text-white">280 kcal</div>
+                        </div>
+                        <div class="p-3.5 flex flex-col flex-1 justify-between">
+                            <h4 class="text-xs sm:text-sm font-semibold text-[var(--text-dark)] mb-2 line-clamp-1 group-hover:text-[#E11D48] transition-colors" style="font-family:'Outfit',sans-serif;font-weight:600;" title="Vada Pav, Coffee">Vada Pav, Coffee</h4>
+                            <div class="flex items-center justify-between text-xs pt-2 border-t border-[var(--border-light)] dark:border-[#334155]/60">
+                                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-amber-700 dark:text-amber-400"><i class="fas fa-coffee text-[9px]"></i> Filter Roast</span>
+                                <span class="text-[10px] text-neutral-400 font-medium">Fresh Daily</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wed -->
+                    <div class="rounded-2xl overflow-hidden border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface-alt)] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group">
+                        <div class="px-3.5 py-2.5 border-b border-[var(--border-light)] dark:border-[#334155]/60 flex items-center justify-between">
+                            <span class="text-xs font-bold text-[var(--text-dark)]" style="font-family:'Outfit',sans-serif;font-weight:600;">Wednesday</span>
+                            <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#E11D48]/10 text-[#E11D48]">Coastal Saffron</span>
+                        </div>
+                        <div class="relative h-36 overflow-hidden bg-neutral-900">
+                            <img src="assets/images/menu_wed_snacks.jpg" alt="Pakora, Buttermilk" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" loading="lazy">
+                            <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-[10px] font-bold text-white">210 kcal</div>
+                        </div>
+                        <div class="p-3.5 flex flex-col flex-1 justify-between">
+                            <h4 class="text-xs sm:text-sm font-semibold text-[var(--text-dark)] mb-2 line-clamp-1 group-hover:text-[#E11D48] transition-colors" style="font-family:'Outfit',sans-serif;font-weight:600;" title="Pakora, Buttermilk">Pakora, Buttermilk</h4>
+                            <div class="flex items-center justify-between text-xs pt-2 border-t border-[var(--border-light)] dark:border-[#334155]/60">
+                                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-teal-600 dark:text-teal-400"><i class="fas fa-snowflake text-[9px]"></i> Chilled Chaas</span>
+                                <span class="text-[10px] text-neutral-400 font-medium">Fresh Daily</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Thu -->
+                    <div class="rounded-2xl overflow-hidden border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface-alt)] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group">
+                        <div class="px-3.5 py-2.5 border-b border-[var(--border-light)] dark:border-[#334155]/60 flex items-center justify-between">
+                            <span class="text-xs font-bold text-[var(--text-dark)]" style="font-family:'Outfit',sans-serif;font-weight:600;">Thursday</span>
+                            <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#E11D48]/10 text-[#E11D48]">Comfort Classics</span>
+                        </div>
+                        <div class="relative h-36 overflow-hidden bg-neutral-900">
+                            <img src="assets/images/menu_thu_snacks.jpg" alt="Dhokla, Hot Chocolate" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" loading="lazy">
+                            <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-[10px] font-bold text-white">220 kcal</div>
+                        </div>
+                        <div class="p-3.5 flex flex-col flex-1 justify-between">
+                            <h4 class="text-xs sm:text-sm font-semibold text-[var(--text-dark)] mb-2 line-clamp-1 group-hover:text-[#E11D48] transition-colors" style="font-family:'Outfit',sans-serif;font-weight:600;" title="Dhokla, Hot Chocolate">Dhokla, Hot Chocolate</h4>
+                            <div class="flex items-center justify-between text-xs pt-2 border-t border-[var(--border-light)] dark:border-[#334155]/60">
+                                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-amber-700 dark:text-amber-400"><i class="fas fa-mug-hot text-[9px]"></i> Steamed Spongy</span>
+                                <span class="text-[10px] text-neutral-400 font-medium">Fresh Daily</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fri -->
+                    <div class="rounded-2xl overflow-hidden border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface-alt)] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group">
+                        <div class="px-3.5 py-2.5 border-b border-[var(--border-light)] dark:border-[#334155]/60 flex items-center justify-between">
+                            <span class="text-xs font-bold text-[var(--text-dark)]" style="font-family:'Outfit',sans-serif;font-weight:600;">Friday</span>
+                            <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#E11D48]/10 text-[#E11D48]">Grand Finale</span>
+                        </div>
+                        <div class="relative h-36 overflow-hidden bg-neutral-900">
+                            <img src="assets/images/menu_fri_snacks.jpg" alt="Pizza, Mango Lassi" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" loading="lazy">
+                            <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-[10px] font-bold text-white">350 kcal</div>
+                        </div>
+                        <div class="p-3.5 flex flex-col flex-1 justify-between">
+                            <h4 class="text-xs sm:text-sm font-semibold text-[var(--text-dark)] mb-2 line-clamp-1 group-hover:text-[#E11D48] transition-colors" style="font-family:'Outfit',sans-serif;font-weight:600;" title="Pizza, Mango Lassi">Pizza, Mango Lassi</h4>
+                            <div class="flex items-center justify-between text-xs pt-2 border-t border-[var(--border-light)] dark:border-[#334155]/60">
+                                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-orange-600 dark:text-orange-400"><i class="fas fa-pizza-slice text-[9px]"></i> TGIF Celebration</span>
+                                <span class="text-[10px] text-neutral-400 font-medium">Fresh Daily</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================= BY DAY VIEW (ALTERNATIVE TOGGLE) ================= -->
+        <div id="menu-days-container" class="hidden space-y-6">
+            <!-- Monday -->
+            <div class="menu-section-block">
+                <div class="flex items-center justify-between pb-3 mb-4 border-b border-[var(--border-light)]">
+                    <div class="flex items-center gap-2.5">
+                        <span class="w-3 h-3 rounded-full bg-[#E11D48]"></span>
+                        <h3 class="text-lg font-semibold" style="font-family:'Outfit',sans-serif;font-weight:600;">Monday</h3>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#E11D48]/10 text-[#E11D48]">Vitality Start</span>
+                    </div>
+                    <span class="text-xs text-neutral-400 day-meal-count">3 Meals</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="day-meal-card p-3 rounded-xl border border-[var(--border-light)] bg-[var(--surface-alt)] flex items-center gap-3 transition-all duration-300" data-meal="breakfast">
+                        <img src="assets/images/menu_mon_breakfast.jpg" alt="Breakfast" class="w-14 h-14 rounded-lg object-cover">
+                        <div>
+                            <span class="text-[10px] font-bold text-amber-500 uppercase tracking-wider">Breakfast</span>
+                            <p class="text-sm font-semibold" style="font-weight:600;">Masala Omelette, Poha</p>
+                            <p class="text-[11px] text-neutral-400">High Protein • 380 kcal</p>
+                        </div>
+                    </div>
+                    <div class="day-meal-card p-3 rounded-xl border border-[var(--border-light)] bg-[var(--surface-alt)] flex items-center gap-3 transition-all duration-300" data-meal="lunch">
+                        <img src="assets/images/menu_mon_lunch.jpg" alt="Lunch" class="w-14 h-14 rounded-lg object-cover">
+                        <div>
+                            <span class="text-[10px] font-bold text-[#E11D48] uppercase tracking-wider">Lunch</span>
+                            <p class="text-sm font-semibold" style="font-weight:600;">Paneer Butter Masala, Rice</p>
+                            <p class="text-[11px] text-neutral-400">Vegetarian • 520 kcal</p>
+                        </div>
+                    </div>
+                    <div class="day-meal-card p-3 rounded-xl border border-[var(--border-light)] bg-[var(--surface-alt)] flex items-center gap-3 transition-all duration-300" data-meal="snacks">
+                        <img src="assets/images/menu_mon_snacks.jpg" alt="Snacks" class="w-14 h-14 rounded-lg object-cover">
+                        <div>
+                            <span class="text-[10px] font-bold text-orange-500 uppercase tracking-wider">Snacks</span>
+                            <p class="text-sm font-semibold" style="font-weight:600;">Samosa, Chai</p>
+                            <p class="text-[11px] text-neutral-400">Evening Bite • 240 kcal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tuesday -->
+            <div class="menu-section-block">
+                <div class="flex items-center justify-between pb-3 mb-4 border-b border-[var(--border-light)]">
+                    <div class="flex items-center gap-2.5">
+                        <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+                        <h3 class="text-lg font-semibold" style="font-family:'Outfit',sans-serif;font-weight:600;">Tuesday</h3>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#E11D48]/10 text-[#E11D48]">North &amp; South</span>
+                    </div>
+                    <span class="text-xs text-neutral-400 day-meal-count">3 Meals</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="day-meal-card p-3 rounded-xl border border-[var(--border-light)] bg-[var(--surface-alt)] flex items-center gap-3 transition-all duration-300" data-meal="breakfast">
+                        <img src="assets/images/menu_tue_breakfast.jpg" alt="Breakfast" class="w-14 h-14 rounded-lg object-cover">
+                        <div>
+                            <span class="text-[10px] font-bold text-amber-500 uppercase tracking-wider">Breakfast</span>
+                            <p class="text-sm font-semibold" style="font-weight:600;">Idli Sambar, Paratha</p>
+                            <p class="text-[11px] text-neutral-400">Steamed &amp; Fresh • 340 kcal</p>
+                        </div>
+                    </div>
+                    <div class="day-meal-card p-3 rounded-xl border border-[var(--border-light)] bg-[var(--surface-alt)] flex items-center gap-3 transition-all duration-300" data-meal="lunch">
+                        <img src="assets/images/menu_tue_lunch.jpg" alt="Lunch" class="w-14 h-14 rounded-lg object-cover">
+                        <div>
+                            <span class="text-[10px] font-bold text-[#E11D48] uppercase tracking-wider">Lunch</span>
+                            <p class="text-sm font-semibold" style="font-weight:600;">Dal Makhani, Naan</p>
+                            <p class="text-[11px] text-neutral-400">Chef Classic • 560 kcal</p>
+                        </div>
+                    </div>
+                    <div class="day-meal-card p-3 rounded-xl border border-[var(--border-light)] bg-[var(--surface-alt)] flex items-center gap-3 transition-all duration-300" data-meal="snacks">
+                        <img src="assets/images/menu_tue_snacks.jpg" alt="Snacks" class="w-14 h-14 rounded-lg object-cover">
+                        <div>
+                            <span class="text-[10px] font-bold text-orange-500 uppercase tracking-wider">Snacks</span>
+                            <p class="text-sm font-semibold" style="font-weight:600;">Vada Pav, Coffee</p>
+                            <p class="text-[11px] text-neutral-400">Filter Roast • 280 kcal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wednesday -->
+            <div class="menu-section-block">
+                <div class="flex items-center justify-between pb-3 mb-4 border-b border-[var(--border-light)]">
+                    <div class="flex items-center gap-2.5">
+                        <span class="w-3 h-3 rounded-full bg-teal-500"></span>
+                        <h3 class="text-lg font-semibold" style="font-family:'Outfit',sans-serif;font-weight:600;">Wednesday</h3>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#E11D48]/10 text-[#E11D48]">Coastal Saffron</span>
+                    </div>
+                    <span class="text-xs text-neutral-400 day-meal-count">3 Meals</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="day-meal-card p-3 rounded-xl border border-[var(--border-light)] bg-[var(--surface-alt)] flex items-center gap-3 transition-all duration-300" data-meal="breakfast">
+                        <img src="assets/images/menu_wed_breakfast.jpg" alt="Breakfast" class="w-14 h-14 rounded-lg object-cover">
+                        <div>
+                            <span class="text-[10px] font-bold text-amber-500 uppercase tracking-wider">Breakfast</span>
+                            <p class="text-sm font-semibold" style="font-weight:600;">Dosa, Upma</p>
+                            <p class="text-[11px] text-neutral-400">Crispy Roast • 360 kcal</p>
+                        </div>
+                    </div>
+                    <div class="day-meal-card p-3 rounded-xl border border-[var(--border-light)] bg-[var(--surface-alt)] flex items-center gap-3 transition-all duration-300" data-meal="lunch">
+                        <img src="assets/images/menu_wed_lunch.jpg" alt="Lunch" class="w-14 h-14 rounded-lg object-cover">
+                        <div>
+                            <span class="text-[10px] font-bold text-[#E11D48] uppercase tracking-wider">Lunch</span>
+                            <p class="text-sm font-semibold" style="font-weight:600;">Chole Bhature, Biryani</p>
+                            <p class="text-[11px] text-neutral-400">Mid-Week Feast • 610 kcal</p>
+                        </div>
+                    </div>
+                    <div class="day-meal-card p-3 rounded-xl border border-[var(--border-light)] bg-[var(--surface-alt)] flex items-center gap-3 transition-all duration-300" data-meal="snacks">
+                        <img src="assets/images/menu_wed_snacks.jpg" alt="Snacks" class="w-14 h-14 rounded-lg object-cover">
+                        <div>
+                            <span class="text-[10px] font-bold text-orange-500 uppercase tracking-wider">Snacks</span>
+                            <p class="text-sm font-semibold" style="font-weight:600;">Pakora, Buttermilk</p>
+                            <p class="text-[11px] text-neutral-400">Chilled Chaas • 210 kcal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thursday -->
+            <div class="menu-section-block">
+                <div class="flex items-center justify-between pb-3 mb-4 border-b border-[var(--border-light)]">
+                    <div class="flex items-center gap-2.5">
+                        <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+                        <h3 class="text-lg font-semibold" style="font-family:'Outfit',sans-serif;font-weight:600;">Thursday</h3>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#E11D48]/10 text-[#E11D48]">Comfort Classics</span>
+                    </div>
+                    <span class="text-xs text-neutral-400 day-meal-count">3 Meals</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="day-meal-card p-3 rounded-xl border border-[var(--border-light)] bg-[var(--surface-alt)] flex items-center gap-3 transition-all duration-300" data-meal="breakfast">
+                        <img src="assets/images/menu_thu_breakfast.jpg" alt="Breakfast" class="w-14 h-14 rounded-lg object-cover">
+                        <div>
+                            <span class="text-[10px] font-bold text-amber-500 uppercase tracking-wider">Breakfast</span>
+                            <p class="text-sm font-semibold" style="font-weight:600;">Puri Bhaji, Cornflakes</p>
+                            <p class="text-[11px] text-neutral-400">Energy Blend • 410 kcal</p>
+                        </div>
+                    </div>
+                    <div class="day-meal-card p-3 rounded-xl border border-[var(--border-light)] bg-[var(--surface-alt)] flex items-center gap-3 transition-all duration-300" data-meal="lunch">
+                        <img src="assets/images/menu_thu_lunch.jpg" alt="Lunch" class="w-14 h-14 rounded-lg object-cover">
+                        <div>
+                            <span class="text-[10px] font-bold text-[#E11D48] uppercase tracking-wider">Lunch</span>
+                            <p class="text-sm font-semibold" style="font-weight:600;">Rajma Chawal, Pasta</p>
+                            <p class="text-[11px] text-neutral-400">Desi &amp; Continental • 540 kcal</p>
+                        </div>
+                    </div>
+                    <div class="day-meal-card p-3 rounded-xl border border-[var(--border-light)] bg-[var(--surface-alt)] flex items-center gap-3 transition-all duration-300" data-meal="snacks">
+                        <img src="assets/images/menu_thu_snacks.jpg" alt="Snacks" class="w-14 h-14 rounded-lg object-cover">
+                        <div>
+                            <span class="text-[10px] font-bold text-orange-500 uppercase tracking-wider">Snacks</span>
+                            <p class="text-sm font-semibold" style="font-weight:600;">Dhokla, Hot Chocolate</p>
+                            <p class="text-[11px] text-neutral-400">Steamed Spongy • 220 kcal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Friday -->
+            <div class="menu-section-block">
+                <div class="flex items-center justify-between pb-3 mb-4 border-b border-[var(--border-light)]">
+                    <div class="flex items-center gap-2.5">
+                        <span class="w-3 h-3 rounded-full bg-purple-500"></span>
+                        <h3 class="text-lg font-semibold" style="font-family:'Outfit',sans-serif;font-weight:600;">Friday</h3>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#E11D48]/10 text-[#E11D48]">Grand Finale</span>
+                    </div>
+                    <span class="text-xs text-neutral-400 day-meal-count">3 Meals</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="day-meal-card p-3 rounded-xl border border-[var(--border-light)] bg-[var(--surface-alt)] flex items-center gap-3 transition-all duration-300" data-meal="breakfast">
+                        <img src="assets/images/menu_fri_breakfast.jpg" alt="Breakfast" class="w-14 h-14 rounded-lg object-cover">
+                        <div>
+                            <span class="text-[10px] font-bold text-amber-500 uppercase tracking-wider">Breakfast</span>
+                            <p class="text-sm font-semibold" style="font-weight:600;">Pancakes, Rava Dosa</p>
+                            <p class="text-[11px] text-neutral-400">Gourmet Brunch • 420 kcal</p>
+                        </div>
+                    </div>
+                    <div class="day-meal-card p-3 rounded-xl border border-[var(--border-light)] bg-[var(--surface-alt)] flex items-center gap-3 transition-all duration-300" data-meal="lunch">
+                        <img src="assets/images/menu_fri_lunch.jpg" alt="Lunch" class="w-14 h-14 rounded-lg object-cover">
+                        <div>
+                            <span class="text-[10px] font-bold text-[#E11D48] uppercase tracking-wider">Lunch</span>
+                            <p class="text-sm font-semibold" style="font-weight:600;">Special Biryani, Fish</p>
+                            <p class="text-[11px] text-neutral-400">Friday Special • 640 kcal</p>
+                        </div>
+                    </div>
+                    <div class="day-meal-card p-3 rounded-xl border border-[var(--border-light)] bg-[var(--surface-alt)] flex items-center gap-3 transition-all duration-300" data-meal="snacks">
+                        <img src="assets/images/menu_fri_snacks.jpg" alt="Snacks" class="w-14 h-14 rounded-lg object-cover">
+                        <div>
+                            <span class="text-[10px] font-bold text-orange-500 uppercase tracking-wider">Snacks</span>
+                            <p class="text-sm font-semibold" style="font-weight:600;">Pizza, Mango Lassi</p>
+                            <p class="text-[11px] text-neutral-400">TGIF Celebration • 350 kcal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Unified Filter & View Mode Logic
+            const filterBtns = document.querySelectorAll('.menu-section-filter-btn');
+            const secBreakfast = document.getElementById('section-breakfast');
+            const secLunch = document.getElementById('section-lunch');
+            const secSnacks = document.getElementById('section-snacks');
+            const sectionsContainer = document.getElementById('menu-sections-container');
+            const daysContainer = document.getElementById('menu-days-container');
+            const btnViewSection = document.getElementById('view-mode-section');
+            const btnViewDay = document.getElementById('view-mode-day');
+            const dayMealCards = document.querySelectorAll('.day-meal-card');
+            const dayMealCounters = document.querySelectorAll('.day-meal-count');
+
+            let activeFilter = 'all';
+
+            function applyFilter(filter) {
+                activeFilter = filter;
+
+                // 1. Update Section View Blocks
+                if (secBreakfast) secBreakfast.style.display = (filter === 'all' || filter === 'breakfast') ? 'block' : 'none';
+                if (secLunch) secLunch.style.display = (filter === 'all' || filter === 'lunch') ? 'block' : 'none';
+                if (secSnacks) secSnacks.style.display = (filter === 'all' || filter === 'snacks') ? 'block' : 'none';
+
+                // 2. Update Day View Meal Cards
+                if (dayMealCards.length) {
+                    dayMealCards.forEach(card => {
+                        const meal = card.getAttribute('data-meal');
+                        if (filter === 'all' || meal === filter) {
+                            card.style.display = 'flex';
+                            card.style.opacity = '1';
+                        } else {
+                            card.style.display = 'none';
+                            card.style.opacity = '0';
+                        }
+                    });
+                }
+
+                // 3. Update Day Header Counter Badges
+                if (dayMealCounters.length) {
+                    dayMealCounters.forEach(badge => {
+                        if (filter === 'all') {
+                            badge.textContent = '3 Meals';
+                        } else if (filter === 'breakfast') {
+                            badge.textContent = '1 Meal (Breakfast)';
+                        } else if (filter === 'lunch') {
+                            badge.textContent = '1 Meal (Lunch)';
+                        } else if (filter === 'snacks') {
+                            badge.textContent = '1 Meal (Snacks)';
+                        }
+                    });
+                }
+            }
+
+            // Filter button click handler
+            if (filterBtns.length) {
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        filterBtns.forEach(b => b.classList.remove('active'));
+                        this.classList.add('active');
+                        const filter = this.getAttribute('data-filter') || 'all';
+                        applyFilter(filter);
+                    });
+                });
+            }
+
+            // View toggle handlers
+            function switchToSectionView() {
+                if (sectionsContainer && daysContainer && btnViewSection && btnViewDay) {
+                    sectionsContainer.classList.remove('hidden');
+                    daysContainer.classList.add('hidden');
+                    btnViewSection.classList.add('bg-[#E11D48]', 'text-white', 'shadow-sm');
+                    btnViewSection.classList.remove('text-neutral-500');
+                    btnViewDay.classList.remove('bg-[#E11D48]', 'text-white', 'shadow-sm');
+                    btnViewDay.classList.add('text-neutral-500');
+                    applyFilter(activeFilter);
+                }
+            }
+
+            function switchToDayView() {
+                if (sectionsContainer && daysContainer && btnViewSection && btnViewDay) {
+                    sectionsContainer.classList.add('hidden');
+                    daysContainer.classList.remove('hidden');
+                    btnViewDay.classList.add('bg-[#E11D48]', 'text-white', 'shadow-sm');
+                    btnViewDay.classList.remove('text-neutral-500');
+                    btnViewSection.classList.remove('bg-[#E11D48]', 'text-white', 'shadow-sm');
+                    btnViewSection.classList.add('text-neutral-500');
+                    applyFilter(activeFilter);
+                }
+            }
+
+            if (btnViewSection && btnViewDay) {
+                btnViewSection.addEventListener('click', switchToSectionView);
+                btnViewDay.addEventListener('click', switchToDayView);
+            }
+
+            // Initialize filter state
+            applyFilter('all');
+        });
+        </script>
     </div>
 </section>
 
@@ -101,11 +775,11 @@
                 <div class="p-6"><span class="badge badge-warning mb-3">Autumn</span><h3 style="font-size:1.1rem;" class="mb-2">Harvest Festival Menu</h3><p class="text-sm text-neutral-500" style="font-weight:400;">Pumpkin soup, roasted root vegetables, warm spiced lentils, and cinnamon desserts.</p></div>
             </div>
             <div class="card reveal" style="transition-delay:0.1s;">
-                <div class="overflow-hidden h-48 flex items-center justify-center" style="background:linear-gradient(135deg,#E0F2FE,#BAE6FD);"><i class="fas fa-snowflake text-5xl text-sky-400"></i></div>
+                <div class="overflow-hidden h-48 flex items-center justify-center bg-[#E11D48]/10 text-[#E11D48]"><i class="fas fa-snowflake text-5xl"></i></div>
                 <div class="p-6"><span class="badge badge-teal mb-3">Winter</span><h3 style="font-size:1.1rem;" class="mb-2">Comfort Classics</h3><p class="text-sm text-neutral-500" style="font-weight:400;">Hot soups, stews, makki ki roti with sarson da saag, gajar ka halwa, and hot cocoa.</p></div>
             </div>
             <div class="card reveal" style="transition-delay:0.2s;">
-                <div class="overflow-hidden h-48 flex items-center justify-center" style="background:linear-gradient(135deg,#FEF3C7,#FDE68A);"><i class="fas fa-sun text-5xl text-amber-500"></i></div>
+                <div class="overflow-hidden h-48 flex items-center justify-center bg-[#E11D48]/10 text-[#E11D48]"><i class="fas fa-sun text-5xl"></i></div>
                 <div class="p-6"><span class="badge badge-success mb-3">Summer</span><h3 style="font-size:1.1rem;" class="mb-2">Cool & Refreshing</h3><p class="text-sm text-neutral-500" style="font-weight:400;">Chilled salads, fruit bowls, aam panna, coconut water, and light grilled options.</p></div>
             </div>
         </div>
@@ -114,20 +788,65 @@
 
 <!-- Custom Menu Request Form -->
 <section class="py-20" style="background:var(--surface-alt);">
-    <div class="max-w-2xl mx-auto px-4 sm:px-6">
-        <div class="text-center mb-12">
-            <span class="section-tag reveal"><i class="fas fa-pen text-[10px]"></i> Custom Request</span>
-            <h2 class="section-title mb-4 reveal">Request a Custom Menu</h2>
-            <p class="section-subtitle mx-auto reveal">Have specific dietary requirements or cuisine preferences? Let us know and we'll design a menu just for your team.</p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="max-w-2xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="section-tag reveal"><i class="fas fa-pen text-[10px]"></i> Custom Request</span>
+                <h2 class="section-title mb-4 reveal">Request a Custom Menu</h2>
+                <p class="section-subtitle mx-auto reveal">Have specific dietary requirements or cuisine preferences? Let us know and we'll design a menu just for your team.</p>
+            </div>
+            <div class="card p-8 reveal">
+                <form class="space-y-5" onsubmit="event.preventDefault();alert('Request submitted! We will contact you within 24 hours.');">
+                    <div class="form-group"><label class="form-label" for="req-name">Company Name</label><input type="text" id="req-name" class="form-input" placeholder="Your company name" required></div>
+                    <div class="form-group"><label class="form-label" for="req-email">Email</label><input type="email" id="req-email" class="form-input" placeholder="hr@yourcompany.com" required></div>
+                    <div class="form-group"><label class="form-label" for="req-size">Team Size</label><input type="number" id="req-size" class="form-input" placeholder="e.g. 200" required></div>
+                    <div class="form-group"><label class="form-label" for="req-notes">Special Requirements</label><textarea id="req-notes" class="form-input" placeholder="Describe your dietary needs, cuisine preferences, budget range..."></textarea></div>
+                    <button type="submit" class="btn btn-primary btn-full btn-shine">Submit Request</button>
+                </form>
+            </div>
         </div>
-        <div class="card p-8 reveal">
-            <form class="space-y-5" onsubmit="event.preventDefault();alert('Request submitted! We will contact you within 24 hours.');">
-                <div class="form-group"><label class="form-label" for="req-name">Company Name</label><input type="text" id="req-name" class="form-input" placeholder="Your company name" required></div>
-                <div class="form-group"><label class="form-label" for="req-email">Email</label><input type="email" id="req-email" class="form-input" placeholder="hr@yourcompany.com" required></div>
-                <div class="form-group"><label class="form-label" for="req-size">Team Size</label><input type="number" id="req-size" class="form-input" placeholder="e.g. 200" required></div>
-                <div class="form-group"><label class="form-label" for="req-notes">Special Requirements</label><textarea id="req-notes" class="form-input" placeholder="Describe your dietary needs, cuisine preferences, budget range..."></textarea></div>
-                <button type="submit" class="btn btn-primary btn-full btn-shine">Submit Request</button>
-            </form>
+    </div>
+</section>
+
+<!-- ===== MENU PLANNING CTA: CLEAN MINIMALIST DESIGN ===== -->
+<section class="py-16 md:py-20 relative overflow-hidden" style="background:var(--cream);">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        <div class="relative rounded-3xl overflow-hidden border border-[#E2E8F0] dark:border-[#334155] shadow-xl bg-[var(--surface)] p-8 sm:p-12 text-center reveal">
+            <!-- Subtle ambient flare -->
+            <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-[#E11D48]/10 blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-[#E11D48]/10 blur-3xl pointer-events-none"></div>
+
+            <div class="relative z-10">
+                <span class="section-tag mb-4 inline-flex items-center gap-2 mx-auto">
+                    <i class="fas fa-concierge-bell text-[10px] text-[#E11D48]"></i> VIP Service
+                </span>
+                
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[var(--text-dark)] tracking-tight mb-3" style="font-family:'Outfit',sans-serif;">
+                    Request a Free Chef's Tasting Box
+                </h2>
+                
+                <p class="text-neutral-500 dark:text-neutral-400 text-base max-w-xl mx-auto mb-8 leading-relaxed" style="font-weight:400;">
+                    Experience our chef-crafted corporate dining with a complimentary sample box delivered directly to your office.
+                </p>
+
+                <!-- Dual Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="signup.html" class="btn btn-primary btn-lg btn-shine">
+                        <i class="fas fa-box-open text-xs mr-2"></i>
+                        <span>Claim Tasting Box</span>
+                    </a>
+                    <a href="tel:+918001234567" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-phone-alt text-xs text-[#E11D48] mr-2"></i>
+                        <span>Call Chef Desk</span>
+                    </a>
+                </div>
+
+                <!-- Fine-print assurance -->
+                <p class="mt-6 text-xs text-neutral-400 flex items-center justify-center gap-1.5" style="font-weight:400;">
+                    <i class="fas fa-truck text-[#E11D48]"></i>
+                    <span>Delivered hot within 48h to your office desk.</span>
+                </p>
+            </div>
         </div>
     </div>
 </section>

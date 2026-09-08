@@ -5,51 +5,435 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CulinaCorp — Smart corporate canteen management. Nourishing your workforce with fresh, healthy meals, smart ordering, and hygiene-first kitchen operations.">
     <title>CulinaCorp — Corporate Office Canteen Management</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' stroke='%23C2410C' stroke-width='2.5' fill='none'/%3E%3Cline x1='38' y1='28' x2='38' y2='72' stroke='%23C2410C' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M55 58 Q68 38 62 28 Q54 36 55 58Z' fill='%23C2410C' fill-opacity='0.3' stroke='%23C2410C' stroke-width='2'/%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' stroke='%23E11D48' stroke-width='2.5' fill='none'/%3E%3Cline x1='38' y1='28' x2='38' y2='72' stroke='%23E11D48' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M55 58 Q68 38 62 28 Q54 36 55 58Z' fill='%23E11D48' fill-opacity='0.3' stroke='%23E11D48' stroke-width='2'/%3E%3C/svg%3E">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#C2410C',secondary:'#1E293B'}}}}</script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#E11D48',secondary:'#1E293B'}}}}</script>
 </head>
 <body>
 <!-- Navbar -->
 <div id="navbar-container"></div>
 
-<!-- ===== HERO SECTION — Split Layout ===== -->
-<section class="hero relative overflow-hidden" style="background: linear-gradient(135deg, var(--cream) 0%, rgba(13,124,102,0.04) 100%);">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <!-- Text -->
-            <div class="reveal text-center lg:text-left">
-                <span class="section-tag"><i class="fas fa-utensils text-[10px]"></i> Smart Canteen Solutions</span>
-                <h1 class="mb-6" style="line-height:1.15;">Nourishing Your Workforce, <span class="teal-text">Elevating</span> Your Workplace</h1>
-                <p class="section-subtitle mb-8 mx-auto lg:mx-0" style="max-width:520px;">From daily meal plans to real-time dashboards — we transform corporate dining into a seamless, healthy, and cost-efficient experience for every team.</p>
-                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                    <a href="services.html" class="btn btn-primary btn-lg btn-shine"><i class="fas fa-arrow-right text-xs"></i> Explore Services</a>
-                    <a href="pricing.html" class="btn btn-secondary btn-lg"><i class="fas fa-tag text-xs"></i> View Pricing</a>
-                </div>
-            </div>
-            <!-- Image -->
-            <div class="reveal relative">
-                <div class="rounded-2xl overflow-hidden shadow-2xl shadow-[#C2410C]/10 border border-[#E2E8F0] dark:border-[#334155]">
-                    <img src="assets/images/hero_home1.jpg" alt="Modern corporate canteen with employees enjoying healthy meals" class="w-full h-[400px] lg:h-[480px] object-cover">
-                </div>
-                <!-- Floating badge -->
-                <div class="absolute -bottom-4 -left-4 sm:left-auto sm:-right-4 glass-card px-5 py-3 flex items-center gap-3 animate-on-scroll slide-up visible" style="animation: float 4s ease-in-out infinite;">
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#C2410C] to-[#9A3412] flex items-center justify-center text-white text-sm"><i class="fas fa-check"></i></div>
-                    <div>
-                        <p class="text-xs font-bold text-[#0F172A] dark:text-white" style="font-weight:600;">FSSAI Certified</p>
-                        <p class="text-[11px] text-neutral-500" style="font-weight:400;">100% Compliance</p>
+<!-- ===== HERO SECTION — Unified Smart Canteen Command Hub ===== -->
+<section class="hero-bento-section">
+    <!-- Ambient Glowing Backdrops -->
+    <div class="ambient-orb w-[650px] h-[650px] -top-40 -left-40" style="background: radial-gradient(circle, rgba(225,29,72,0.22) 0%, transparent 65%);"></div>
+    <div class="ambient-orb w-[600px] h-[600px] -bottom-36 -right-24" style="background: radial-gradient(circle, rgba(244,63,94,0.18) 0%, transparent 65%);"></div>
+    <div class="hero-grid-pattern opacity-60"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 py-6 sm:py-8">
+        <!-- Combined Master Command Hub Container -->
+        <div class="hero-master-hub p-6 sm:p-8 lg:p-10 rounded-3xl border border-white/15 bg-[#0F172A]/80 backdrop-blur-2xl shadow-2xl shadow-black/80 reveal">
+
+            <!-- Upper Tier: Auto Side Move Carousel (3 Distinct Content & Image Stages) -->
+            <div id="hero-slider-container" class="relative">
+                
+                <!-- Carousel Viewport -->
+                <div class="hero-carousel-viewport">
+                    <div id="hero-slider-track" class="hero-carousel-track">
+
+                        <!-- Slide 1: Corporate Dining Operating System -->
+                        <div class="hero-carousel-slide">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+                                <!-- Left Column -->
+                                <div class="lg:col-span-7">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-white/15 bg-white/5 backdrop-blur-md mb-5">
+                                        <span class="live-dot radar-ring"></span>
+                                        <span class="text-xs font-semibold tracking-wider uppercase text-white/90" style="font-family:'DM Sans',sans-serif;">Live Ecosystem • 200+ Corporate Hubs</span>
+                                        <span class="hidden sm:inline-block w-1 h-1 rounded-full bg-white/40"></span>
+                                        <span class="hidden sm:inline-block text-[11px] text-white/90 font-semibold"><i class="fas fa-utensils text-[10px] mr-1"></i> Lunch Active</span>
+                                    </div>
+                                    <h1 class="text-white text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight mb-4" style="font-family:'Outfit',sans-serif;line-height:1.14;">
+                                        Nourishing Your Teams, <br class="hidden sm:block">
+                                        <span class="text-shimmer">Elevating Your Workplace</span>
+                                    </h1>
+                                    <p class="text-white/75 text-sm sm:text-base mb-6 max-w-xl leading-relaxed" style="font-weight:400;">
+                                        The intelligent corporate dining operating system. Chef-curated micro-nutrition, sub-second RFID tap-to-eat checkouts, and automated real-time hygiene compliance.
+                                    </p>
+                                    <div class="flex flex-col sm:flex-row items-center gap-3.5 mb-7">
+                                        <a href="services.html" class="btn btn-primary btn-lg btn-shine shadow-xl shadow-[#E11D48]/35 w-full sm:w-auto text-center">
+                                            <i class="fas fa-bolt text-xs mr-1"></i> Explore Live Solutions
+                                        </a>
+                                        <a href="pricing.html" class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/40 text-white text-xs font-bold uppercase tracking-widest transition-all w-full sm:w-auto">
+                                            <span class="w-6 h-6 rounded-full bg-gradient-to-br from-[#E11D48] to-[#9F1239] text-white flex items-center justify-center text-xs shadow-md shadow-[#E11D48]/40">
+                                                <i class="fas fa-tag text-[9px]"></i>
+                                            </span>
+                                            <span>View Transparent Pricing</span>
+                                        </a>
+                                    </div>
+                                    <div class="pt-5 border-t border-white/10 grid grid-cols-3 gap-3">
+                                        <div>
+                                            <p class="text-xl sm:text-2xl font-medium text-white tracking-tight" style="font-family:'Outfit',sans-serif;">&lt;10m</p>
+                                            <p class="text-[11px] text-white/50 font-normal">Avg. Pickup Time</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-xl sm:text-2xl font-medium text-white tracking-tight" style="font-family:'Outfit',sans-serif;">99.4%</p>
+                                            <p class="text-[11px] text-white/50 font-normal">Hygiene Audit Score</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-xl sm:text-2xl font-medium text-white tracking-tight flex items-center" style="font-family:'Outfit',sans-serif;"><i class="fas fa-star text-sm mr-1.5 opacity-90"></i>4.95</p>
+                                            <p class="text-[11px] text-white/50 font-normal">Employee Rating</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Right Column (Image 1) -->
+                                <div class="lg:col-span-5 relative">
+                                    <div class="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-[#1E293B]/40 group">
+                                        <img src="assets/images/hero_home1.jpg" alt="Corporate Cafeteria Dining" class="w-full h-[280px] sm:h-[350px] object-cover group-hover:scale-105 transition-transform duration-700">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-transparent to-black/20 pointer-events-none"></div>
+                                        <div class="absolute top-3.5 left-3.5 right-3.5 z-10 flex items-center justify-between">
+                                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B1120]/85 backdrop-blur-md border border-white/15 text-xs text-white">
+                                                <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+                                                <span class="font-medium text-[11px]">68% Capacity • Peak Lunch</span>
+                                            </div>
+                                            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[10px] font-bold text-white uppercase tracking-wider shadow-lg">
+                                                <i class="fas fa-shield-alt text-[10px]"></i>
+                                                <span>FSSAI 5-Star</span>
+                                            </div>
+                                        </div>
+                                        <div class="absolute bottom-3.5 left-3.5 right-3.5 z-10 p-3 rounded-xl bg-[#0F172A]/90 backdrop-blur-md border border-white/15 flex items-center justify-between shadow-xl">
+                                            <div class="flex items-center gap-2.5">
+                                                <div class="w-7 h-7 rounded-lg bg-white/10 border border-white/15 text-white flex items-center justify-center text-xs">
+                                                    <i class="fas fa-utensils"></i>
+                                                </div>
+                                                <div>
+                                                    <p class="text-xs font-medium text-white leading-tight">Floor 3 Central Canteen</p>
+                                                    <p class="text-[10px] text-white/60">Live seating & counters open</p>
+                                                </div>
+                                            </div>
+                                            <span class="px-2 py-0.5 rounded-full bg-white/10 border border-white/15 text-white/90 text-[9px] font-bold uppercase">Active</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: Smart Touchless RFID & Cashless Dining -->
+                        <div class="hero-carousel-slide">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+                                <!-- Left Column -->
+                                <div class="lg:col-span-7">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-white/15 bg-white/5 backdrop-blur-md mb-5">
+                                        <span class="live-dot radar-ring"></span>
+                                        <span class="text-xs font-semibold tracking-wider uppercase text-white/90" style="font-family:'DM Sans',sans-serif;">Smart Canteen Tech • 100% Cashless</span>
+                                        <span class="hidden sm:inline-block w-1 h-1 rounded-full bg-white/40"></span>
+                                        <span class="hidden sm:inline-block text-[11px] text-white/90 font-semibold"><i class="fas fa-wifi text-[10px] mr-1"></i> RFID Express</span>
+                                    </div>
+                                    <h2 class="text-white text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight mb-4" style="font-family:'Outfit',sans-serif;line-height:1.14;">
+                                        Touchless Tap-to-Eat, <br class="hidden sm:block">
+                                        <span class="text-shimmer">Zero Cafeteria Queues</span>
+                                    </h2>
+                                    <p class="text-white/75 text-sm sm:text-base mb-6 max-w-xl leading-relaxed" style="font-weight:400;">
+                                        Eliminate peak lunch bottlenecks with sub-second corporate badge taps, instant prepaid balance sync, and automated payroll allowance reconciliation.
+                                    </p>
+                                    <div class="flex flex-col sm:flex-row items-center gap-3.5 mb-7">
+                                        <a href="services.html" class="btn btn-primary btn-lg btn-shine shadow-xl shadow-[#E11D48]/35 w-full sm:w-auto text-center">
+                                            <i class="fas fa-wifi text-xs mr-1"></i> See RFID Checkout
+                                        </a>
+                                        <a href="dashboard.html" class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/40 text-white text-xs font-bold uppercase tracking-widest transition-all w-full sm:w-auto">
+                                            <span class="w-6 h-6 rounded-full bg-gradient-to-br from-[#E11D48] to-[#9F1239] text-white flex items-center justify-center text-xs shadow-md shadow-[#E11D48]/40">
+                                                <i class="fas fa-chart-line text-[9px]"></i>
+                                            </span>
+                                            <span>Live Operations Portal</span>
+                                        </a>
+                                    </div>
+                                    <div class="pt-5 border-t border-white/10 grid grid-cols-3 gap-3">
+                                        <div>
+                                            <p class="text-xl sm:text-2xl font-medium text-white tracking-tight" style="font-family:'Outfit',sans-serif;">0.8s</p>
+                                            <p class="text-[11px] text-white/50 font-normal">Tap &amp; Go Speed</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-xl sm:text-2xl font-medium text-white tracking-tight" style="font-family:'Outfit',sans-serif;">100%</p>
+                                            <p class="text-[11px] text-white/50 font-normal">Cashless Precision</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-xl sm:text-2xl font-medium text-white tracking-tight flex items-center" style="font-family:'Outfit',sans-serif;"><i class="fas fa-bolt text-sm mr-1.5 opacity-90"></i>3x</p>
+                                            <p class="text-[11px] text-white/50 font-normal">Faster Counter Flow</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Right Column (Image 2) -->
+                                <div class="lg:col-span-5 relative">
+                                    <div class="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-[#1E293B]/40 group">
+                                        <img src="assets/images/hero_premium_dining.jpg" alt="Smart RFID Checkout Dining" class="w-full h-[280px] sm:h-[350px] object-cover group-hover:scale-105 transition-transform duration-700">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-transparent to-black/20 pointer-events-none"></div>
+                                        <div class="absolute top-3.5 left-3.5 right-3.5 z-10 flex items-center justify-between">
+                                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B1120]/85 backdrop-blur-md border border-white/15 text-xs text-white">
+                                                <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+                                                <span class="font-medium text-[11px]">0.8s Tap Speed • Peak Active</span>
+                                            </div>
+                                            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[10px] font-bold text-white uppercase tracking-wider shadow-lg">
+                                                <i class="fas fa-credit-card text-[10px]"></i>
+                                                <span>Prepaid Wallet</span>
+                                            </div>
+                                        </div>
+                                        <div class="absolute bottom-3.5 left-3.5 right-3.5 z-10 p-3 rounded-xl bg-[#0F172A]/90 backdrop-blur-md border border-white/15 flex items-center justify-between shadow-xl">
+                                            <div class="flex items-center gap-2.5">
+                                                <div class="w-7 h-7 rounded-lg bg-white/10 border border-white/15 text-white flex items-center justify-center text-xs">
+                                                    <i class="fas fa-wifi"></i>
+                                                </div>
+                                                <div>
+                                                    <p class="text-xs font-medium text-white leading-tight">Express RFID Terminal</p>
+                                                    <p class="text-[10px] text-white/60">Sub-second contactless checkout</p>
+                                                </div>
+                                            </div>
+                                            <span class="px-2 py-0.5 rounded-full bg-white/10 border border-white/15 text-white/90 text-[9px] font-bold uppercase">Ready</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3: Farm-to-Fork Freshness & 5-Star Hygiene -->
+                        <div class="hero-carousel-slide">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+                                <!-- Left Column -->
+                                <div class="lg:col-span-7">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-white/15 bg-white/5 backdrop-blur-md mb-5">
+                                        <span class="live-dot radar-ring"></span>
+                                        <span class="text-xs font-semibold tracking-wider uppercase text-white/90" style="font-family:'DM Sans',sans-serif;">Certified Nutrition • Farm to Fork</span>
+                                        <span class="hidden sm:inline-block w-1 h-1 rounded-full bg-white/40"></span>
+                                        <span class="hidden sm:inline-block text-[11px] text-white/90 font-semibold"><i class="fas fa-leaf text-[10px] mr-1"></i> 100% Fresh</span>
+                                    </div>
+                                    <h2 class="text-white text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight mb-4" style="font-family:'Outfit',sans-serif;line-height:1.14;">
+                                        Chef-Crafted Menus, <br class="hidden sm:block">
+                                        <span class="text-shimmer">Highest Hygiene Standards</span>
+                                    </h2>
+                                    <p class="text-white/75 text-sm sm:text-base mb-6 max-w-xl leading-relaxed" style="font-weight:400;">
+                                        Multi-cuisine daily culinary rotations prepared with fresh farm produce, IoT-monitored cold storage, and daily FSSAI microbiological audits.
+                                    </p>
+                                    <div class="flex flex-col sm:flex-row items-center gap-3.5 mb-7">
+                                        <a href="menu-planning.html" class="btn btn-primary btn-lg btn-shine shadow-xl shadow-[#E11D48]/35 w-full sm:w-auto text-center">
+                                            <i class="fas fa-utensils text-xs mr-1"></i> View Weekly Menus
+                                        </a>
+                                        <a href="hygiene.html" class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/40 text-white text-xs font-bold uppercase tracking-widest transition-all w-full sm:w-auto">
+                                            <span class="w-6 h-6 rounded-full bg-gradient-to-br from-[#E11D48] to-[#9F1239] text-white flex items-center justify-center text-xs shadow-md shadow-[#E11D48]/40">
+                                                <i class="fas fa-shield-virus text-[9px]"></i>
+                                            </span>
+                                            <span>Food Safety Audits</span>
+                                        </a>
+                                    </div>
+                                    <div class="pt-5 border-t border-white/10 grid grid-cols-3 gap-3">
+                                        <div>
+                                            <p class="text-xl sm:text-2xl font-medium text-white tracking-tight" style="font-family:'Outfit',sans-serif;">100%</p>
+                                            <p class="text-[11px] text-white/50 font-normal">Fresh Daily Produce</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-xl sm:text-2xl font-medium text-white tracking-tight" style="font-family:'Outfit',sans-serif;">45k+</p>
+                                            <p class="text-[11px] text-white/50 font-normal">Meals Served Daily</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-xl sm:text-2xl font-medium text-white tracking-tight flex items-center" style="font-family:'Outfit',sans-serif;"><i class="fas fa-shield-alt text-sm mr-1.5 opacity-90"></i>5-Star</p>
+                                            <p class="text-[11px] text-white/50 font-normal">FSSAI Hygiene Rating</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Right Column (Image 3) -->
+                                <div class="lg:col-span-5 relative">
+                                    <div class="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-[#1E293B]/40 group">
+                                        <img src="assets/images/service_daily_meals.jpg" alt="Chef Crafted Fresh Daily Dining" class="w-full h-[280px] sm:h-[350px] object-cover group-hover:scale-105 transition-transform duration-700">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-transparent to-black/20 pointer-events-none"></div>
+                                        <div class="absolute top-3.5 left-3.5 right-3.5 z-10 flex items-center justify-between">
+                                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B1120]/85 backdrop-blur-md border border-white/15 text-xs text-white">
+                                                <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+                                                <span class="font-medium text-[11px]">Farm to Fork • Inspected Daily</span>
+                                            </div>
+                                            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[10px] font-bold text-white uppercase tracking-wider shadow-lg">
+                                                <i class="fas fa-certificate text-[10px]"></i>
+                                                <span>Grade A+</span>
+                                            </div>
+                                        </div>
+                                        <div class="absolute bottom-3.5 left-3.5 right-3.5 z-10 p-3 rounded-xl bg-[#0F172A]/90 backdrop-blur-md border border-white/15 flex items-center justify-between shadow-xl">
+                                            <div class="flex items-center gap-2.5">
+                                                <div class="w-7 h-7 rounded-lg bg-white/10 border border-white/15 text-white flex items-center justify-center text-xs">
+                                                    <i class="fas fa-utensils"></i>
+                                                </div>
+                                                <div>
+                                                    <p class="text-xs font-medium text-white leading-tight">Executive Salad &amp; Hot Buffet</p>
+                                                    <p class="text-[10px] text-white/60">Farm-fresh batch prepped</p>
+                                                </div>
+                                            </div>
+                                            <span class="px-2 py-0.5 rounded-full bg-white/10 border border-white/15 text-white/90 text-[9px] font-bold uppercase">Active</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+
+                <!-- Carousel Controls Bar -->
+                <div class="flex items-center justify-between pt-4 pb-1 border-t border-white/10 mt-6">
+                    <!-- Progress Pill Indicators -->
+                    <div class="flex items-center gap-2">
+                        <button class="hero-slide-pill active" data-slide="0" aria-label="Slide 1" style="width: 48px;">
+                            <span class="hero-slide-pill-progress"></span>
+                        </button>
+                        <button class="hero-slide-pill" data-slide="1" aria-label="Slide 2" style="width: 24px;">
+                            <span class="hero-slide-pill-progress"></span>
+                        </button>
+                        <button class="hero-slide-pill" data-slide="2" aria-label="Slide 3" style="width: 24px;">
+                            <span class="hero-slide-pill-progress"></span>
+                        </button>
+                    </div>
+
+                    <!-- Slide Counter & Navigation Arrows -->
+                    <div class="flex items-center gap-3">
+                        <span id="hero-slide-counter" class="text-xs font-mono font-semibold text-white/70 tracking-wider">01 / 03</span>
+                        <div class="flex items-center gap-1.5">
+                            <button id="hero-slider-prev" class="hero-nav-arrow" aria-label="Previous Slide">
+                                <i class="fas fa-chevron-left text-xs"></i>
+                            </button>
+                            <button id="hero-slider-next" class="hero-nav-arrow" aria-label="Next Slide">
+                                <i class="fas fa-chevron-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
+            <!-- Lower Tier: Integrated Telemetry Cluster (Combined Dock) -->
+            <div class="mt-8 pt-6 border-t border-white/10 grid grid-cols-1 md:grid-cols-3 gap-4">
+
+                <!-- Module 1: AI Nutrition Intelligence -->
+                <div class="telemetry-dock-card p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-2">
+                            <div class="w-7 h-7 rounded-lg bg-white/10 border border-white/15 text-white flex items-center justify-center text-xs">
+                                <i class="fas fa-apple-alt"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-medium text-white tracking-wide uppercase">AI Nutrition</p>
+                                <p class="text-[9px] text-white/50">Personalized Macros</p>
+                            </div>
+                        </div>
+                        <span class="text-[9px] px-2 py-0.5 rounded-full bg-white/10 border border-white/15 text-white/80 font-bold uppercase">Today</span>
+                    </div>
+
+                    <div class="flex items-center gap-3.5 mb-3">
+                        <div class="relative w-14 h-14 flex items-center justify-center shrink-0">
+                            <svg class="w-14 h-14 -rotate-90" viewBox="0 0 36 36">
+                                <path class="text-white/10" stroke-width="3" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="text-[#E11D48]" stroke-dasharray="78, 100" stroke-width="3" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            </svg>
+                            <div class="absolute text-center">
+                                <span class="block text-xs font-bold text-white leading-none">520</span>
+                                <span class="text-[7px] text-white/50 uppercase">kcal</span>
+                            </div>
+                        </div>
+                        <div class="flex-1 space-y-1.5">
+                            <div>
+                                <div class="flex justify-between text-[10px] text-white/80 font-medium mb-0.5">
+                                    <span>Protein (34g)</span>
+                                    <span class="text-white font-semibold">High</span>
+                                </div>
+                                <div class="w-full bg-white/10 rounded-full h-1.5 overflow-hidden">
+                                    <div class="bg-white/70 h-1.5 rounded-full" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-[10px] text-white/80 font-medium mb-0.5">
+                                    <span>Low GI Complex</span>
+                                    <span class="text-white/80 font-semibold">Balanced</span>
+                                </div>
+                                <div class="w-full bg-white/10 rounded-full h-1.5 overflow-hidden">
+                                    <div class="bg-white/50 h-1.5 rounded-full" style="width: 65%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] text-white/60">
+                        <span><i class="fas fa-check-circle text-white/80 mr-1"></i> Chef Curated</span>
+                        <a href="menu-planning.html" class="text-white/80 font-semibold hover:underline">View Menu &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Module 2: Touchless RFID Tap-to-Eat -->
+                <div id="bento-rfid-card" onclick="simulateRfidTap()" class="telemetry-dock-card p-4 cursor-pointer bento-rfid-interactive">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-2">
+                            <div class="w-7 h-7 rounded-lg bg-white/10 border border-white/15 text-white flex items-center justify-center text-xs">
+                                <i class="fas fa-id-card"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-medium text-white tracking-wide uppercase">Touchless RFID</p>
+                                <p class="text-[9px] text-white/50">Instant Tap-to-Eat</p>
+                            </div>
+                        </div>
+                        <span class="text-[9px] px-2 py-0.5 rounded-full bg-white/10 border border-white/15 text-white/80 font-bold uppercase">1s Speed</span>
+                    </div>
+
+                    <div class="p-2.5 rounded-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 mb-3">
+                        <div class="flex items-center justify-between mb-1.5">
+                            <div class="flex items-center gap-1.5">
+                                <div class="w-5 h-3 rounded bg-white/40"></div>
+                                <span class="text-[9px] font-mono text-white/70">•••• 8942</span>
+                            </div>
+                            <i class="fas fa-wifi rotate-90 text-white/80 text-[10px] rfid-wave-anim"></i>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-[10px] font-medium text-white" id="rfid-holder-name">Alex Morgan</p>
+                                <p class="text-[8px] text-white/50">Tech Lead • Engineering</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-xs font-medium text-white" id="rfid-status-text"><i class="fas fa-check-circle text-[10px] mr-1"></i>Paid ₹180</p>
+                                <p class="text-[8px] text-white/60" id="rfid-balance-text">Balance: ₹1,420</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] text-white/60">
+                        <span id="rfid-tap-hint"><i class="fas fa-hand-pointer text-white/80 mr-1 animate-bounce"></i> Click card to tap demo</span>
+                        <span class="text-white/90 font-semibold"><i class="fas fa-bolt mr-0.5"></i> Sub-Second</span>
+                    </div>
+                </div>
+
+                <!-- Module 3: Live Queue & Hygiene Audit -->
+                <div class="telemetry-dock-card p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-2">
+                            <div class="w-7 h-7 rounded-lg bg-white/10 border border-white/15 text-white flex items-center justify-center text-xs">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-medium text-white tracking-wide uppercase">Queue & Hygiene</p>
+                                <p class="text-[9px] text-white/50">Automated Telemetry</p>
+                            </div>
+                        </div>
+                        <span class="text-[9px] px-2 py-0.5 rounded-full bg-white/10 border border-white/15 text-white/80 font-bold uppercase">Live</span>
+                    </div>
+
+                    <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/10 mb-3">
+                        <div class="flex items-center gap-2.5">
+                            <div class="queue-wave">
+                                <span class="queue-bar"></span>
+                                <span class="queue-bar"></span>
+                                <span class="queue-bar"></span>
+                                <span class="queue-bar"></span>
+                                <span class="queue-bar"></span>
+                            </div>
+                            <div>
+                                <p class="text-[11px] font-medium text-white">Est. Wait: 2 Mins</p>
+                                <p class="text-[9px] text-white/70 font-medium">Counters moving fast</p>
+                            </div>
+                        </div>
+                        <span class="text-sm font-bold text-white inline-flex items-center gap-1" style="font-family:'Outfit',sans-serif;"><i class="fas fa-bolt text-xs"></i> Fast</span>
+                    </div>
+
+                    <div class="pt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] text-white/60">
+                        <span><i class="fas fa-shield-virus text-white/80 mr-1"></i> FSSAI Audit: <strong>99.4%</strong></span>
+                        <a href="hygiene.html" class="text-white/80 font-semibold hover:underline">Report &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
-    </div>
-    <!-- Wave Divider -->
-    <div class="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;height:60px;">
-            <path d="M0 30 Q360 0 720 30 T1440 30 V60 H0Z" fill="var(--cream)"/>
-        </svg>
     </div>
 </section>
 
@@ -58,19 +442,19 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 reveal">
             <div class="text-center p-6 rounded-2xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)]">
-                <p class="text-3xl font-bold text-[#C2410C] mb-1 counter" data-count="10000" data-suffix="+" style="font-family:'Outfit',sans-serif;">0</p>
+                <p class="text-3xl font-medium text-[#E11D48] mb-1 counter" data-count="10000" data-suffix="+" style="font-family:'Outfit',sans-serif;">0</p>
                 <p class="text-sm text-neutral-500" style="font-weight:400;">Meals Served Daily</p>
             </div>
             <div class="text-center p-6 rounded-2xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)]">
-                <p class="text-3xl font-bold text-[#C2410C] mb-1 counter" data-count="200" data-suffix="+" style="font-family:'Outfit',sans-serif;">0</p>
+                <p class="text-3xl font-medium text-[#E11D48] mb-1 counter" data-count="200" data-suffix="+" style="font-family:'Outfit',sans-serif;">0</p>
                 <p class="text-sm text-neutral-500" style="font-weight:400;">Corporates Served</p>
             </div>
             <div class="text-center p-6 rounded-2xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)]">
-                <p class="text-3xl font-bold text-[#C2410C] mb-1 counter" data-count="99" data-suffix=".5%" style="font-family:'Outfit',sans-serif;">0</p>
+                <p class="text-3xl font-medium text-[#E11D48] mb-1 counter" data-count="99" data-suffix=".5%" style="font-family:'Outfit',sans-serif;">0</p>
                 <p class="text-sm text-neutral-500" style="font-weight:400;">Hygiene Score</p>
             </div>
             <div class="text-center p-6 rounded-2xl border border-[#E2E8F0] dark:border-[#334155] bg-[var(--surface)]">
-                <p class="text-3xl font-bold text-[#C2410C] mb-1" style="font-family:'Outfit',sans-serif;">4.8 ★</p>
+                <p class="text-3xl font-medium text-[#E11D48] mb-1 flex items-center justify-center gap-1" style="font-family:'Outfit',sans-serif;">4.8 <i class="fas fa-star text-xl"></i></p>
                 <p class="text-sm text-neutral-500" style="font-weight:400;">Client Rating</p>
             </div>
         </div>
@@ -79,37 +463,37 @@
 
 <!-- ===== HOW IT WORKS — Timeline ===== -->
 <section class="py-20" style="background: var(--surface-alt);">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <span class="section-tag reveal"><i class="fas fa-cogs text-[10px]"></i> How It Works</span>
-        <h2 class="section-title mb-4 reveal">Three Simple Steps to Better Dining</h2>
-        <p class="section-subtitle mx-auto mb-16 reveal">Getting started is effortless. Our streamlined process ensures your office canteen runs like clockwork from day one.</p>
-    </div>
-    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="section-tag reveal"><i class="fas fa-cogs text-[10px]"></i> How It Works</span>
+            <h2 class="section-title mb-4 reveal">Three Simple Steps to Better Dining</h2>
+            <p class="section-subtitle mx-auto reveal">Getting started is effortless. Our streamlined process ensures your office canteen runs like clockwork from day one.</p>
+        </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Step 1 -->
             <div class="reveal text-center">
-                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#C2410C] to-[#9A3412] flex items-center justify-center text-white text-xl mx-auto mb-5 shadow-lg shadow-[#C2410C]/25">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#E11D48] to-[#9F1239] flex items-center justify-center text-white text-xl mx-auto mb-5 shadow-lg shadow-[#E11D48]/25">
                     <i class="fas fa-clipboard-list"></i>
                 </div>
-                <span class="inline-block text-xs font-bold text-[#C2410C] uppercase tracking-widest mb-2" style="font-weight:600;">Step 01</span>
+                <span class="inline-block text-xs font-bold text-[#E11D48] uppercase tracking-widest mb-2" style="font-weight:600;">Step 01</span>
                 <h3 class="mb-3" style="font-size:1.2rem;">Configure Your Menu</h3>
                 <p class="text-sm text-neutral-500" style="font-weight:400;">Set up your weekly meal plan through our intuitive dashboard. Choose cuisines, dietary options, and portion sizes.</p>
             </div>
             <!-- Step 2 -->
             <div class="reveal text-center" style="transition-delay:0.15s;">
-                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#C2410C] to-[#9A3412] flex items-center justify-center text-white text-xl mx-auto mb-5 shadow-lg shadow-[#C2410C]/25">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#E11D48] to-[#9F1239] flex items-center justify-center text-white text-xl mx-auto mb-5 shadow-lg shadow-[#E11D48]/25">
                     <i class="fas fa-mobile-alt"></i>
                 </div>
-                <span class="inline-block text-xs font-bold text-[#C2410C] uppercase tracking-widest mb-2" style="font-weight:600;">Step 02</span>
+                <span class="inline-block text-xs font-bold text-[#E11D48] uppercase tracking-widest mb-2" style="font-weight:600;">Step 02</span>
                 <h3 class="mb-3" style="font-size:1.2rem;">Employees Order</h3>
                 <p class="text-sm text-neutral-500" style="font-weight:400;">Team members browse the daily menu, pre-order their meals, and pay via their prepaid wallet — all from their phone.</p>
             </div>
             <!-- Step 3 -->
             <div class="reveal text-center" style="transition-delay:0.3s;">
-                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#C2410C] to-[#9A3412] flex items-center justify-center text-white text-xl mx-auto mb-5 shadow-lg shadow-[#C2410C]/25">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#E11D48] to-[#9F1239] flex items-center justify-center text-white text-xl mx-auto mb-5 shadow-lg shadow-[#E11D48]/25">
                     <i class="fas fa-truck"></i>
                 </div>
-                <span class="inline-block text-xs font-bold text-[#C2410C] uppercase tracking-widest mb-2" style="font-weight:600;">Step 03</span>
+                <span class="inline-block text-xs font-bold text-[#E11D48] uppercase tracking-widest mb-2" style="font-weight:600;">Step 03</span>
                 <h3 class="mb-3" style="font-size:1.2rem;">We Deliver Fresh</h3>
                 <p class="text-sm text-neutral-500" style="font-weight:400;">Our certified kitchen team prepares and delivers piping-hot meals right to your office canteen — on time, every time.</p>
             </div>
@@ -166,8 +550,200 @@
     </div>
 </section>
 
+<!-- ===== SECTION 1: INTERACTIVE CULINARY SHOWCASE & DIETARY FILTERS ===== -->
+<section id="culinary-showcase-section" class="py-24" style="background:var(--surface-alt);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="section-tag reveal"><i class="fas fa-utensils text-[10px]"></i> Live Menu Showcase</span>
+            <h2 class="section-title mb-4 reveal">Chef-Curated Daily Dishes</h2>
+            <p class="section-subtitle mx-auto reveal">Wholesome, nutritionally calibrated meals rotated daily across 4 corporate dining stations. Filter by dietary lifestyle or explore today's specials.</p>
+        </div>
+
+        <!-- Day Selector Tabs & Dietary Filters -->
+        <div class="reveal mb-10 flex flex-col items-center gap-5">
+            <!-- Day Selector Bar -->
+            <div class="inline-flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-full bg-[var(--surface)] border border-[var(--border-light)] shadow-sm">
+                <button class="culinary-tab-btn active" data-day="mon"><i class="fas fa-calendar-day text-xs"></i> Monday (Today)</button>
+                <button class="culinary-tab-btn" data-day="tue">Tuesday</button>
+                <button class="culinary-tab-btn" data-day="wed">Wednesday</button>
+                <button class="culinary-tab-btn" data-day="thu">Thursday</button>
+                <button class="culinary-tab-btn" data-day="fri">Friday</button>
+            </div>
+
+            <!-- Dietary Tag Filters -->
+            <div class="flex flex-wrap items-center justify-center gap-2">
+                <button class="culinary-filter-pill active" data-diet="all">All Dishes</button>
+                <button class="culinary-filter-pill" data-diet="special"><i class="fas fa-fire-alt text-xs mr-1"></i> Chef's Special</button>
+                <button class="culinary-filter-pill" data-diet="protein"><i class="fas fa-dumbbell text-xs mr-1"></i> High Protein</button>
+                <button class="culinary-filter-pill" data-diet="vegan"><i class="fas fa-seedling text-xs mr-1"></i> Vegan &amp; Plant-Based</button>
+                <button class="culinary-filter-pill" data-diet="gluten-free"><i class="fas fa-bread-slice text-xs mr-1"></i> Gluten-Free</button>
+            </div>
+        </div>
+
+        <!-- Dishes Grid -->
+        <div id="culinary-dishes-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+            <!-- Dish 1 -->
+            <div class="culinary-card group" data-category="protein gluten-free special">
+                <div class="relative overflow-hidden h-48">
+                    <img src="assets/images/service_daily_meals.jpg" alt="Grilled Paneer Tikka Bowl" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider border border-white/10">Station 01 • Grill</span>
+                    <span class="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-[#E11D48] text-white text-xs font-bold shadow-md">₹160</span>
+                </div>
+                <div class="p-5 flex flex-col flex-1">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-[10px] uppercase font-bold tracking-wider text-neutral-400">North Indian Fusion</span>
+                    </div>
+                    <h3 class="text-base font-semibold mb-2 group-hover:text-[#E11D48] transition-colors" style="font-family:'Outfit',sans-serif;">Grilled Paneer Tikka Bowl</h3>
+                    <p class="text-xs text-neutral-500 dark:text-neutral-400 mb-4 flex-1" style="font-weight:400;line-height:1.6;">Spiced cottage cheese, brown jeera rice, mint yogurt drizzle, and roasted bell peppers.</p>
+                    
+                    <!-- Macros -->
+                    <div class="grid grid-cols-3 gap-2 mb-4">
+                        <div class="macro-pill">
+                            <span class="block text-[10px] text-neutral-400 font-normal uppercase">Energy</span>
+                            <span class="text-xs font-bold">480 kcal</span>
+                        </div>
+                        <div class="macro-pill">
+                            <span class="block text-[10px] text-neutral-400 font-normal uppercase">Protein</span>
+                            <span class="text-xs font-bold">28g</span>
+                        </div>
+                        <div class="macro-pill">
+                            <span class="block text-[10px] text-neutral-400 font-normal uppercase">Carbs</span>
+                            <span class="text-xs font-bold">38g</span>
+                        </div>
+                    </div>
+
+                    <button onclick="addDishToPlate('Grilled Paneer Tikka Bowl')" class="btn btn-secondary btn-sm w-full font-bold flex items-center justify-center gap-1.5">
+                        <i class="fas fa-plus text-[11px]"></i> Add to Plate
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dish 2 -->
+            <div class="culinary-card group" data-category="vegan gluten-free">
+                <div class="relative overflow-hidden h-48">
+                    <img src="assets/images/seasonal_specials.jpg" alt="Mediterranean Quinoa Harvest Plate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider border border-white/10">Station 02 • Bowls</span>
+                    <span class="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-[#E11D48] text-white text-xs font-bold shadow-md">₹140</span>
+                </div>
+                <div class="p-5 flex flex-col flex-1">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-[10px] uppercase font-bold tracking-wider text-neutral-400">Continental Organic</span>
+                    </div>
+                    <h3 class="text-base font-semibold mb-2 group-hover:text-[#E11D48] transition-colors" style="font-family:'Outfit',sans-serif;">Mediterranean Quinoa Plate</h3>
+                    <p class="text-xs text-neutral-500 dark:text-neutral-400 mb-4 flex-1" style="font-weight:400;line-height:1.6;">Tri-color organic quinoa, cherry tomatoes, kalamata olives, avocado, and lemon tahini dressing.</p>
+                    
+                    <!-- Macros -->
+                    <div class="grid grid-cols-3 gap-2 mb-4">
+                        <div class="macro-pill">
+                            <span class="block text-[10px] text-neutral-400 font-normal uppercase">Energy</span>
+                            <span class="text-xs font-bold">420 kcal</span>
+                        </div>
+                        <div class="macro-pill">
+                            <span class="block text-[10px] text-neutral-400 font-normal uppercase">Protein</span>
+                            <span class="text-xs font-bold">18g</span>
+                        </div>
+                        <div class="macro-pill">
+                            <span class="block text-[10px] text-neutral-400 font-normal uppercase">Carbs</span>
+                            <span class="text-xs font-bold">52g</span>
+                        </div>
+                    </div>
+
+                    <button onclick="addDishToPlate('Mediterranean Quinoa Plate')" class="btn btn-secondary btn-sm w-full font-bold flex items-center justify-center gap-1.5">
+                        <i class="fas fa-plus text-[11px]"></i> Add to Plate
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dish 3 -->
+            <div class="culinary-card group" data-category="special protein">
+                <div class="relative overflow-hidden h-48">
+                    <img src="assets/images/hero_premium_dining.jpg" alt="Royal Hyderabadi Dum Biryani" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider border border-white/10">Station 03 • Regional</span>
+                    <span class="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-[#E11D48] text-white text-xs font-bold shadow-md">₹180</span>
+                </div>
+                <div class="p-5 flex flex-col flex-1">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-[10px] uppercase font-bold tracking-wider text-neutral-400">Classic Heritage</span>
+                    </div>
+                    <h3 class="text-base font-semibold mb-2 group-hover:text-[#E11D48] transition-colors" style="font-family:'Outfit',sans-serif;">Hyderabadi Dum Biryani</h3>
+                    <p class="text-xs text-neutral-500 dark:text-neutral-400 mb-4 flex-1" style="font-weight:400;line-height:1.6;">Slow-cooked long-grain basmati with saffron, caramelized onions, cucumber raita, and mirchi ka salan.</p>
+                    
+                    <!-- Macros -->
+                    <div class="grid grid-cols-3 gap-2 mb-4">
+                        <div class="macro-pill">
+                            <span class="block text-[10px] text-neutral-400 font-normal uppercase">Energy</span>
+                            <span class="text-xs font-bold">590 kcal</span>
+                        </div>
+                        <div class="macro-pill">
+                            <span class="block text-[10px] text-neutral-400 font-normal uppercase">Protein</span>
+                            <span class="text-xs font-bold">24g</span>
+                        </div>
+                        <div class="macro-pill">
+                            <span class="block text-[10px] text-neutral-400 font-normal uppercase">Carbs</span>
+                            <span class="text-xs font-bold">64g</span>
+                        </div>
+                    </div>
+
+                    <button onclick="addDishToPlate('Hyderabadi Dum Biryani')" class="btn btn-secondary btn-sm w-full font-bold flex items-center justify-center gap-1.5">
+                        <i class="fas fa-plus text-[11px]"></i> Add to Plate
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dish 4 -->
+            <div class="culinary-card group" data-category="vegan protein">
+                <div class="relative overflow-hidden h-48">
+                    <img src="assets/images/menu_planning.jpg" alt="Asian Sesame Tofu Stir-Fry" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider border border-white/10">Station 04 • Wok</span>
+                    <span class="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-[#E11D48] text-white text-xs font-bold shadow-md">₹150</span>
+                </div>
+                <div class="p-5 flex flex-col flex-1">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-[10px] uppercase font-bold tracking-wider text-neutral-400">Pan-Asian Live Wok</span>
+                    </div>
+                    <h3 class="text-base font-semibold mb-2 group-hover:text-[#E11D48] transition-colors" style="font-family:'Outfit',sans-serif;">Sesame Tofu Stir-Fry</h3>
+                    <p class="text-xs text-neutral-500 dark:text-neutral-400 mb-4 flex-1" style="font-weight:400;line-height:1.6;">Crispy organic tofu cubes, bok choy, snap peas, toasted sesame seeds, and ginger tamari sauce.</p>
+                    
+                    <!-- Macros -->
+                    <div class="grid grid-cols-3 gap-2 mb-4">
+                        <div class="macro-pill">
+                            <span class="block text-[10px] text-neutral-400 font-normal uppercase">Energy</span>
+                            <span class="text-xs font-bold">390 kcal</span>
+                        </div>
+                        <div class="macro-pill">
+                            <span class="block text-[10px] text-neutral-400 font-normal uppercase">Protein</span>
+                            <span class="text-xs font-bold">22g</span>
+                        </div>
+                        <div class="macro-pill">
+                            <span class="block text-[10px] text-neutral-400 font-normal uppercase">Carbs</span>
+                            <span class="text-xs font-bold">34g</span>
+                        </div>
+                    </div>
+
+                    <button onclick="addDishToPlate('Sesame Tofu Stir-Fry')" class="btn btn-secondary btn-sm w-full font-bold flex items-center justify-center gap-1.5">
+                        <i class="fas fa-plus text-[11px]"></i> Add to Plate
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Link -->
+        <div class="mt-12 text-center reveal">
+            <a href="menu-planning.html" class="inline-flex items-center gap-2 text-sm font-bold text-[#E11D48] hover:underline">
+                <span>View Full 30-Day Enterprise Menu Calendar</span>
+                <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
 <!-- ===== WHY CHOOSE US — Asymmetric Layout ===== -->
-<section class="py-20" style="background:var(--surface-alt);">
+<section class="py-20" style="background:var(--cream);">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             <!-- Image -->
@@ -180,28 +756,28 @@
                 <h2 class="section-title mb-6">The Smarter Way to Feed Your Team</h2>
                 <div class="space-y-5">
                     <div class="flex gap-4 items-start">
-                        <div class="w-10 h-10 rounded-xl bg-[#C2410C]/10 flex items-center justify-center text-[#C2410C] shrink-0"><i class="fas fa-sliders-h"></i></div>
+                        <div class="w-10 h-10 rounded-xl bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48] shrink-0"><i class="fas fa-sliders-h"></i></div>
                         <div>
                             <h4 class="mb-1" style="font-size:1rem;">Customizable Menus</h4>
                             <p class="text-sm text-neutral-500" style="font-weight:400;">Tailor weekly menus to your team's preferences, cultural backgrounds, and dietary needs.</p>
                         </div>
                     </div>
                     <div class="flex gap-4 items-start">
-                        <div class="w-10 h-10 rounded-xl bg-[#C2410C]/10 flex items-center justify-center text-[#C2410C] shrink-0"><i class="fas fa-heartbeat"></i></div>
+                        <div class="w-10 h-10 rounded-xl bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48] shrink-0"><i class="fas fa-heartbeat"></i></div>
                         <div>
                             <h4 class="mb-1" style="font-size:1rem;">Dietary Accommodation</h4>
                             <p class="text-sm text-neutral-500" style="font-weight:400;">Vegetarian, vegan, gluten-free, keto, and regional cuisine options available every day.</p>
                         </div>
                     </div>
                     <div class="flex gap-4 items-start">
-                        <div class="w-10 h-10 rounded-xl bg-[#C2410C]/10 flex items-center justify-center text-[#C2410C] shrink-0"><i class="fas fa-recycle"></i></div>
+                        <div class="w-10 h-10 rounded-xl bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48] shrink-0"><i class="fas fa-recycle"></i></div>
                         <div>
                             <h4 class="mb-1" style="font-size:1rem;">Zero Waste Policy</h4>
                             <p class="text-sm text-neutral-500" style="font-weight:400;">Smart forecasting reduces food waste by 40%. Compostable packaging and eco-friendly practices.</p>
                         </div>
                     </div>
                     <div class="flex gap-4 items-start">
-                        <div class="w-10 h-10 rounded-xl bg-[#C2410C]/10 flex items-center justify-center text-[#C2410C] shrink-0"><i class="fas fa-chart-line"></i></div>
+                        <div class="w-10 h-10 rounded-xl bg-[#E11D48]/10 flex items-center justify-center text-[#E11D48] shrink-0"><i class="fas fa-chart-line"></i></div>
                         <div>
                             <h4 class="mb-1" style="font-size:1rem;">Real-time Dashboard</h4>
                             <p class="text-sm text-neutral-500" style="font-weight:400;">Track orders, subscriptions, meal costs, and hygiene audits with our powerful admin panel.</p>
@@ -209,6 +785,231 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTION 2: DARK HIGH-TECH BENTO ECOSYSTEM (HARDWARE & IOT) ===== -->
+<section id="tech-ecosystem-section" class="py-24 relative overflow-hidden" style="background:#070B16;">
+    <!-- Ambient Background Glows -->
+    <div class="absolute top-0 right-1/4 w-96 h-96 bg-[#E11D48]/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-[#F43F5E]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/15 bg-white/5 backdrop-blur-md text-xs font-semibold uppercase tracking-wider text-white/90 mb-4 reveal">
+                <i class="fas fa-microchip text-[10px]"></i> Smart Infrastructure
+            </span>
+            <h2 class="text-white text-3xl sm:text-4xl font-semibold mb-4 reveal" style="font-family:'Outfit',sans-serif;">
+                The Hardware &amp; IoT Operating System
+            </h2>
+            <p class="text-white/60 max-w-2xl mx-auto text-base reveal" style="font-weight:400;">
+                Engineered for zero lunch queues, automated food safety compliance, and seamless contactless employee micro-transactions.
+            </p>
+        </div>
+
+        <!-- Bento Grid (12 Columns) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+            <!-- Bento Card 1: Express RFID Terminal (Col 8) -->
+            <div class="lg:col-span-8 tech-bento-card p-6 sm:p-8 reveal flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/15 text-white flex items-center justify-center text-sm">
+                                <i class="fas fa-id-card-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white text-lg font-semibold" style="font-family:'Outfit',sans-serif;">Express RFID Tap-to-Eat Kiosk</h3>
+                                <p class="text-xs text-white/50">Contactless point-of-sale hardware integration</p>
+                            </div>
+                        </div>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-white text-[10px] font-bold uppercase">
+                            <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                            0.8s Tap Speed
+                        </span>
+                    </div>
+
+                    <!-- Terminal Visual Simulator -->
+                    <div class="p-5 rounded-2xl bg-white/5 border border-white/10 mb-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
+                            <!-- Tap Graphic -->
+                            <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white shrink-0">
+                                    <i class="fas fa-wifi text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-medium text-white">NFC / RFID Sensor</p>
+                                    <p class="text-[10px] text-white/60">13.56 MHz Encrypted</p>
+                                </div>
+                            </div>
+
+                            <!-- Live Counter Queue Wave -->
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+                                <div class="flex items-center justify-between mb-1.5">
+                                    <span class="text-[10px] text-white/60 uppercase font-bold">Counter Flow</span>
+                                    <span class="text-[10px] text-white font-bold">Optimal</span>
+                                </div>
+                                <div class="flex items-end gap-1.5 h-7">
+                                    <div class="queue-pulse-bar" style="animation-delay: 0s;"></div>
+                                    <div class="queue-pulse-bar" style="animation-delay: 0.2s;"></div>
+                                    <div class="queue-pulse-bar" style="animation-delay: 0.4s;"></div>
+                                    <div class="queue-pulse-bar" style="animation-delay: 0.1s;"></div>
+                                    <div class="queue-pulse-bar" style="animation-delay: 0.3s;"></div>
+                                    <div class="queue-pulse-bar" style="animation-delay: 0.5s;"></div>
+                                </div>
+                            </div>
+
+                            <!-- Payment Status -->
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between">
+                                <div>
+                                    <p class="text-[10px] text-white/60 uppercase font-medium">Avg Queue Time</p>
+                                    <p class="text-sm font-medium text-white">&lt; 45 seconds</p>
+                                </div>
+                                <i class="fas fa-check-circle text-white text-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs text-white/70">
+                    <span class="flex items-center gap-1.5"><i class="fas fa-check text-[10px] text-[#E11D48]"></i> Compatible with HID, Mifare, and Mobile NFC</span>
+                    <span class="flex items-center gap-1.5"><i class="fas fa-check text-[10px] text-[#E11D48]"></i> Works offline during corporate network downtime</span>
+                </div>
+            </div>
+
+            <!-- Bento Card 2: IoT Cold-Chain & Food Safety (Col 4) -->
+            <div class="lg:col-span-4 tech-bento-card p-6 sm:p-8 reveal flex flex-col justify-between" style="transition-delay:0.1s;">
+                <div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/15 text-white flex items-center justify-center text-sm">
+                            <i class="fas fa-temperature-low"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white text-lg font-semibold" style="font-family:'Outfit',sans-serif;">Automated HACCP Cold Chain</h3>
+                            <p class="text-xs text-white/50">Continuous thermal IoT monitoring</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 mb-6">
+                        <div class="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-[11px] text-white/60">Salad Bar</span>
+                                <i class="fas fa-snowflake text-xs text-white/70"></i>
+                            </div>
+                            <p class="text-xl font-medium text-white" style="font-family:'Outfit',sans-serif;">3.4°C</p>
+                            <span class="text-[10px] font-semibold text-emerald-400">Normal Range</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-[11px] text-white/60">Hot Bain-Marie</span>
+                                <i class="fas fa-fire text-xs text-white/70"></i>
+                            </div>
+                            <p class="text-xl font-medium text-white" style="font-family:'Outfit',sans-serif;">68.2°C</p>
+                            <span class="text-[10px] font-semibold text-emerald-400">Safe Serving</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-white/70">
+                    <span><i class="fas fa-shield-alt mr-1 text-[#E11D48]"></i> FSSAI HACCP Compliant</span>
+                    <span class="text-white font-bold">Live Stream</span>
+                </div>
+            </div>
+
+            <!-- Bento Card 3: Smart Wallet & Payroll Sync (Col 4) -->
+            <div class="lg:col-span-4 tech-bento-card p-6 sm:p-8 reveal flex flex-col justify-between" style="transition-delay:0.15s;">
+                <div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/15 text-white flex items-center justify-center text-sm">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white text-lg font-semibold" style="font-family:'Outfit',sans-serif;">Corporate Allowance Wallet</h3>
+                            <p class="text-xs text-white/50">Multi-tier subsidy reconciliation</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 mb-6">
+                        <div class="flex justify-between items-center text-xs mb-2">
+                            <span class="text-white/60">Company Subsidy Share</span>
+                            <span class="font-bold text-white">70%</span>
+                        </div>
+                        <div class="w-full bg-white/10 rounded-full h-2 overflow-hidden mb-3">
+                            <div class="bg-white/80 h-2 rounded-full" style="width: 70%;"></div>
+                        </div>
+                        <p class="text-[11px] text-white/60">Automated end-of-month payroll deduction for employee co-pay remainder.</p>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-white/10 text-xs text-white/70 flex items-center justify-between">
+                    <span><i class="fas fa-file-invoice mr-1 text-[#E11D48]"></i> 1-Click Tax GST Invoicing</span>
+                    <span class="text-white font-bold">Auto-Sync</span>
+                </div>
+            </div>
+
+            <!-- Bento Card 4: AI Demand & Waste Forecasting (Col 4) -->
+            <div class="lg:col-span-4 tech-bento-card p-6 sm:p-8 reveal flex flex-col justify-between" style="transition-delay:0.2s;">
+                <div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/15 text-white flex items-center justify-center text-sm">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white text-lg font-semibold" style="font-family:'Outfit',sans-serif;">AI Zero-Waste Forecasting</h3>
+                            <p class="text-xs text-white/50">Machine learning portion planning</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 mb-6 text-center">
+                        <p class="text-3xl font-medium text-white mb-1" style="font-family:'Outfit',sans-serif;">-40.8%</p>
+                        <p class="text-xs text-white/70 font-medium mb-2">Food Waste Reduction</p>
+                        <p class="text-[11px] text-white/50 leading-relaxed">Predicts attendance based on hybrid work schedules &amp; calendar events.</p>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-white/10 text-xs text-white/70 flex items-center justify-between">
+                    <span><i class="fas fa-leaf mr-1 text-[#E11D48]"></i> Green ESG Report Ready</span>
+                    <span class="text-white font-bold">Daily Audit</span>
+                </div>
+            </div>
+
+            <!-- Bento Card 5: Real-Time Mobile App & Self-Service (Col 4) -->
+            <div class="lg:col-span-4 tech-bento-card p-6 sm:p-8 reveal flex flex-col justify-between" style="transition-delay:0.25s;">
+                <div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/15 text-white flex items-center justify-center text-sm">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white text-lg font-semibold" style="font-family:'Outfit',sans-serif;">Employee Self-Service App</h3>
+                            <p class="text-xs text-white/50">Pre-order, dietary tags &amp; feedback</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-center gap-2 text-xs text-white/80 p-2 rounded-lg bg-white/5">
+                            <i class="fas fa-check text-[10px] text-[#E11D48]"></i>
+                            <span>Pre-order favorite meals from desk</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-white/80 p-2 rounded-lg bg-white/5">
+                            <i class="fas fa-check text-[10px] text-[#E11D48]"></i>
+                            <span>Live counter occupancy tracker</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-white/80 p-2 rounded-lg bg-white/5">
+                            <i class="fas fa-check text-[10px] text-[#E11D48]"></i>
+                            <span>Allergen &amp; calorie transparency</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-white/10 text-xs text-white/70 flex items-center justify-between">
+                    <span><i class="fas fa-qrcode mr-1 text-[#E11D48]"></i> Instant QR Pickup</span>
+                    <span class="text-white font-bold">iOS &amp; Android</span>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -224,54 +1025,54 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Testimonial 1 -->
             <div class="card p-7 reveal">
-                <div class="flex items-center gap-1 mb-4">
-                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                <div class="flex items-center gap-1 mb-4 text-[#E11D48]">
+                    <i class="fas fa-star text-sm"></i>
+                    <i class="fas fa-star text-sm"></i>
+                    <i class="fas fa-star text-sm"></i>
+                    <i class="fas fa-star text-sm"></i>
+                    <i class="fas fa-star text-sm"></i>
                 </div>
                 <p class="text-sm text-neutral-600 dark:text-neutral-300 mb-6 flex-1" style="font-weight:400;line-height:1.8;">"CulinaCorp completely transformed our office canteen. Employee satisfaction scores jumped 35% within the first month. The dashboard makes managing meal plans incredibly easy."</p>
                 <div class="flex items-center gap-3 mt-auto">
-                    <img src="assets/images/testimonial_1.jpg" alt="Priya Sharma" class="w-11 h-11 rounded-full object-cover border-2 border-[#C2410C]/30">
+                    <img src="assets/images/testimonial_1.jpg" alt="Priya Sharma" class="w-11 h-11 rounded-full object-cover border-2 border-[#E11D48]/30">
                     <div>
-                        <p class="text-sm font-bold" style="font-weight:600;">Priya Sharma</p>
+                        <p class="text-sm font-medium" style="font-weight:500;">Priya Sharma</p>
                         <p class="text-xs text-neutral-500" style="font-weight:400;">HR Director, TechNova Solutions</p>
                     </div>
                 </div>
             </div>
             <!-- Testimonial 2 -->
             <div class="card p-7 reveal" style="transition-delay:0.1s;">
-                <div class="flex items-center gap-1 mb-4">
-                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                <div class="flex items-center gap-1 mb-4 text-[#E11D48]">
+                    <i class="fas fa-star text-sm"></i>
+                    <i class="fas fa-star text-sm"></i>
+                    <i class="fas fa-star text-sm"></i>
+                    <i class="fas fa-star text-sm"></i>
+                    <i class="fas fa-star text-sm"></i>
                 </div>
                 <p class="text-sm text-neutral-600 dark:text-neutral-300 mb-6 flex-1" style="font-weight:400;line-height:1.8;">"The hygiene standards are impeccable. Monthly audit reports give us complete transparency. Our facility management costs dropped by 20% since partnering with CulinaCorp."</p>
                 <div class="flex items-center gap-3 mt-auto">
-                    <img src="assets/images/testimonial_2.jpg" alt="Rajesh Mehta" class="w-11 h-11 rounded-full object-cover border-2 border-[#C2410C]/30">
+                    <img src="assets/images/testimonial_2.jpg" alt="Rajesh Mehta" class="w-11 h-11 rounded-full object-cover border-2 border-[#E11D48]/30">
                     <div>
-                        <p class="text-sm font-bold" style="font-weight:600;">Rajesh Mehta</p>
+                        <p class="text-sm font-medium" style="font-weight:500;">Rajesh Mehta</p>
                         <p class="text-xs text-neutral-500" style="font-weight:400;">Facility Manager, GlobalEdge Corp</p>
                     </div>
                 </div>
             </div>
             <!-- Testimonial 3 -->
             <div class="card p-7 reveal" style="transition-delay:0.2s;">
-                <div class="flex items-center gap-1 mb-4">
-                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                    <i class="fas fa-star-half-alt text-yellow-400 text-sm"></i>
+                <div class="flex items-center gap-1 mb-4 text-[#E11D48]">
+                    <i class="fas fa-star text-sm"></i>
+                    <i class="fas fa-star text-sm"></i>
+                    <i class="fas fa-star text-sm"></i>
+                    <i class="fas fa-star text-sm"></i>
+                    <i class="fas fa-star-half-alt text-sm"></i>
                 </div>
                 <p class="text-sm text-neutral-600 dark:text-neutral-300 mb-6 flex-1" style="font-weight:400;line-height:1.8;">"The prepaid wallet system is a game changer. Employees love the convenience and we get detailed cost reports for payroll. Highly recommended for any mid-to-large enterprise."</p>
                 <div class="flex items-center gap-3 mt-auto">
-                    <img src="assets/images/testimonial_3.jpg" alt="Emily Watson" class="w-11 h-11 rounded-full object-cover border-2 border-[#C2410C]/30">
+                    <img src="assets/images/testimonial_3.jpg" alt="Emily Watson" class="w-11 h-11 rounded-full object-cover border-2 border-[#E11D48]/30">
                     <div>
-                        <p class="text-sm font-bold" style="font-weight:600;">Emily Watson</p>
+                        <p class="text-sm font-medium" style="font-weight:500;">Emily Watson</p>
                         <p class="text-xs text-neutral-500" style="font-weight:400;">Ops Coordinator, Nexus Dynamics</p>
                     </div>
                 </div>
@@ -280,15 +1081,297 @@
     </div>
 </section>
 
-<!-- ===== CTA BANNER ===== -->
-<section class="py-20 relative overflow-hidden" style="background: linear-gradient(135deg, #C2410C 0%, #9A3412 40%, #1E293B 100%);">
-    <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:50px 50px;"></div>
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
-        <h2 class="text-white mb-4 reveal" style="font-family:'Outfit',sans-serif;">Transform Your Office Dining Experience</h2>
-        <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto reveal" style="font-weight:400;">Join 200+ corporates already serving healthier, happier meals to their teams with CulinaCorp.</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center reveal">
-            <a href="signup.html" class="btn btn-lg text-[#C2410C]" style="background:white;border:1.5px solid white;"><i class="fas fa-rocket text-xs"></i> Get Started Free</a>
-            <a href="pricing.html" class="btn btn-lg" style="border:1.5px solid rgba(255,255,255,0.4);color:white;"><i class="fas fa-phone text-xs"></i> Talk to Sales</a>
+<!-- ===== SECTION 3: SIGNATURE WORKPLACE CAFETERIA CONCEPTS ===== -->
+<section id="campus-concepts-section" class="py-24 relative overflow-hidden" style="background:var(--surface-alt);">
+    <!-- Decorative Ambient Glow -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#E11D48]/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-[#E11D48]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="section-tag reveal"><i class="fas fa-layer-group text-[10px]"></i> Turnkey Dining Formats</span>
+            <h2 class="section-title mb-4 reveal">Tailored Dining Experiences for Every Workplace</h2>
+            <p class="section-subtitle mx-auto reveal">From bustling 2,000+ employee tech parks to high-touch executive suites and 24/7 hybrid pantries, explore our signature corporate cafeteria models.</p>
+        </div>
+
+        <!-- Concept Nav Tabs -->
+        <div class="flex flex-wrap items-center justify-center gap-3 mb-12 reveal">
+            <button type="button" class="concept-tab-btn active" data-concept="campus">
+                <i class="fas fa-city text-sm"></i>
+                <span>Tech Park Food Hall</span>
+                <span class="concept-tab-badge">1,000+ Pax</span>
+            </button>
+            <button type="button" class="concept-tab-btn" data-concept="bistro">
+                <i class="fas fa-crown text-sm"></i>
+                <span>Executive HQ Bistro</span>
+                <span class="concept-tab-badge">200-800 Pax</span>
+            </button>
+            <button type="button" class="concept-tab-btn" data-concept="micromarket">
+                <i class="fas fa-store text-sm"></i>
+                <span>24/7 Smart Micro-Market</span>
+                <span class="concept-tab-badge">50-300 Pax</span>
+            </button>
+        </div>
+
+        <!-- Main Showcase Card Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch reveal">
+            <!-- Left Column: Visual Showcase & Real-Time Telemetry Badges (Col 5) -->
+            <div class="lg:col-span-5 flex flex-col">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-[var(--border-light)] bg-[#0B1120] group h-full min-h-[380px] sm:min-h-[460px] flex flex-col justify-between">
+                    <!-- Concept Photo with smooth transition -->
+                    <img id="concept-main-img" src="assets/images/why_choose_us.jpg" alt="Tech Park Food Hall" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-black/35 to-black/40 pointer-events-none"></div>
+
+                    <!-- Top Telemetry Header -->
+                    <div class="relative z-10 p-5 sm:p-6 flex items-center justify-between">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0B1120]/80 backdrop-blur-md border border-white/20 text-xs font-semibold text-white shadow-lg">
+                            <span class="w-2 h-2 rounded-full bg-[#E11D48] animate-ping"></span>
+                            <span id="concept-badge-top">1,800+ Daily Capacity</span>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold uppercase tracking-wider">
+                            <i class="fas fa-certificate text-[10px] text-emerald-400 mr-1"></i> ISO 22000
+                        </span>
+                    </div>
+
+                    <!-- Bottom Floating Card -->
+                    <div class="relative z-10 p-5 sm:p-6">
+                        <div class="p-4 sm:p-5 rounded-2xl bg-[#0B1120]/85 backdrop-blur-xl border border-white/15 shadow-2xl">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-xl bg-[#E11D48]/20 border border-[#E11D48]/30 text-[#E11D48] flex items-center justify-center text-xs">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <div>
+                                    <p id="concept-badge-bottom-title" class="text-sm font-medium text-white leading-tight">Avg. Service Time: 3.2 Mins</p>
+                                    <p id="concept-badge-bottom-sub" class="text-xs text-white/60">Reduced from 22 mins with RFID express lane</p>
+                                </div>
+                            </div>
+                            <div class="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-white/75 font-medium">
+                                <span><i class="fas fa-check-circle text-emerald-400 mr-1"></i> Zero Queues Verified</span>
+                                <span class="text-white font-bold">Live Campus Telemetry</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Concept Specs, Key Amenities & Actions (Col 7) -->
+            <div class="lg:col-span-7 p-7 sm:p-9 rounded-3xl bg-[var(--surface)] border border-[var(--border-light)] shadow-xl flex flex-col justify-between">
+                <div>
+                    <!-- Header Info -->
+                    <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+                        <span class="text-xs font-bold uppercase tracking-wider text-[#E11D48]" id="concept-kicker">Signature Format 01</span>
+                        <div class="flex items-center gap-1.5 text-amber-400 text-xs">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="text-neutral-500 dark:text-neutral-400 text-xs font-semibold ml-1">(4.9/5 Rating)</span>
+                        </div>
+                    </div>
+
+                    <h3 id="concept-title" class="text-2xl sm:text-3xl font-semibold mb-2" style="font-family:'Outfit',sans-serif;">Tech Park Food Hall</h3>
+                    <p id="concept-subtitle" class="text-sm font-medium text-[#E11D48] mb-3">High-Throughput Culinary Arena for 1,000+ Daily Diners</p>
+                    <p id="concept-desc" class="text-sm text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed">
+                        Designed specifically for high-density technology campuses. Multiple live culinary stations, smart multi-lane queuing, and RFID contactless checkout keep lunch rushes flowing effortlessly with zero bottlenecks.
+                    </p>
+
+                    <!-- 3 Quick Stats -->
+                    <div class="grid grid-cols-3 gap-3 p-4 rounded-2xl bg-[var(--surface-alt)] border border-[var(--border-light)] mb-6">
+                        <div class="text-center border-r border-[var(--border-light)] pr-2">
+                            <p id="concept-stat-val-1" class="text-lg sm:text-2xl font-medium text-[#E11D48] font-mono">1,200/hr</p>
+                            <p id="concept-stat-label-1" class="text-[11px] text-neutral-500 font-medium">Throughput Flow</p>
+                        </div>
+                        <div class="text-center border-r border-[var(--border-light)] pr-2">
+                            <p id="concept-stat-val-2" class="text-lg sm:text-2xl font-medium text-neutral-800 dark:text-neutral-100 font-mono">-78%</p>
+                            <p id="concept-stat-label-2" class="text-[11px] text-neutral-500 font-medium">Queue Reduction</p>
+                        </div>
+                        <div class="text-center">
+                            <p id="concept-stat-val-3" class="text-lg sm:text-2xl font-medium text-neutral-800 dark:text-neutral-100 font-mono">+52</p>
+                            <p id="concept-stat-label-3" class="text-[11px] text-neutral-500 font-medium">Employee NPS</p>
+                        </div>
+                    </div>
+
+                    <!-- 4 Features / Amenities Grid -->
+                    <div id="concept-features-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-8">
+                        <div class="concept-amenity-card">
+                            <div class="concept-amenity-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-semibold mb-0.5 text-neutral-800 dark:text-neutral-100" style="font-family:'Outfit',sans-serif;">Sub-Second RFID Checkout</h4>
+                                <p class="text-[11px] text-neutral-500 dark:text-neutral-400 leading-relaxed">Scan tray and tap employee badge in under 8 seconds.</p>
+                            </div>
+                        </div>
+                        <div class="concept-amenity-card">
+                            <div class="concept-amenity-icon">
+                                <i class="fas fa-fire-burner"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-semibold mb-0.5 text-neutral-800 dark:text-neutral-100" style="font-family:'Outfit',sans-serif;">4 Rotating Live Stations</h4>
+                                <p class="text-[11px] text-neutral-500 dark:text-neutral-400 leading-relaxed">Live Asian wok, sizzlers, regional Indian, and salad bars.</p>
+                            </div>
+                        </div>
+                        <div class="concept-amenity-card">
+                            <div class="concept-amenity-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-semibold mb-0.5 text-neutral-800 dark:text-neutral-100" style="font-family:'Outfit',sans-serif;">Zero-Food-Waste Scheduling</h4>
+                                <p class="text-[11px] text-neutral-500 dark:text-neutral-400 leading-relaxed">AI forecasts meal quantities based on attendance patterns.</p>
+                            </div>
+                        </div>
+                        <div class="concept-amenity-card">
+                            <div class="concept-amenity-icon">
+                                <i class="fas fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-semibold mb-0.5 text-neutral-800 dark:text-neutral-100" style="font-family:'Outfit',sans-serif;">Live HACCP Hygiene Audit</h4>
+                                <p class="text-[11px] text-neutral-500 dark:text-neutral-400 leading-relaxed">Digital temperature monitoring and open kitchen sanitization.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons & Guarantee -->
+                <div class="pt-6 border-t border-[var(--border-light)] flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+                        <a id="concept-primary-btn" href="contact.html" class="btn btn-primary btn-shine w-full sm:w-auto text-center font-bold">
+                            <i class="fas fa-calendar-check text-xs mr-1.5"></i> Book Campus Walkthrough
+                        </a>
+                        <a id="concept-secondary-btn" href="menu-planning.html" class="btn btn-secondary w-full sm:w-auto text-center font-semibold text-xs">
+                            <i class="fas fa-utensils text-xs mr-1.5"></i> Explore Menus
+                        </a>
+                    </div>
+                    <span class="text-xs text-neutral-500 dark:text-neutral-400 flex items-center gap-1.5">
+                        <i class="fas fa-shield-alt text-[#E11D48]"></i> Custom fit for your campus
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA SECTION: FLOATING GASTRONOMY TRANSFORMATION BENTO ===== -->
+<section class="py-20 sm:py-24 relative overflow-hidden" style="background:var(--cream);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl p-8 sm:p-12 lg:p-16"
+             style="background: linear-gradient(135deg, #090E17 0%, #0F172A 55%, #1F1524 100%);">
+            
+            <!-- Ambient Rose Glow Flares -->
+            <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-[#E11D48]/20 blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-[#BE123C]/15 blur-3xl pointer-events-none"></div>
+            <div class="absolute inset-0 pointer-events-none opacity-40"
+                 style="background-image:linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 36px 36px;"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center relative z-10">
+                <!-- Left Column: Copy, Value Propositions & CTAs (7 cols) -->
+                <div class="lg:col-span-7 text-left reveal">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#E11D48]/30 bg-[#E11D48]/15 text-[#FB7185] text-xs font-semibold uppercase tracking-wider mb-5">
+                        <span class="w-2 h-2 rounded-full bg-[#E11D48] animate-pulse"></span>
+                        <span>200+ Enterprise Campuses Live</span>
+                    </div>
+                    
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-tight mb-5" style="font-family:'Outfit',sans-serif;">
+                        Transform Your Office Dining Experience
+                    </h2>
+                    
+                    <p class="text-slate-300 text-base sm:text-lg mb-8 leading-relaxed max-w-xl" style="font-weight:400;">
+                        Join 200+ corporates already serving healthier, happier meals to their teams with CulinaCorp. Cut cafeteria queue times by 78%, eliminate administrative overhead, and boost daily team satisfaction.
+                    </p>
+
+                    <!-- Key Benefits Micro-Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-8">
+                        <div class="flex items-center gap-3 text-sm text-slate-200">
+                            <div class="w-7 h-7 rounded-lg bg-[#E11D48]/20 border border-[#E11D48]/30 flex items-center justify-center text-[#FB7185] shrink-0 text-xs">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <span style="font-weight:450;">Zero Upfront CapEx</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-slate-200">
+                            <div class="w-7 h-7 rounded-lg bg-[#E11D48]/20 border border-[#E11D48]/30 flex items-center justify-center text-[#FB7185] shrink-0 text-xs">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <span style="font-weight:450;">48-Hour Rapid Rollout</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-slate-200">
+                            <div class="w-7 h-7 rounded-lg bg-[#E11D48]/20 border border-[#E11D48]/30 flex items-center justify-center text-[#FB7185] shrink-0 text-xs">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <span style="font-weight:450;">FSSAI 5-Star Hygiene</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-slate-200">
+                            <div class="w-7 h-7 rounded-lg bg-[#E11D48]/20 border border-[#E11D48]/30 flex items-center justify-center text-[#FB7185] shrink-0 text-xs">
+                                <i class="fas fa-id-card"></i>
+                            </div>
+                            <span style="font-weight:450;">Sub-Second RFID POS</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center mb-6">
+                        <a href="signup.html" class="btn btn-primary btn-lg btn-shine shadow-lg shadow-[#E11D48]/30 text-center justify-center">
+                            <i class="fas fa-rocket text-xs mr-2"></i>
+                            <span>Get Started Free</span>
+                        </a>
+                        <a href="pricing.html" class="btn btn-lg text-center justify-center border border-white/30 text-white hover:bg-white/10 transition-colors">
+                            <i class="fas fa-phone text-xs text-[#FB7185] mr-2"></i>
+                            <span>Talk to Sales</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust social proof -->
+                    <div class="flex items-center gap-3 text-xs text-slate-400">
+                        <div class="flex text-amber-400 text-xs">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span style="font-weight:400;">Trusted by 45,000+ daily corporate diners</span>
+                    </div>
+                </div>
+
+                <!-- Right Column: Visual Showcase & Live Telemetry Dock (5 cols) -->
+                <div class="lg:col-span-5 reveal" style="transition-delay:0.15s;">
+                    <div class="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl group">
+                        <img src="assets/images/service_daily_meals.jpg" alt="Corporate Office Canteen Dining Experience"
+                             class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10"></div>
+
+                        <!-- Top Status Floating Pill -->
+                        <div class="absolute top-4 left-4 right-4 flex items-center justify-between">
+                            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white text-xs font-medium">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                <span>Active Cafeteria Hub</span>
+                            </span>
+                            <span class="px-2.5 py-1 rounded-full bg-[#E11D48]/80 backdrop-blur-md text-white text-[11px] font-bold">
+                                Live Telemetry
+                            </span>
+                        </div>
+
+                        <!-- Bottom Telemetry Glass Card -->
+                        <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/85 backdrop-blur-md border border-white/15 text-white">
+                            <div class="grid grid-cols-3 gap-2 text-center divide-x divide-white/10">
+                                <div>
+                                    <p class="text-base sm:text-lg font-bold text-white">2.8 <span class="text-xs text-slate-300">min</span></p>
+                                    <p class="text-[10px] text-emerald-400 font-semibold flex items-center justify-center gap-0.5"><i class="fas fa-arrow-down text-[9px]"></i> 78% Wait</p>
+                                </div>
+                                <div class="pl-2">
+                                    <p class="text-base sm:text-lg font-bold text-white">40+</p>
+                                    <p class="text-[10px] text-slate-300 font-medium">Daily Dishes</p>
+                                </div>
+                                <div class="pl-2">
+                                    <p class="text-base sm:text-lg font-bold text-white">+68</p>
+                                    <p class="text-[10px] text-[#FB7185] font-medium">NPS Score</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

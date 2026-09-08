@@ -20,14 +20,14 @@
         { label: 'Menu Planning', href: 'menu-planning.html' },
         { label: 'Hygiene', href: 'hygiene.html' },
         { label: 'Pricing', href: 'pricing.html' },
-        { label: 'Dashboard', href: 'dashboard.html' }
+        { label: 'Contact', href: 'contact.html' }
     ];
 
     const SOCIAL_LINKS = [
         { icon: 'fab fa-instagram', href: '#', label: 'Instagram' },
         { icon: 'fab fa-linkedin-in', href: '#', label: 'LinkedIn' },
         { icon: 'fab fa-facebook-f', href: '#', label: 'Facebook' },
-        { icon: 'fab fa-twitter', href: '#', label: 'Twitter' }
+        { icon: 'fab fa-x-twitter', href: '#', label: 'X' }
     ];
 
     // --- Brand Logo SVG (Fork + Leaf in circle) ---
@@ -53,27 +53,28 @@
         const navLinksDesktop = NAV_LINKS.map(link => {
             const isActive = link.href === currentPage ||
                              (currentPage === '' && link.href === 'index.html');
-            return `<a href="${link.href}" class="nav-link whitespace-nowrap text-[12.5px] font-semibold tracking-widest uppercase transition-all duration-300 hover:text-[#C2410C] relative group ${isActive ? 'text-[#C2410C]' : 'text-neutral-700 dark:text-neutral-300'}" style="font-family:'DM Sans',sans-serif;">
+            return `<a href="${link.href}" class="nav-link whitespace-nowrap text-[12.5px] font-semibold tracking-widest uppercase transition-all duration-300 hover:text-[#E11D48] relative group ${isActive ? 'text-[#E11D48]' : 'text-neutral-700 dark:text-neutral-300'}" style="font-family:'DM Sans',sans-serif;">
                 ${link.label}
-                <span class="absolute -bottom-1 left-0 h-[1.5px] bg-[#C2410C] transition-all duration-300 group-hover:w-full ${isActive ? 'w-full' : 'w-0'}"></span>
+                <span class="absolute -bottom-1 left-0 h-[1.5px] bg-[#E11D48] transition-all duration-300 group-hover:w-full ${isActive ? 'w-full' : 'w-0'}"></span>
             </a>`;
         }).join('');
 
         const navLinksMobile = NAV_LINKS.map(link => {
             const isActive = link.href === currentPage || (currentPage === '' && link.href === 'index.html');
-            return `<a href="${link.href}" class="nav-link flex items-center px-5 py-4 text-sm font-semibold uppercase tracking-wider border-b border-neutral-100 dark:border-[#334155] hover:text-[#C2410C] transition-all ${isActive ? 'text-[#C2410C] bg-orange-50/40 dark:bg-[#C2410C]/5' : 'text-neutral-700 dark:text-neutral-200'}" style="font-family:'DM Sans',sans-serif;">
+            return `<a href="${link.href}" class="nav-link flex items-center px-5 py-4 text-sm font-semibold uppercase tracking-wider border-b border-neutral-100 dark:border-[#334155] hover:text-[#E11D48] transition-all ${isActive ? 'text-[#E11D48] bg-rose-50/40 dark:bg-[#E11D48]/5' : 'text-neutral-700 dark:text-neutral-200'}" style="font-family:'DM Sans',sans-serif;">
                 ${link.label}
             </a>`;
         }).join('');
 
         return `
-        <nav id="main-nav" class="sticky top-0 z-50 backdrop-blur-md border-b border-[#E2E8F0] dark:border-[#334155] transition-all duration-300">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 xl:px-6">
+        <div class="nav-spacer h-20 w-full" aria-hidden="true"></div>
+        <nav id="main-nav" class="fixed top-0 left-0 right-0 w-full z-50 bg-white/90 dark:bg-[#0B1120]/90 backdrop-blur-md border-b border-[#E2E8F0] dark:border-[#334155] transition-all duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
                 <div class="flex justify-between items-center h-20">
                     <!-- Logo -->
-                    <a href="index.html" class="flex items-center gap-2.5 group shrink-0">
+                    <a href="index.html" class="brand-logo flex items-center gap-2.5 group shrink-0">
                         ${LOGO_SVG}
-                        <span class="font-bold text-xl tracking-tight text-[#0F172A] dark:text-[#F1F5F9] group-hover:text-[#C2410C] transition-colors" style="font-family: 'Outfit', sans-serif;">
+                        <span class="font-bold text-xl tracking-tight text-[#0F172A] dark:text-[#F1F5F9] group-hover:text-[#E11D48] transition-colors" style="font-family: 'Outfit', sans-serif;">
                             ${BRAND_NAME}
                         </span>
                     </a>
@@ -86,23 +87,23 @@
                     <!-- Right Actions -->
                     <div class="flex items-center gap-2">
                         <!-- RTL Toggle -->
-                        <button id="dir-toggle" class="js-dir-toggle hidden xl:flex w-10 h-10 items-center justify-center rounded-xl bg-white dark:bg-[#1E293B] border border-[#E2E8F0] dark:border-[#334155] hover:border-[#C2410C] text-neutral-500 dark:text-neutral-400 hover:text-[#C2410C] transition-all shadow-sm" aria-label="Toggle RTL">
+                        <button id="dir-toggle" class="js-dir-toggle hidden xl:flex w-10 h-10 items-center justify-center rounded-xl bg-white dark:bg-[#1E293B] border border-[#E2E8F0] dark:border-[#334155] hover:border-[#E11D48] text-neutral-500 dark:text-neutral-400 hover:text-[#E11D48] transition-all shadow-sm" aria-label="Toggle RTL">
                             <i class="fas fa-exchange-alt text-sm"></i>
                         </button>
 
                         <!-- Theme Toggle -->
-                        <button id="theme-toggle-desktop" class="js-theme-toggle hidden xl:flex w-10 h-10 items-center justify-center rounded-xl bg-white dark:bg-[#1E293B] border border-[#E2E8F0] dark:border-[#334155] hover:border-[#C2410C] text-neutral-500 dark:text-neutral-400 hover:text-[#C2410C] transition-all shadow-sm" aria-label="Toggle theme">
+                        <button id="theme-toggle-desktop" class="js-theme-toggle hidden xl:flex w-10 h-10 items-center justify-center rounded-xl bg-white dark:bg-[#1E293B] border border-[#E2E8F0] dark:border-[#334155] hover:border-[#E11D48] text-neutral-500 dark:text-neutral-400 hover:text-[#E11D48] transition-all shadow-sm" aria-label="Toggle theme">
                             <i class="fas fa-moon text-sm"></i>
                         </button>
 
-                        <!-- Primary CTA -->
-                        <a href="login.html" class="hidden xl:inline-flex items-center gap-2 bg-gradient-to-r from-[#C2410C] to-[#9A3412] text-white px-5 py-2.5 rounded-full text-[12px] font-bold uppercase tracking-widest hover:from-[#EA580C] hover:to-[#C2410C] hover:shadow-lg hover:shadow-[#C2410C]/25 transition-all whitespace-nowrap" style="font-family:'DM Sans',sans-serif;">
+                        <!-- Secondary CTA: Sign In -->
+                        <a href="login.html" class="hidden xl:inline-flex items-center gap-2 border border-[#E11D48] text-[#E11D48] px-5 py-2.5 rounded-full text-[12px] font-bold uppercase tracking-widest hover:bg-[#E11D48] hover:text-white transition-all whitespace-nowrap" style="font-family:'DM Sans',sans-serif;">
                             Sign In
                         </a>
 
-                        <!-- Secondary CTA -->
-                        <a href="signup.html" class="hidden xl:inline-flex items-center gap-2 border border-[#C2410C] text-[#C2410C] px-5 py-2.5 rounded-full text-[12px] font-bold uppercase tracking-widest hover:bg-[#C2410C] hover:text-white transition-all whitespace-nowrap" style="font-family:'DM Sans',sans-serif;">
-                            Sign Up
+                        <!-- Primary CTA: Dashboard -->
+                        <a href="dashboard.html" class="hidden xl:inline-flex items-center gap-2 bg-gradient-to-r from-[#E11D48] to-[#9F1239] text-white px-5 py-2.5 rounded-full text-[12px] font-bold uppercase tracking-widest hover:from-[#F43F5E] hover:to-[#E11D48] hover:shadow-lg hover:shadow-[#E11D48]/25 transition-all whitespace-nowrap" style="font-family:'DM Sans',sans-serif;">
+                            Dashboard
                         </a>
 
                         <!-- Mobile Menu Btn -->
@@ -131,8 +132,8 @@
                             </button>
                         </div>
                         <div class="flex gap-2 w-full sm:w-auto">
-                            <a href="login.html" class="flex-1 sm:flex-none text-center bg-gradient-to-r from-[#C2410C] to-[#9A3412] text-white px-5 py-3 rounded-full font-bold uppercase tracking-widest text-xs hover:from-[#EA580C] hover:to-[#C2410C] transition-all">Sign In</a>
-                            <a href="signup.html" class="flex-1 sm:flex-none text-center border border-[#C2410C] text-[#C2410C] px-5 py-3 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-[#C2410C] hover:text-white transition-all">Sign Up</a>
+                            <a href="login.html" class="flex-1 sm:flex-none text-center border border-[#E11D48] text-[#E11D48] px-5 py-3 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-[#E11D48] hover:text-white transition-all">Sign In</a>
+                            <a href="dashboard.html" class="flex-1 sm:flex-none text-center bg-gradient-to-r from-[#E11D48] to-[#9F1239] text-white px-5 py-3 rounded-full font-bold uppercase tracking-widest text-xs hover:from-[#F43F5E] hover:to-[#E11D48] transition-all">Dashboard</a>
                         </div>
                     </div>
                 </div>
@@ -143,7 +144,7 @@
     // --- Render Footer ---
     function renderFooter() {
         const socialLinksHtml = SOCIAL_LINKS.map(s =>
-            `<a href="${s.href}" aria-label="${s.label}" class="w-10 h-10 flex items-center justify-center rounded-full border border-[#E2E8F0] dark:border-[#334155] text-neutral-500 dark:text-neutral-400 hover:text-[#C2410C] hover:border-[#C2410C] hover:-translate-y-1 transition-all duration-300">
+            `<a href="${s.href}" aria-label="${s.label}" class="w-10 h-10 flex items-center justify-center rounded-full border border-[#E2E8F0] dark:border-[#334155] text-neutral-500 dark:text-neutral-400 hover:text-[#E11D48] hover:border-[#E11D48] hover:-translate-y-1 transition-all duration-300">
                 <i class="${s.icon} text-sm"></i>
             </a>`
         ).join('');
@@ -155,9 +156,9 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
                     <!-- Brand -->
                     <div class="lg:col-span-1 space-y-5">
-                        <a href="index.html" class="flex items-center gap-2.5 group">
+                        <a href="index.html" class="brand-logo flex items-center gap-2.5 group">
                             ${LOGO_SVG}
-                            <span class="font-bold text-xl tracking-tight text-[#0F172A] dark:text-[#F1F5F9]" style="font-family: 'Outfit', sans-serif;">${BRAND_NAME}</span>
+                            <span class="font-bold text-xl tracking-tight text-[#0F172A] dark:text-[#F1F5F9] group-hover:text-[#E11D48] transition-colors" style="font-family: 'Outfit', sans-serif;">${BRAND_NAME}</span>
                         </a>
                         <p class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed" style="font-weight:400;">
                             Transforming corporate dining with smart meal management, hygiene excellence, and delightful culinary experiences for every office.
@@ -167,7 +168,7 @@
 
                     <!-- Quick Links -->
                     <div>
-                        <h4 class="font-bold mb-5 text-[#0F172A] dark:text-white uppercase text-xs tracking-[0.15em]" style="font-family:'Outfit',sans-serif;">Quick Links</h4>
+                        <h4 class="font-semibold mb-5 text-[#0F172A] dark:text-white uppercase text-xs tracking-[0.15em]" style="font-family:'Outfit',sans-serif;font-weight:600;">Quick Links</h4>
                         <ul class="space-y-2.5">
                             <li><a href="index.html" class="footer-link">Home</a></li>
                             <li><a href="home2.html" class="footer-link">Home 2 — Premium</a></li>
@@ -175,12 +176,13 @@
                             <li><a href="menu-planning.html" class="footer-link">Menu Planning</a></li>
                             <li><a href="hygiene.html" class="footer-link">Hygiene Standards</a></li>
                             <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+                            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
                         </ul>
                     </div>
 
                     <!-- Resources -->
                     <div>
-                        <h4 class="font-bold mb-5 text-[#0F172A] dark:text-white uppercase text-xs tracking-[0.15em]" style="font-family:'Outfit',sans-serif;">Resources</h4>
+                        <h4 class="font-semibold mb-5 text-[#0F172A] dark:text-white uppercase text-xs tracking-[0.15em]" style="font-family:'Outfit',sans-serif;font-weight:600;">Resources</h4>
                         <ul class="space-y-2.5">
                             <li><a href="dashboard.html" class="footer-link">Dashboard</a></li>
                             <li><a href="coming-soon.html" class="footer-link">Coming Soon</a></li>
@@ -192,16 +194,16 @@
 
                     <!-- Newsletter -->
                     <div class="bg-white dark:bg-[#1E293B] p-6 rounded-2xl border border-[#E2E8F0] dark:border-[#334155]">
-                        <h4 class="font-bold mb-2 text-[#0F172A] dark:text-white" style="font-family:'Outfit',sans-serif;font-size:1.1rem;">Stay Updated</h4>
+                        <h4 class="font-semibold mb-2 text-[#0F172A] dark:text-white" style="font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:600;">Stay Updated</h4>
                         <p class="text-xs text-neutral-500 dark:text-neutral-400 mb-4" style="font-weight:400;">Subscribe for weekly menu updates, wellness tips & corporate dining insights.</p>
                         <form id="newsletter-form" class="space-y-2.5">
                             <input type="email" required placeholder="your@email.com"
-                                class="w-full px-4 py-3 text-sm bg-[#F8FAFC] dark:bg-[#283548] border border-[#E2E8F0] dark:border-[#334155] focus:border-[#C2410C] focus:ring-2 focus:ring-[#C2410C]/20 rounded-xl outline-none transition-all dark:text-white placeholder:text-neutral-400" />
-                            <button type="submit" class="w-full bg-gradient-to-r from-[#C2410C] to-[#9A3412] hover:from-[#EA580C] hover:to-[#C2410C] text-white text-sm font-bold py-3 rounded-xl transition-all">
+                                class="w-full px-4 py-3 text-sm bg-[#F8FAFC] dark:bg-[#283548] border border-[#E2E8F0] dark:border-[#334155] focus:border-[#E11D48] focus:ring-2 focus:ring-[#E11D48]/20 rounded-xl outline-none transition-all dark:text-white placeholder:text-neutral-400" />
+                            <button type="submit" class="w-full bg-gradient-to-r from-[#E11D48] to-[#9F1239] hover:from-[#F43F5E] hover:to-[#E11D48] text-white text-sm font-bold py-3 rounded-xl transition-all">
                                 Subscribe
                             </button>
                         </form>
-                        <p id="newsletter-success" class="hidden text-xs text-emerald-500 mt-2 font-bold text-center">✓ Thank you for subscribing!</p>
+                        <p id="newsletter-success" class="hidden text-xs text-neutral-600 dark:text-neutral-300 mt-2 font-medium text-center" style="font-weight:500;"><i class="fas fa-check-circle mr-1"></i> Thank you for subscribing!</p>
                     </div>
                 </div>
 
@@ -212,8 +214,8 @@
                             &copy; ${CURRENT_YEAR} ${BRAND_NAME}. All rights reserved.
                         </p>
                         <div class="flex items-center gap-6">
-                            <a href="#" class="text-[11px] uppercase tracking-widest text-neutral-400 hover:text-[#C2410C] transition-colors">Privacy</a>
-                            <a href="#" class="text-[11px] uppercase tracking-widest text-neutral-400 hover:text-[#C2410C] transition-colors">Terms</a>
+                            <a href="#" class="text-[11px] uppercase tracking-widest text-neutral-400 hover:text-[#E11D48] transition-colors">Privacy</a>
+                            <a href="#" class="text-[11px] uppercase tracking-widest text-neutral-400 hover:text-[#E11D48] transition-colors">Terms</a>
                             <span class="text-[11px] uppercase tracking-widest text-neutral-400">${PHONE}</span>
                         </div>
                     </div>
@@ -222,7 +224,7 @@
         </footer>
 
         <!-- Back to Top -->
-        <button id="back-to-top" aria-label="Back to top" class="fixed bottom-8 right-8 z-50 w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-[#C2410C] to-[#9A3412] text-white border-none cursor-pointer opacity-0 translate-y-5 transition-all duration-300 hover:-translate-y-1 hover:scale-110 shadow-lg shadow-[#C2410C]/30 active:scale-95">
+        <button id="back-to-top" aria-label="Back to top" class="fixed bottom-8 right-8 z-50 w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-[#E11D48] to-[#9F1239] text-white border-none cursor-pointer opacity-0 translate-y-5 transition-all duration-300 hover:-translate-y-1 hover:scale-110 shadow-lg shadow-[#E11D48]/30 active:scale-95">
             <i class="fas fa-chevron-up text-sm"></i>
         </button>`;
     }
@@ -289,7 +291,7 @@
                 html.classList.add('dark');
                 themeBtns.forEach(btn => {
                     const icon = btn.querySelector('i');
-                    if (icon) icon.className = 'fas fa-sun text-sm text-yellow-400';
+                    if (icon) icon.className = 'fas fa-sun text-sm';
                     const span = btn.querySelector('span');
                     if (span) span.textContent = 'Light Mode';
                 });
@@ -364,7 +366,10 @@
                 backToTop.classList.toggle('opacity-100', scrollTop > 400);
                 backToTop.classList.toggle('translate-y-0', scrollTop > 400);
             }
-            if (nav) nav.classList.toggle('shadow-lg', scrollTop > 10);
+            if (nav) {
+                nav.classList.toggle('shadow-lg', scrollTop > 10);
+                nav.classList.toggle('nav-scrolled', scrollTop > 10);
+            }
         });
 
         if (backToTop) backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
