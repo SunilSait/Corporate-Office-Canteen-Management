@@ -484,7 +484,7 @@
                 title: "Tech Park Food Hall",
                 subtitle: "High-Throughput Culinary Arena for 1,000+ Daily Diners",
                 desc: "Designed specifically for high-density technology campuses. Multiple live culinary stations, smart multi-lane queuing, and RFID contactless checkout keep lunch rushes flowing effortlessly with zero bottlenecks.",
-                image: "assets/images/why_choose_us.jpg",
+                image: "assets/images/tech_park_food_hall.jpg",
                 imageAlt: "Tech Park Corporate Food Hall",
                 badgeTop: "1,800+ Daily Capacity",
                 badgeBottomTitle: "Avg. Service Time: 3.2 Mins",
@@ -667,13 +667,13 @@
                 macroDiet: 'Vegan / Halal Opt.',
                 chefName: 'Chef Marcus Chen',
                 chefTitle: 'Executive Sous Chef • 12 yrs Five-Star Hospitality',
-                chefImg: 'assets/images/testimonial_3.jpg'
+                chefImg: 'assets/images/chef_marcus_chen.jpg'
             },
             hearth: {
                 title: 'Artisan Hearth & Tandoor',
                 cuisine: 'Clay-Fired Breads & Slow Smoked Grills',
                 desc: 'Live charcoal tandoors firing crisp garlic naans, slow-simmered rich dal makhani, and succulent paneer tikka skewers with bespoke spice levels.',
-                img: 'assets/images/hero_premium_dining.jpg',
+                img: 'assets/images/station_tandoor_hearth.jpg',
                 stationTag: 'Station 02',
                 liveStatus: 'Live Charcoal Active',
                 prepTime: '3.0 mins',
@@ -685,13 +685,13 @@
                 macroDiet: 'Vegetarian / GF Opt.',
                 chefName: 'Chef Vikram Singhania',
                 chefTitle: 'Master Tandoor Specialist • 16 yrs Royal Heritage Dining',
-                chefImg: 'assets/images/testimonial_2.jpg'
+                chefImg: 'assets/images/chef_vikram_singhania.jpg'
             },
             salad: {
                 title: 'Hydroponic Salad & Deli',
                 cuisine: 'Pesticide-Free Microgreens & Clean Bowls',
                 desc: 'Fresh morning harvest from certified local hydroponic farms. Build-your-own cold-pressed bowls with organic quinoa, ancient seeds, avocado, and zero-sugar vinaigrettes.',
-                img: 'assets/images/farm_fresh_sourcing.jpg',
+                img: 'assets/images/station_hydroponic_salad.jpg',
                 stationTag: 'Station 03',
                 liveStatus: 'Fresh Deli Bar Open',
                 prepTime: '1.5 mins',
@@ -703,13 +703,13 @@
                 macroDiet: '100% Organic Vegan',
                 chefName: 'Chef Natasha Rao',
                 chefTitle: 'Wellness Nutrition Specialist • Certified Dietitian',
-                chefImg: 'assets/images/testimonial_1.jpg'
+                chefImg: 'assets/images/chef_natasha_rao.jpg'
             },
             barista: {
                 title: 'Barista Roastery & Bakery',
                 cuisine: 'Single-Origin Espresso & Artisan Bakes',
                 desc: 'Specialty Arabica roasts from Chikmagalur estates, stone-ground matcha lattes, and in-house baked sourdough croissants and gluten-free fruit tea cakes.',
-                img: 'assets/images/service_daily_meals.jpg',
+                img: 'assets/images/station_barista_roastery.jpg',
                 stationTag: 'Station 04',
                 liveStatus: 'Brew Bar Steaming',
                 prepTime: '2.0 mins',
@@ -721,7 +721,7 @@
                 macroDiet: 'Artisan Roasted',
                 chefName: 'Barista Lead Rohan Sen',
                 chefTitle: 'Q-Grader Certified • National Latte Art Finalist',
-                chefImg: 'assets/images/testimonial_2.jpg'
+                chefImg: 'assets/images/barista_rohan_sen.jpg'
             }
         };
 
@@ -751,11 +751,14 @@
                 stationNavBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
 
+                const targetImg = btn.getAttribute('data-img') || data.img;
+                const targetChefImg = btn.getAttribute('data-chef-img') || data.chefImg;
+
                 if (imgEl) {
                     imgEl.style.opacity = '0.3';
                     imgEl.style.transform = 'scale(0.98)';
                     setTimeout(() => {
-                        imgEl.src = data.img;
+                        imgEl.src = targetImg;
                         imgEl.alt = data.title;
                         imgEl.style.opacity = '1';
                         imgEl.style.transform = 'scale(1)';
@@ -776,7 +779,7 @@
                 if (dietEl) dietEl.innerHTML = `<i class="fas fa-leaf text-xs text-[#E11D48]"></i> ${data.macroDiet}`;
                 if (chefNameEl) chefNameEl.textContent = data.chefName;
                 if (chefTitleEl) chefTitleEl.textContent = data.chefTitle;
-                if (chefImgEl) chefImgEl.src = data.chefImg;
+                if (chefImgEl && targetChefImg) chefImgEl.src = targetChefImg;
             });
         });
     }

@@ -260,6 +260,31 @@ input, textarea, select, button {
     box-shadow: 0 8px 24px var(--shadow-base);
 }
 
+.btn-white {
+    background: #FFFFFF;
+    color: #E11D48;
+    border: 1.5px solid #FFFFFF;
+    font-weight: 700;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.btn-white i {
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.btn-white:hover {
+    background: linear-gradient(135deg, #F43F5E, #E11D48) !important;
+    color: #FFFFFF !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 0 8px 28px rgba(225, 29, 72, 0.5) !important;
+    transform: translateY(-2px);
+}
+
+.btn-white:hover i {
+    color: #FFFFFF !important;
+}
+
 .btn-full { width: 100%; }
 .btn-sm { padding: 9px 20px; font-size: 0.75rem; }
 .btn-lg { padding: 16px 40px; font-size: 0.85rem; }
@@ -323,6 +348,11 @@ input, textarea, select, button {
     transition: var(--transition);
     display: flex;
     flex-direction: column;
+    height: auto;
+}
+
+.grid > .card,
+.grid > div > .card {
     height: 100%;
 }
 
@@ -414,6 +444,31 @@ input, textarea, select, button {
 .dark .form-input:focus {
     border-color: var(--primary-light);
     box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.2);
+}
+
+/* Native Date & Time Picker Calendar Indicator */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.dark input[type="date"]::-webkit-calendar-picker-indicator,
+.dark input[type="datetime-local"]::-webkit-calendar-picker-indicator,
+.dark input[type="time"]::-webkit-calendar-picker-indicator,
+.dark .form-input::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.dark input[type="date"]::-webkit-calendar-picker-indicator:hover,
+.dark input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover,
+.dark input[type="time"]::-webkit-calendar-picker-indicator:hover,
+.dark .form-input::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
 }
 
 textarea.form-input { resize: vertical; min-height: 120px; }
