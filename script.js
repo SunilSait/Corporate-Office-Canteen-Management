@@ -101,6 +101,15 @@
         notifPanel.addEventListener('click', (e) => e.stopPropagation());
     }
 
+    // ---- Table Container Vertical Scroll Forwarding ----
+    document.querySelectorAll('.overflow-x-auto').forEach(wrapper => {
+        wrapper.addEventListener('wheel', e => {
+            if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+                window.scrollBy(0, e.deltaY);
+            }
+        }, { passive: true });
+    });
+
     // ---- FAQ Accordion ----
     document.addEventListener('DOMContentLoaded', () => {
         const faqItems = document.querySelectorAll('.faq-item');

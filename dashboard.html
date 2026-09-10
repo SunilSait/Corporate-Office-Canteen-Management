@@ -229,7 +229,7 @@
                     <h4 style="font-size:1rem;margin-bottom:0;">Department-wise Meal Count (Today)</h4>
                     <button class="btn btn-sm btn-secondary"><i class="fas fa-download text-xs"></i> Export</button>
                 </div>
-                <div class="w-full rounded-xl border border-[var(--border-light)] overflow-hidden">
+                <div class="w-full rounded-xl border border-[var(--border-light)] overflow-x-auto">
                     <table class="data-table w-full">
                         <thead><tr><th><span class="hidden sm:inline">Department</span><span class="sm:hidden">Dept</span></th><th class="text-center"><span class="hidden sm:inline">Breakfast</span><span class="sm:hidden">B'fast</span></th><th class="text-center">Lunch</th><th class="text-center">Snacks</th><th class="text-center">Total</th></tr></thead>
                         <tbody>
@@ -643,7 +643,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="w-full rounded-xl border border-[var(--border-light)] overflow-hidden">
+                <div class="w-full rounded-xl border border-[var(--border-light)] overflow-x-auto">
                     <table class="data-table w-full">
                         <thead>
                             <tr><th>Employee</th><th class="hidden sm:table-cell">Department</th><th class="text-center sm:text-left">Plan</th><th class="text-center hidden md:table-cell">Start Date</th><th class="text-center hidden sm:table-cell">Expiry</th><th class="text-center">Status</th></tr>
@@ -758,7 +758,7 @@
             <!-- Department Balances -->
             <div class="card p-4 sm:p-6 mb-8">
                 <h4 style="font-size:1rem;" class="mb-4 sm:mb-6">Department Wallet Balances</h4>
-                <div class="w-full rounded-xl border border-[var(--border-light)] overflow-hidden">
+                <div class="w-full rounded-xl border border-[var(--border-light)] overflow-x-auto">
                     <table class="data-table w-full">
                         <thead><tr><th>Department</th><th class="text-center hidden md:table-cell">Allocated</th><th class="text-center">Spent</th><th class="text-center">Remaining</th><th class="text-center hidden sm:table-cell">Utilization</th><th class="text-center">Action</th></tr></thead>
                         <tbody>
@@ -929,7 +929,7 @@
             </div>
 
             <!-- Orders Table -->
-            <div class="card p-3.5 sm:p-4">
+            <div class="card p-2.5 sm:p-4">
                 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-3 gap-2.5">
                     <h4 style="font-size:0.9rem;margin-bottom:0;">Recent Orders</h4>
                     <div class="flex items-center gap-2 px-2.5 py-1.5 rounded-xl bg-[var(--surface-alt)] border border-[var(--border-light)] text-xs">
@@ -937,7 +937,7 @@
                         <input type="text" placeholder="Search orders..." class="bg-transparent outline-none text-xs w-32 sm:w-40" style="font-weight:400;">
                     </div>
                 </div>
-                <div class="w-full rounded-xl border border-[var(--border-light)] overflow-hidden">
+                <div class="w-full rounded-xl border border-[var(--border-light)] overflow-x-auto">
                     <table class="data-table w-full">
                         <thead>
                             <tr>
@@ -953,7 +953,7 @@
                         <tbody>
                             <tr>
                                 <td class="text-left"><span class="font-semibold block" style="font-weight:600;color:var(--primary);">#ORD-8471</span><span class="text-[10px] text-neutral-400 block sm:hidden">1:15 PM</span></td>
-                                <td class="text-left"><span class="font-medium block truncate" style="font-weight:500;">Amit Kumar</span><span class="text-[10px] text-neutral-400 block md:hidden truncate max-w-[120px]">Dal Makhani, Rice, Naan</span></td>
+                                <td class="text-left"><span class="font-medium block truncate" style="font-weight:500;">Amit Kumar</span><span class="text-[10px] text-neutral-400 block md:hidden truncate max-w-[85px] sm:max-w-[120px]">Dal Makhani, Rice, Naan</span></td>
                                 <td class="text-center hidden sm:table-cell"><span class="badge badge-warning">Lunch</span></td>
                                 <td class="text-left hidden md:table-cell" style="font-weight:400;">Dal Makhani, Rice, Naan</td>
                                 <td class="text-center whitespace-nowrap" style="font-weight:600;">₹65</td>
@@ -962,7 +962,7 @@
                             </tr>
                             <tr>
                                 <td class="text-left"><span class="font-semibold block" style="font-weight:600;color:var(--primary);">#ORD-8470</span><span class="text-[10px] text-neutral-400 block sm:hidden">1:05 PM</span></td>
-                                <td class="text-left"><span class="font-medium block truncate" style="font-weight:500;">Priya Singh</span><span class="text-[10px] text-neutral-400 block md:hidden truncate max-w-[120px]">Paneer Butter Masala, Roti</span></td>
+                                <td class="text-left"><span class="font-medium block truncate" style="font-weight:500;">Priya Singh</span><span class="text-[10px] text-neutral-400 block md:hidden truncate max-w-[85px] sm:max-w-[120px]">Paneer Butter Masala, Roti</span></td>
                                 <td class="text-center hidden sm:table-cell"><span class="badge badge-warning">Lunch</span></td>
                                 <td class="text-left hidden md:table-cell" style="font-weight:400;">Paneer Butter Masala, Roti</td>
                                 <td class="text-center whitespace-nowrap" style="font-weight:600;">₹55</td>
@@ -971,7 +971,7 @@
                             </tr>
                             <tr>
                                 <td class="text-left"><span class="font-semibold block" style="font-weight:600;color:var(--primary);">#ORD-8469</span><span class="text-[10px] text-neutral-400 block sm:hidden">9:20 AM</span></td>
-                                <td class="text-left"><span class="font-medium block truncate" style="font-weight:500;">Ravi Joshi</span><span class="text-[10px] text-neutral-400 block md:hidden truncate max-w-[120px]">Idli Sambar, Coffee</span></td>
+                                <td class="text-left"><span class="font-medium block truncate" style="font-weight:500;">Ravi Joshi</span><span class="text-[10px] text-neutral-400 block md:hidden truncate max-w-[85px] sm:max-w-[120px]">Idli Sambar, Coffee</span></td>
                                 <td class="text-center hidden sm:table-cell"><span class="badge badge-teal">Breakfast</span></td>
                                 <td class="text-left hidden md:table-cell" style="font-weight:400;">Idli Sambar, Coffee</td>
                                 <td class="text-center whitespace-nowrap" style="font-weight:600;">₹30</td>
@@ -980,7 +980,7 @@
                             </tr>
                             <tr>
                                 <td class="text-left"><span class="font-semibold block" style="font-weight:600;color:var(--primary);">#ORD-8468</span><span class="text-[10px] text-neutral-400 block sm:hidden">12:50 PM</span></td>
-                                <td class="text-left"><span class="font-medium block truncate" style="font-weight:500;">Neha Patel</span><span class="text-[10px] text-neutral-400 block md:hidden truncate max-w-[120px]">Chole Bhature, Salad</span></td>
+                                <td class="text-left"><span class="font-medium block truncate" style="font-weight:500;">Neha Patel</span><span class="text-[10px] text-neutral-400 block md:hidden truncate max-w-[85px] sm:max-w-[120px]">Chole Bhature, Salad</span></td>
                                 <td class="text-center hidden sm:table-cell"><span class="badge badge-warning">Lunch</span></td>
                                 <td class="text-left hidden md:table-cell" style="font-weight:400;">Chole Bhature, Salad</td>
                                 <td class="text-center whitespace-nowrap" style="font-weight:600;">₹50</td>
@@ -989,7 +989,7 @@
                             </tr>
                             <tr>
                                 <td class="text-left"><span class="font-semibold block" style="font-weight:600;color:var(--primary);">#ORD-8467</span><span class="text-[10px] text-neutral-400 block sm:hidden">4:30 PM</span></td>
-                                <td class="text-left"><span class="font-medium block truncate" style="font-weight:500;">Sunil Kapoor</span><span class="text-[10px] text-neutral-400 block md:hidden truncate max-w-[120px]">Vada Pav, Cutting Chai</span></td>
+                                <td class="text-left"><span class="font-medium block truncate" style="font-weight:500;">Sunil Kapoor</span><span class="text-[10px] text-neutral-400 block md:hidden truncate max-w-[85px] sm:max-w-[120px]">Vada Pav, Cutting Chai</span></td>
                                 <td class="text-center hidden sm:table-cell"><span class="badge badge-teal">Snacks</span></td>
                                 <td class="text-left hidden md:table-cell" style="font-weight:400;">Vada Pav, Cutting Chai</td>
                                 <td class="text-center whitespace-nowrap" style="font-weight:600;">₹25</td>
@@ -998,7 +998,7 @@
                             </tr>
                             <tr>
                                 <td class="text-left"><span class="font-semibold block" style="font-weight:600;color:var(--primary);">#ORD-8466</span><span class="text-[10px] text-neutral-400 block sm:hidden">1:00 PM</span></td>
-                                <td class="text-left"><span class="font-medium block truncate" style="font-weight:500;">Meera Desai</span><span class="text-[10px] text-neutral-400 block md:hidden truncate max-w-[120px]">Rajma Chawal, Raita</span></td>
+                                <td class="text-left"><span class="font-medium block truncate" style="font-weight:500;">Meera Desai</span><span class="text-[10px] text-neutral-400 block md:hidden truncate max-w-[85px] sm:max-w-[120px]">Rajma Chawal, Raita</span></td>
                                 <td class="text-center hidden sm:table-cell"><span class="badge badge-warning">Lunch</span></td>
                                 <td class="text-left hidden md:table-cell" style="font-weight:400;">Rajma Chawal, Raita</td>
                                 <td class="text-center whitespace-nowrap" style="font-weight:600;">₹45</td>
@@ -1007,7 +1007,7 @@
                             </tr>
                             <tr>
                                 <td class="text-left"><span class="font-semibold block" style="font-weight:600;color:var(--primary);">#ORD-8465</span><span class="text-[10px] text-neutral-400 block sm:hidden">8:45 AM</span></td>
-                                <td class="text-left"><span class="font-medium block truncate" style="font-weight:500;">Vikram Rao</span><span class="text-[10px] text-neutral-400 block md:hidden truncate max-w-[120px]">Poha, Tea</span></td>
+                                <td class="text-left"><span class="font-medium block truncate" style="font-weight:500;">Vikram Rao</span><span class="text-[10px] text-neutral-400 block md:hidden truncate max-w-[85px] sm:max-w-[120px]">Poha, Tea</span></td>
                                 <td class="text-center hidden sm:table-cell"><span class="badge badge-teal">Breakfast</span></td>
                                 <td class="text-left hidden md:table-cell" style="font-weight:400;">Poha, Tea</td>
                                 <td class="text-center whitespace-nowrap" style="font-weight:600;">₹20</td>
@@ -1137,7 +1137,7 @@
                     <h4 style="font-size:1rem;margin-bottom:0;">Department Performance</h4>
                     <button class="btn btn-sm btn-secondary"><i class="fas fa-download text-xs"></i> Export CSV</button>
                 </div>
-                <div class="w-full rounded-xl border border-[var(--border-light)] overflow-hidden">
+                <div class="w-full rounded-xl border border-[var(--border-light)] overflow-x-auto">
                     <table class="data-table w-full">
                         <thead><tr><th>Department</th><th class="text-center">Meals</th><th class="text-center">Cost</th><th class="text-center hidden sm:table-cell">Avg/Meal</th><th class="text-center hidden md:table-cell">Waste</th><th class="text-center"><span class="hidden sm:inline">Satisfaction</span><span class="sm:hidden">Rating</span></th></tr></thead>
                         <tbody>
@@ -1499,6 +1499,15 @@
                 window.closeLogoutModal(e);
             }
         }
+    });
+
+    // Ensure vertical mouse wheel & trackpad scrolling over tables smoothly scrolls the page
+    document.querySelectorAll('.overflow-x-auto').forEach(function(wrapper) {
+        wrapper.addEventListener('wheel', function(e) {
+            if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+                window.scrollBy(0, e.deltaY);
+            }
+        }, { passive: true });
     });
 })();
 </script>
